@@ -1,0 +1,14 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.openai/
+
+# Local artifacts
+.DS_Store
+node_modules/
+*.log
+__pycache__/
+*.py[cod]
