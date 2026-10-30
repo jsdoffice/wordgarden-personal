@@ -21,4 +21,6 @@ identifies its dataset as CC0. No Apple system voice recordings or paid speech
 API was used. Naming the contributor identifies the synthetic voice source and
 does not imply endorsement of Word Garden.
 
-AAC-LC mono, 64 kbps. 50 lessons per track; use translation-audio.json for cues.
+AAC-LC mono, 64 kbps. 50 lessons per track; use translation-audio-v2.json for the revised lesson cues.
+Legacy translation-audio.json and translation-*.m4a files are retained for
+clients that still have the previous lesson catalog open.

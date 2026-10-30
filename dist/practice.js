@@ -4,7 +4,7 @@ let practiceTarget = null;
 let activeRecording = null;
 let recordingURL = null;
 let practiceTopic = '카페에서 주문하기';
-let practiceLevel = '중상급 B2–C1';
+let practiceLevel = '중급 B1–B2';
 
 function stopPractice() {
   const rec = activeRecording;
@@ -182,7 +182,7 @@ async function showOfflineStatus() {
   const el = document.querySelector('#offlineStatus');
   if (!el) return;
   try {
-    const cache = await caches.open('wordgarden-v13-focus');
+    const cache = await caches.open('wordgarden-v14-distinct');
     const urls = ['./index.html','./dictionary.js','./questions.js','./app.js','./practice.js','./style.css','./lab-data.js','./lab.js','./lab.css','./lab-attribution.txt','./translation-data.js','./translation.js','./translation.css','./focus-theme.css'];
     const cached = await Promise.all(urls.map(url => cache.match(url)));
     el.textContent = cached.every(Boolean) ? '학습 자료가 이 기기에 저장되어 있어요. 인터넷 없이 단어·예문 학습, 영어 연구실 전체 자료, 번역 카드·직접 입력과 녹음을 사용할 수 있습니다. 미국 남성 음성 연속 듣기는 인터넷이 필요하며, 한국어 읽기와 기존 발음은 기기에 설치된 음성에 따라 달라요.' : '오프라인 자료를 준비 중이에요. 인터넷에 연결한 상태로 잠시 뒤 다시 확인해 주세요.';

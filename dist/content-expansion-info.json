@@ -48,8 +48,19 @@
     }
   },
   "notes": [
-    "Existing IDs and learning records are preserved.",
+    "Vocabulary IDs and accumulated history are preserved. Old translation progress is archived in the local backup; replaced translations start fresh.",
     "Business examples are integrated into existing menus.",
-    "Pattern-based variants are included; repeated lesson modes do not count as additional unique sentences."
-  ]
+    "Core word-example patterns remain; translation exercises were rewritten as independent messages. Card and typing modes share 3,000 sentences."
+  ],
+  "translationRevision": {
+    "version": "2026-10-30-distinct-v2",
+    "sentences": 3000,
+    "level": "B1–B2",
+    "meanWords": 10.882,
+    "previousMeanWords": 16.413,
+    "lengthReductionPercent": 33.7,
+    "koreanExactDuplicates": 0,
+    "englishExactDuplicates": 0,
+    "description": "Independent practical messages replace grammar paraphrases of repeated situations. Difficulty labels are an editorial estimate, not a certified CEFR score."
+  }
 }

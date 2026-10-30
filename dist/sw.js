@@ -1,5 +1,5 @@
-const CACHE = 'wordgarden-v13-focus';
-const ASSETS = ['./index.html','./dictionary.js','./questions.js','./style.css','./app.js','./practice.js','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png','./data-credits.html','./dictionary-data.json','./lab-data.js','./lab-data.json','./content-expansion-info.json','./lab-example-sources.json','./lab.js','./lab.css','./lab-attribution.txt','./translation-data.js','./translation-data.json','./translation.js','./translation.css','./focus-theme.css','./translation-audio.json','./translation-audio-attribution.txt'];
+const CACHE = 'wordgarden-v14-distinct';
+const ASSETS = ['./index.html','./dictionary.js','./questions.js','./style.css','./app.js','./practice.js','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png','./data-credits.html','./dictionary-data.json','./lab-data.js','./lab-data.json','./content-expansion-info.json','./lab-example-sources.json','./lab.js','./lab.css','./lab-attribution.txt','./translation-data.js','./translation-data.json','./translation.js','./translation.css','./focus-theme.css','./translation-audio.json','./translation-audio-v2.json','./translation-audio-attribution.txt'];
 const allowed = new Set(ASSETS.map(path => new URL(path, self.location.href).href));
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
