@@ -1,5 +1,5 @@
-const CACHE = 'wordgarden-v6-lab';
-const ASSETS = ['./index.html','./dictionary.js','./questions.js','./style.css','./app.js','./practice.js','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png','./data-credits.html','./dictionary-data.json','./lab-data.js','./lab-data.json','./lab.js','./lab.css','./lab-attribution.txt'];
+const CACHE = 'wordgarden-v11-blue';
+const ASSETS = ['./index.html','./dictionary.js','./questions.js','./style.css','./app.js','./practice.js','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png','./data-credits.html','./dictionary-data.json','./lab-data.js','./lab-data.json','./lab.js','./lab.css','./lab-attribution.txt','./translation-data.js','./translation-data.json','./translation.js','./translation.css','./translation-audio.json','./translation-audio-attribution.txt'];
 const allowed = new Set(ASSETS.map(path => new URL(path, self.location.href).href));
 self.addEventListener('install', event => {
   event.waitUntil((async () => {

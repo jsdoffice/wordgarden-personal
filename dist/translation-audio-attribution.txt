@@ -1,0 +1,24 @@
+Word Garden lesson audio
+
+Voice: Joe — US English male synthetic speech (en_US-joe-medium).
+These are computer-generated recordings, not a human performance of the lessons.
+
+Generated locally using Piper 1.8.0:
+https://github.com/OHF-Voice/piper1-gpl
+The Piper program and model are not included in this web app.
+
+Voice model and model card:
+https://huggingface.co/rhasspy/piper-voices/tree/5041a7a49ae5b3a0f30e6837769eb03fdbb231bd/en/en_US/joe/medium
+Model SHA-256: 58afce0321b8d9c46d7cdf9c16500cc55a793b4220212dba6b70fb788b3baf06
+
+Original voice dataset: Nabu Casa / Open Home Foundation voice datasets,
+en_US/joe. Dataset license: CC0 (public domain dedication).
+https://github.com/OHF-Voice/voice-datasets
+https://creativecommons.org/publicdomain/zero/1.0/
+
+The Piper voice collection metadata lists MIT; the Joe model card separately
+identifies its dataset as CC0. No Apple system voice recordings or paid speech
+API was used. Naming the contributor identifies the synthetic voice source and
+does not imply endorsement of Word Garden.
+
+AAC-LC mono, 64 kbps. 50 lessons per track; use translation-audio.json for cues.
