@@ -12,8 +12,20 @@
 - 최대 30초 녹음과 다시 듣기, 발음 자가 점검
 - 연습 상황과 수준을 선택해 ChatGPT에 붙여 넣을 연습 내용 생성
 - 홈 화면 설치용 PWA 설정과 오프라인 자료 캐시
+- 영어 연구실 전체 자료 2,662개: 필수 단어 2,060개, 숙어 193개, 구동사 357개, 영어 5형식 8개, 헷갈리는 표현 16개, 문법 규칙 28개
+- 영어 연구실의 한영 통합 검색, 발음기호·영어 뜻풀이·예문, 문장 구조 설명, 비교표와 맞는/틀린 문장
 
 10,000개 확장 예문은 400개 단어·표현과 25개 문장 틀의 조합입니다. 모든 사전 단어에 예문이 연결되어 있는 것은 아닙니다. 공개 사전 번역은 전체 항목을 사람이 검수하지 않았습니다.
+
+영어 연구실은 [나의 영어 연구실](https://my-toeic-english-lab.kohwoon-and-3040.chatgpt.site/)의 6개 분류 전체를 통합한 자료실입니다. 기존 단어장과 단어가 겹쳐도 뜻·예문·설명을 생략하지 않도록 별도 메뉴에서 제공합니다. 연구실 자료 2,662개는 기존 퀴즈 16,060개와 별도로 집계합니다. 기존 `wordgarden-v1` 학습 기록과 백업 형식은 유지됩니다.
+
+## 게시 주소와 Render 배포
+
+[단어정원 접속](https://wordgarden-personal-static.onrender.com/)
+
+Render **Static Site**에서 저장소 `main` 브랜치, Root Directory 빈 값, Build Command `echo "Static files ready"`, Publish Directory `dist`, 환경변수 `SKIP_INSTALL_DEPS=true`로 배포합니다. 별도 Python 서버나 `requirements.txt`가 필요하지 않습니다. 기존 Python Web Service와 별개의 정적 사이트입니다.
+
+앱 업데이트 시 서비스 워커가 새 자료를 캐시에 저장합니다. 이전 화면이 계속 보이면 인터넷에 연결한 상태로 앱을 다시 열거나 새로고침하세요. 학습 기록을 지우기 위해 사이트 데이터를 삭제할 필요는 없습니다.
 
 ## 실행
 
@@ -49,6 +61,9 @@ python3 -m http.server 5867 --bind 127.0.0.1 --directory dist
 - `dist/sw.js`: 오프라인 캐시
 - `dist/dictionary.js`, `dist/dictionary-data.json`: 가공 사전
 - `dist/questions.js`: 확장 예문
+- `dist/lab-data.js`, `dist/lab-data.json`: 원본 필드를 보존한 영어 연구실 전체 자료와 6개 분류 설명
+- `dist/lab.js`, `dist/lab.css`: 통합 자료실 검색·분류·상세 콘텐츠 화면
+- `dist/lab-attribution.txt`: 영어 연구실 원본 출처와 이용 조건 전문
 - `dictionary-source.json`: 사전 변환에 사용한 원본 데이터
 - `work-dictionary.py`, `work-expand.py`: 초기 자료 생성 및 코드 변환 작업 스크립트
 
@@ -60,6 +75,10 @@ python3 -m http.server 5867 --bind 127.0.0.1 --directory dist
 
 사전 데이터 출처는 [Open English-Korean Dictionary](https://github.com/jhseo1211/open-english-korean-dict)입니다. A1–B2 표제어를 선별하고 일부 뜻을 수정했습니다. 가공 사전은 CC BY-SA 4.0 조건을 따릅니다. 자세한 상위 출처와 라이선스는 `dist/data-credits.html`을 확인하세요. 저장소 전체에 일괄적인 오픈소스 라이선스를 새로 부여하지 않았습니다.
 
+영어 연구실에 포함된 추가 사전, 구동사·숙어의 영어 뜻풀이와 Tatoeba 예문의 출처 및 CC BY-SA 4.0 / MIT / The Unlicense / CC0 이용 조건은 `dist/lab-attribution.txt`에 원문 그대로 보존했습니다.
+
 ## 확인한 범위
 
 JavaScript 문법 검사, 390px 모바일 화면의 선택·복사 동작, 가상 오디오 장치의 녹음 종료·권한 거부·오류 처리, 로컬 서버 종료 후 재실행과 검색을 확인했습니다. 실제 아이폰 마이크와 홈 화면 설치는 별도 기기 확인이 필요합니다.
+
+영어 연구실 통합 시 원본 2,662개 항목의 모든 필드와 순서, 다운로드 JSON, 출처 전문을 대조했습니다. 6개 분류, 통합 검색·강조, 더 보기, 390px 화면과 서버 종료 후 연구실 검색을 확인했습니다. 기존 퀴즈 데이터와 학습 기록 저장 형식은 변경하지 않았습니다.
