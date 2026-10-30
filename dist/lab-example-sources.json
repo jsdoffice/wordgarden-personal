@@ -1,0 +1,5152 @@
+{
+  "take": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "financial": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "project": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "stock": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "inventory": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "for": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "such": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "company": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "without": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "product": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "return": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "production": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "like": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "leave": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "service": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "term": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "public": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "future": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "above": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "economic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "charge": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "quality": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "measure": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "security": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "management": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "monitor": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "practical": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "participant": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "promotion": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "maintenance": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "workshop": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "workplace": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "that": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "say": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "very": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "want": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "down": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "retirement": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "pitch": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "formation": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "audit": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "limb": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "linguistic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "maximize": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mercy": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "unacceptable": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "evacuation": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "buck": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "collaborate": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "all": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "over": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "part": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "next": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "report": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "during": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "set": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "few": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "market": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "cost": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "support": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "local": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "concern": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "expect": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "send": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "clear": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "among": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "appear": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "law": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "account": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "performance": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "common": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "effort": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "voice": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "international": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "alone": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "success": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "director": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "pressure": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "promise": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "task": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "doubt": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "useful": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "weight": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "committee": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "regular": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mistake": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "quick": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "extremely": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "hardly": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "branch": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "danger": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "guard": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "repair": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "emergency": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "flood": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "salt": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "fortune": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "hundred": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "liberty": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "toe": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "regulatory": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "brokerage": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "sewage": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "hype": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "archival": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "halt": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "runoff": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "vegan": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "albeit": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "overload": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "unfinished": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "liquidity": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "even": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "last": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "through": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "talk": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "live": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lead": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "until": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "level": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "able": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "whether": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "present": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "process": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "sort": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "fall": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "past": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "record": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "stay": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "development": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "half": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "per": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "top": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "reach": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "require": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "general": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "individual": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "near": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "decision": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "main": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "cut": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "rise": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "model": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "approach": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "land": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "claim": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "relationship": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "amount": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "round": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "fund": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "industry": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "risk": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "total": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "demand": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "limit": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "foot": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lie": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "pick": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "reduce": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "patient": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "current": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "particularly": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "suppose": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "laugh": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "firm": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "cell": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "affect": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "relate": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "wonder": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "press": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "region": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "growth": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "respect": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "various": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "medium": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "hit": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "economy": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "function": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "occur": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "tax": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "aim": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "suffer": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "network": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "document": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "income": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "nor": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "announce": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "inform": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "highly": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "relative": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "print": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lay": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "warn": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "category": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "emerge": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "technique": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "combine": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "marriage": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "trend": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "aid": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "expand": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "recall": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "till": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "rely": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "arise": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "declare": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "selection": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "surely": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "joint": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "compete": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "reserve": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "furthermore": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "gap": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "stable": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "merely": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "slip": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "forth": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "collapse": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "distinguish": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "reimbursement": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "encounter": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mathematics": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "bet": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "efficient": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "dramatic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "procurement": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "owe": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "era": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "tension": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "assist": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "pub": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "rarely": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "stem": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "competitor": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "log": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "efficiency": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "statistic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "broadcast": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "newly": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "exposure": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "virus": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "visual": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "dare": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "rid": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "motor": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "impressive": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "coal": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "motivate": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "weakness": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "govern": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "assign": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "chat": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "tale": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "pot": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "fold": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "bin": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "airline": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "barely": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "firmly": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "continuous": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "confusion": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "slope": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "harbor": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "organic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "ashamed": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "applause": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "assignment": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "clinic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "consonant": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "definite": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "diameter": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "diverse": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "essence": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "exit": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "freely": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "goods": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "hip": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "inject": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "interact": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "intermediate": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lab": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "marble": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mechanical": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mineral": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "nucleus": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "objection": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "organism": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "puzzle": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "rainfall": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "resemble": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "simultaneously": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "strategic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "surgeon": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "tense": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "upward": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "vague": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "outdoor": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "pharmacy": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "academy": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "signature": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "revision": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "ink": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "cotton": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "dial": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "workload": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "fifth": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "overnight": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lottery": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "sleeve": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "flu": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "bishop": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "tin": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "cod": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "gym": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "luggage": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "pie": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "bow": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "frozen": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "nail": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "bare": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "incorrect": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "dirt": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "hazard": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "safely": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "moisture": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "hammer": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "isolation": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "fur": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "renew": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lamb": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "citizenship": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "scenic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "ant": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "postcard": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "vegetarian": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "frost": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mud": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "cliff": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "sticky": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lately": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "scary": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "bacon": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "magnificent": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "phantom": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "jade": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "choir": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "beautifully": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "poison": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "ginger": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "rebuild": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "quake": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "memorable": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "tick": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "abnormal": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "alcoholic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "juicy": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "guilt": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "monk": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "tasty": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "bark": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "trumpet": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "extensively": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "elbow": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lifelong": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "dynasty": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "forgive": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "sore": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "tightly": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "eternity": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "ambitious": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "tragic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "frustration": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "dull": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "hatred": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "sophomore": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "spicy": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "melt": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "warmth": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "volcano": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "skeleton": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "honesty": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "kitten": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "referee": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "unrelated": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "gown": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "herd": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "curiosity": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "certainty": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "sorrow": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "parrot": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "accidentally": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "steadily": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "whistle": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "adorable": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "upstairs": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "faint": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "kindness": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "pineapple": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "intentionally": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "nap": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "disappointment": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "devastating": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "ape": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "kettle": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "dusty": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "affection": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "foolish": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "rainforest": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "aspirin": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "gratitude": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "cabbage": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "sidewalk": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "jealous": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mule": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "waterfall": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "teamwork": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "evenly": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "apology": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "outlaw": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "awkward": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "sparkle": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "hopeful": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "gorilla": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "endure": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "selfish": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "liar": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "hardship": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "unpredictable": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lettuce": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "repay": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "forehead": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "downstairs": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "blush": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "unusually": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "regain": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "payable": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "oneself": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "yell": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "broccoli": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "make": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "since": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "state": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "though": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "far": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "cause": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "win": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "sound": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "wait": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "community": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "particular": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "outside": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "regard": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "standard": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "focus": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "factor": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "inside": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mix": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "primary": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "hang": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "institution": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "sector": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "reaction": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "employ": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "route": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "latter": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "ban": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "yield": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "wage": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "resolution": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "assumption": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "implication": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "swing": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "consistent": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "volunteer": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "profile": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "virtually": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "perceive": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "territory": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "pose": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "dimension": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "ally": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "conventional": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "adequate": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "opponent": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "province": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "evaluation": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "compensation": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "versus": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "gear": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "potentially": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "presumably": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "stimulate": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "attendance": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "functional": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "gently": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "wipe": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "abdominal": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "altitude": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "array": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "beam": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "biologist": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "cheat": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "competent": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "comprehension": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "congruent": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "coronary": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "corruption": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "cue": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "cylinder": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "decay": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "denominator": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "dose": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "economist": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "emit": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "ethics": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "fertility": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "fracture": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "grid": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "hedge": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "impulse": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "infect": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "infinity": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "instinct": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "irrelevant": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "magnitude": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mercury": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "minimize": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "monopoly": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "workflow": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "nest": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "nicely": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "outsourcing": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "norm": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "optical": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "optimal": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "partition": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "periodic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "phonological": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "itinerary": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "precipitate": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "problematic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "protocol": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "pulse": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "radar": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "randomly": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "reliability": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "sensible": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "simulation": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "receivable": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "specialty": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "subset": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "sufficiently": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "susceptible": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "syllabus": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "tribe": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "turbulent": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "undergraduate": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "underneath": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "unstable": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "utterance": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "validity": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "valve": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "weave": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "accountability": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "default": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "turnover": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "courier": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "respective": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "certification": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "commerce": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "optional": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "upgrade": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "administrative": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "disc": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "miscellaneous": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "void": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "laptop": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "portal": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "conversion": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "fox": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "suck": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "navy": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "gateway": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "outlook": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "residence": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "donate": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "excel": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "pine": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "functionality": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "pad": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "wolf": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "cherry": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "coalition": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "blade": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "courtesy": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "astronomy": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "instantly": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lawn": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "formerly": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "nursery": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "ash": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "showcase": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "flame": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "journalism": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "rug": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "funk": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "revenge": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lawsuit": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lap": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "ballot": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "unlock": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "yacht": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "dip": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "penguin": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "madness": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "waterproof": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "dim": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "helicopter": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "walnut": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "refresh": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "wit": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "cursor": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "translator": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "linen": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "enforce": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "bud": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "debit": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "spite": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "burial": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mansion": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "preferably": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "prom": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "pedal": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mist": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "humble": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "outpatient": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "conscience": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "compassion": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "surroundings": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "pumpkin": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lick": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "whip": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "porch": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "elegance": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "midst": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "advisory": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "globally": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "prohibit": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "scent": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "smash": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "unsure": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "dwarf": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "stool": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "paperwork": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "suburb": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "relieve": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lame": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "squeeze": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "suspicious": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "shareholder": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "uncommon": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mortal": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "obey": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "donkey": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "seldom": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "rusty": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "harmless": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "persistence": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "coarse": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "thoughtful": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "successive": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "ignorant": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "teaspoon": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "inaccurate": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "undoubtedly": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lush": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "aspire": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "cornerstone": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "fierce": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "resignation": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "sack": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "vinegar": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "rash": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "barley": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "chimney": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "risky": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "plague": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "supernatural": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "overly": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "humane": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "moonlight": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "invoke": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "awe": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "concession": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "wink": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mango": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "spur": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "gradual": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mastery": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "confession": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "absurd": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "tolerant": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "duel": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "unconscious": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "breathtaking": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "remarkably": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "utter": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "unsuccessful": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "ineffective": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "confront": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mortar": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "scar": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "monastery": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "clinical": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "constraint": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "continuity": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "estimation": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "plausible": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "rotate": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "portable": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "con": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "removal": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "trademark": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "dean": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "setup": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lens": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "offline": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "kernel": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "gourmet": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "avatar": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "fig": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "tab": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "anytime": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "ethernet": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "foster": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "eligibility": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "vacuum": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "sensor": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "franchise": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "integrity": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "legacy": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "rod": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "generator": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "bandwidth": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "continental": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "socket": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "facial": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "jurisdiction": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "recipient": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "median": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "integer": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "duke": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "defendant": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "app": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "petition": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "bidder": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "canyon": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "underlying": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "acoustic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "canvas": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "coupon": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "nylon": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "authentic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "collaborative": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "reset": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "junction": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mat": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lotus": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "cargo": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "grocery": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "outreach": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "appraisal": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "undefined": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "logistics": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "escort": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "warrant": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "chapel": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "foam": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "millennium": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "contractual": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "taxation": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "cuisine": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "butler": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "relevance": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "spirituality": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "watt": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "geometry": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "guild": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "asthma": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "vulnerable": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mainstream": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "hereby": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "periodically": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "infrared": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "seventh": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "pharmacology": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "galaxy": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "testament": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "clarity": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "homeland": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "dietary": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "incomplete": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "chubby": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "freelance": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "livestock": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "instrumental": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "reel": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "witch": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "satin": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "parliamentary": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "texture": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "textile": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "epic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "allergy": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "cult": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "extraction": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "consistency": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "tactics": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "flavor": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "apt": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "denial": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "tsunami": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "aquatic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "gig": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "ambient": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "pledge": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "vampire": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "softball": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "armor": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mold": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "shark": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "contributor": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "hydraulic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "conviction": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "hash": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "retrieval": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "terrain": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "polyester": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "workstation": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "flush": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "humanitarian": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "demographic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "simplicity": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "inherent": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "chill": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "intuitive": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "conform": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "exploitation": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "goose": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "hostile": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "ego": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "remotely": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "roundup": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "descent": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "knowledgeable": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "commercially": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "succession": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "purity": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "amid": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "saloon": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "pigeon": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "fixture": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "concerto": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "traumatic": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "abstraction": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "flick": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "cessation": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "persecution": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "use": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "back": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mean": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "show": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "feel": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "help": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "country": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "while": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "might": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "home": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "include": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "around": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "seem": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "kind": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "system": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "study": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "follow": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "early": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "fact": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "however": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "area": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "provide": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "issue": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "against": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "understand": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "experience": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "member": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "enough": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "quite": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "although": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "low": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "within": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "possible": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "actually": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "view": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "consider": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "control": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lose": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "continue": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "whole": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "rate": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "effect": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "deal": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "allow": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "base": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "probably": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "suggest": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "value": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "force": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "several": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "develop": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "bit": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "share": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "figure": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "decide": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "break": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "remain": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "across": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "create": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "receive": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "sense": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "perhaps": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "pass": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "produce": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "research": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "position": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "human": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "situation": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "film": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "major": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "condition": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "certain": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "forward": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "die": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "himself": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "especially": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "detail": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "step": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "themselves": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "draw": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "raise": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "explain": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "finally": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "travel": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "death": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "improve": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "couple": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "act": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "opportunity": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "road": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "therefore": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "education": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "serve": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "likely": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "certainly": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "national": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "itself": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "air": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "trade": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "space": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "instead": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "single": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "chance": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "accept": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "society": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mention": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "choice": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "material": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "attention": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "upon": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "complete": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "century": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "evidence": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "exist": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "similar": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "contact": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "prepare": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "response": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "apply": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "court": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "knowledge": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "source": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "manage": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "simply": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "attack": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "feature": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "recently": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "drop": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "recent": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "official": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "private": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "opinion": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "notice": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "nature": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "myself": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "exactly": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "plant": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "whatever": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "necessary": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "influence": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "attempt": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "simple": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "average": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "final": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "fit": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "image": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "population": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "fail": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "significant": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "clearly": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "lack": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "depend": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "purpose": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "argue": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "mark": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "achieve": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "stuff": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "wide": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "method": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "challenge": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "nation": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  },
+  "nearly": {
+    "source": "authored",
+    "sentenceId": null,
+    "url": null
+  }
+}

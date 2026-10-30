@@ -2,6 +2,7 @@
   'use strict';
 
   const view = { section: 'vocabulary', query: '', visible: 40 };
+  const quizAnswers = new Map();
   let source, entries = [];
   const number = value => value.toLocaleString('ko-KR');
 
@@ -34,17 +35,25 @@
     return `<button type="button" class="lab-listen" data-lab-speech="${esc(text)}" aria-label="${esc(label)}"><span aria-hidden="true">◖</span> ${esc(label)}</button>`;
   }
 
+  function miniQuiz(item, section, index) {
+    const quiz = item.quiz;
+    if (!quiz || !Array.isArray(quiz.options)) return '';
+    const key = `${section}-${index}`, answer = quizAnswers.get(key), answered = answer !== undefined;
+    const correct = answer === quiz.answer;
+    return `<fieldset class="lab-mini-quiz"><legend>TOEIC PRACTICE</legend><p class="lab-quiz-question" lang="en">${highlight(quiz.question)}</p><div class="lab-quiz-options">${quiz.options.map((option, i) => `<button type="button" data-lab-quiz="${esc(key)}" data-option="${i}" ${answered?'disabled':''} data-result="${answered && i===quiz.answer?'correct':answered && i===answer?'wrong':''}"><b>${String.fromCharCode(65+i)}</b>${esc(option)}</button>`).join('')}</div><div class="lab-quiz-feedback" role="status" ${answered?'':'hidden'}>${answered?`<strong>${correct?'정답이에요.':'다시 확인해 보세요.'} 정답 ${String.fromCharCode(65+quiz.answer)} · ${esc(quiz.options[quiz.answer])}</strong><p>${esc(quiz.explanation)}</p><button type="button" class="text-btn" data-lab-retry="${esc(key)}">다시 풀기 ↻</button>`:''}</div></fieldset>`;
+  }
+
   function card({ section, item, index }) {
     const label = source.sections.find(value => value.id === section).label;
     const badge = `<span class="lab-badge">${esc(label)}</span>`;
     const open = `<article class="lab-card${Array.isArray(item) ? '' : ' lab-card-wide'}" data-lab-entry="${esc(section)}-${index}">`;
     if (Array.isArray(item)) {
-      const [word, meaning, example, type, ipa, englishGloss] = item;
+      const [word, meaning, example, type, ipa, englishGloss, translation] = item;
       return open + `<div class="lab-card-top"><div><h3>${highlight(word)}</h3>${ipa ? `<p class="lab-pronunciation">${highlight(ipa)}</p>` : ''}</div>${badge}</div>
         ${type ? `<p class="lab-type">${highlight(type)}</p>` : ''}
         <p class="lab-meaning">${highlight(meaning)}</p>
         ${englishGloss ? `<p class="lab-gloss">${highlight(englishGloss)}</p>` : ''}
-        ${example ? `<p class="lab-example">${highlight(example)}</p>` : ''}
+        ${example ? `<p class="lab-example" lang="en">${highlight(example)}</p>` : ''}${translation ? `<p class="lab-translation">${highlight(translation)}</p>` : ''}
         <div class="lab-card-actions">${speech(word, '단어·표현 듣기')}${speech(example)}</div></article>`;
     }
     const heading = `<div class="lab-card-top"><h3>${highlight(item.title)}</h3>${badge}</div>`;
@@ -53,20 +62,21 @@
         <p class="lab-meaning">${highlight(item.meaning)}</p>
         <div class="lab-example-pair"><p class="lab-example">${highlight(item.example)}</p><p class="lab-translation">${highlight(item.translation)}</p>${speech(item.example)}</div>
         ${item.moreExamples?.length ? `<ol class="lab-more-examples">${item.moreExamples.map(([en, ko]) => `<li><p>${highlight(en)}</p><p class="lab-translation">${highlight(ko)}</p>${speech(en)}</li>`).join('')}</ol>` : ''}
-        ${item.note ? `<p class="lab-note"><strong>기억하기</strong> ${highlight(item.note)}</p>` : ''}</article>`;
+        ${item.note ? `<p class="lab-note"><strong>기억하기</strong> ${highlight(item.note)}</p>` : ''}${miniQuiz(item, section, index)}</article>`;
     }
     if (section === 'groups') {
       return open + heading + `<p class="lab-meaning">${highlight(item.meaning)}</p>
         <div class="lab-compare-list">${(item.rows || []).map(([term, use, example]) => `<div class="lab-compare-row"><strong>${highlight(term)}</strong><div><p>${highlight(use)}</p><p class="lab-compare-example">${highlight(example)}</p>${speech(example, '표현 듣기')}</div></div>`).join('')}</div>
-        ${item.note ? `<p class="lab-note"><strong>기억하기</strong> ${highlight(item.note)}</p>` : ''}</article>`;
+        ${item.note ? `<p class="lab-note"><strong>기억하기</strong> ${highlight(item.note)}</p>` : ''}${miniQuiz(item, section, index)}</article>`;
     }
     const correct = item.correct || item.example;
     return open + heading + `<p class="lab-formula">${highlight(item.formula)}</p>
       <p class="lab-meaning">${highlight(item.meaning)}</p>
       ${correct ? `<div class="lab-correct"><span class="lab-example-label">✓ 맞는 문장</span><p>${highlight(correct)}</p>${speech(correct)}</div>` : ''}
       ${item.correct && item.example && item.correct !== item.example ? `<p class="lab-example">${highlight(item.example)}</p>` : ''}
+      ${item.translation ? `<p class="lab-translation">${highlight(item.translation)}</p>` : ''}
       ${item.wrong ? `<div class="lab-wrong"><span class="lab-example-label">✕ 틀린 문장</span><p>${highlight(item.wrong)}</p></div>` : ''}
-      ${item.note ? `<p class="lab-note"><strong>기억하기</strong> ${highlight(item.note)}</p>` : ''}</article>`;
+      ${item.note ? `<p class="lab-note"><strong>기억하기</strong> ${highlight(item.note)}</p>` : ''}${miniQuiz(item, section, index)}</article>`;
   }
 
   function matching() {
@@ -106,7 +116,7 @@
     main.innerHTML = `<div class="wg-lab">${title('ENGLISH STUDY LIBRARY', '영어 연구실', '토익 어휘부터 문장 구조까지, 필요한 영어를 바로 찾아 익히세요.', `<span class="lab-total">${number(entries.length)}개 학습 자료</span>`)}
       <section class="lab-search-panel" aria-label="영어 연구실 검색">
         <label for="lab-search">전체 자료 빠른 검색</label><div class="lab-search-box"><span class="lab-search-icon" aria-hidden="true">⌕</span><input id="lab-search" type="search" autocomplete="off" maxlength="160" placeholder="단어, 숙어, 뜻, 문법 규칙 검색" aria-describedby="lab-search-help" value="${esc(view.query)}"><button type="button" id="lab-clear" data-lab-clear aria-label="연구실 검색어 지우기">×</button><kbd aria-hidden="true">⌘ / Ctrl K</kbd></div>
-        <div id="lab-search-help" class="lab-search-help"><span>이렇게 찾아보세요</span>${['accommodate', '동사원형', '목적격보어'].map(query => `<button type="button" data-lab-query="${esc(query)}">${esc(query)} ↗</button>`).join('')}</div>
+        <div id="lab-search-help" class="lab-search-help"><span>이렇게 찾아보세요</span>${['견적', '주어와 동사', '관계대명사'].map(query => `<button type="button" data-lab-query="${esc(query)}">${esc(query)} ↗</button>`).join('')}</div>
       </section>
       <div id="lab-categories" class="lab-categories" role="group" aria-label="영어 연구실 자료 분류"></div>
       <section class="lab-library" aria-labelledby="lab-section-title"><div class="lab-section-heading"><div><p id="lab-kicker" class="eyebrow"></p><h2 id="lab-section-title"></h2><p id="lab-description"></p></div><p id="lab-count" class="lab-count" role="status" aria-live="polite" aria-atomic="true"></p></div><p id="lab-tip" class="lab-tip"></p><div id="lab-results" class="lab-results"></div><div id="lab-more" class="lab-more"></div></section>
@@ -120,7 +130,22 @@
     root.addEventListener('click', event => {
       const button = event.target.closest('button');
       if (!button || !root.contains(button)) return;
-      if (button.hasAttribute('data-lab-section')) {
+      if (button.hasAttribute('data-lab-quiz')) {
+        const key = button.dataset.labQuiz;
+        if (quizAnswers.has(key)) return;
+        const entry = entries.find(e => `${e.section}-${e.index}` === key);
+        if (!entry?.item?.quiz) return;
+        const option = Number(button.dataset.option);
+        if (!Number.isInteger(option) || option < 0 || option >= entry.item.quiz.options.length) return;
+        quizAnswers.set(key, option);
+        const article = button.closest('article');
+        article.outerHTML = card(entry);
+      } else if (button.hasAttribute('data-lab-retry')) {
+        const key = button.dataset.labRetry;
+        const entry = entries.find(e => `${e.section}-${e.index}` === key);
+        quizAnswers.delete(key);
+        if (entry) button.closest('article').outerHTML = card(entry);
+      } else if (button.hasAttribute('data-lab-section')) {
         view.section = button.dataset.labSection;
         changeQuery(root, '', false);
         root.querySelector(`[data-lab-section="${view.section}"]`)?.focus({ preventScroll: true });

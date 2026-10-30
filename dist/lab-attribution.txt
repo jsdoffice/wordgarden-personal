@@ -24,3 +24,9 @@ CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/
 첫 60개 어휘, 첫 24개 표현, 비교 설명과 문법 예문, 인터페이스는 이 앱을 위해 편집했습니다.
 사전의 뜻은 단어의 여러 의미 중 하나일 수 있으며, 자동으로 고른 예문과 뜻풀이가
 항상 같은 의미를 나타내는 것은 아닙니다. 정확한 용법은 문맥과 함께 확인하세요.
+
+
+2026-10-30 additive content expansion
+Dictionary additions: Open English-Korean Dictionary, https://github.com/jhseo1211/open-english-korean-dict, CC BY-SA 4.0. Selected entries, corrected meanings and adapted fields; existing records preserved.
+New vocabulary examples: 1,030 original Word Garden sentences with meanings matched to their context. Per-entry provenance: lab-example-sources.json. The original library retains its previously attributed Tatoeba CC0 examples.
+Additional idioms, phrasal-verb examples, TOEIC-style exercises and 5-form examples are original learning material created for this application, not reproduced official test questions. TOEIC is a trademark of ETS; this independent app is not affiliated with ETS.

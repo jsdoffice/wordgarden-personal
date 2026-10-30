@@ -1,0 +1,55 @@
+{
+  "version": "2026-10-30-content-expansion",
+  "baseline": {
+    "dictionaryHeadwords": 6000,
+    "uniqueHeadwordsAcrossDictionaryAndLab": 6490,
+    "coreExamples": 10060,
+    "translationSentences": 2000,
+    "lab": {
+      "vocabulary": 2060,
+      "idioms": 193,
+      "phrasalVerbs": 357,
+      "rules": 28
+    }
+  },
+  "current": {
+    "dictionaryHeadwords": 9250,
+    "coreExamples": 15492,
+    "coreLearningItems": 24742,
+    "translationSentences": 3000,
+    "lab": {
+      "vocabulary": 3090,
+      "idioms": 303,
+      "grammar": 8,
+      "rules": 60,
+      "phrasalVerbs": 579,
+      "groups": 16
+    },
+    "uniqueHeadwordsAcrossDictionaryAndLab": 9740,
+    "labTotal": 4056,
+    "grammarQuizzes": 32
+  },
+  "added": {
+    "dictionaryHeadwords": 3250,
+    "coreExamples": 5432,
+    "translationSentences": 1000,
+    "labVocabulary": 1030
+  },
+  "sources": {
+    "dictionary": {
+      "url": "https://github.com/jhseo1211/open-english-korean-dict",
+      "license": "CC BY-SA 4.0",
+      "sha256": "31dae7ed8693c3ae232530ee14caadbe47d2ffb898638d12e94aeb5aab22ecf9"
+    },
+    "examples": {
+      "type": "original authored examples",
+      "count": 1030,
+      "note": "All 1,030 added examples, Korean senses, and matching English glosses were newly authored. Candidate Tatoeba text is not used in the final additions; baseline Tatoeba records remain unchanged."
+    }
+  },
+  "notes": [
+    "Existing IDs and learning records are preserved.",
+    "Business examples are integrated into existing menus.",
+    "Pattern-based variants are included; repeated lesson modes do not count as additional unique sentences."
+  ]
+}

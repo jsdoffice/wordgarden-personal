@@ -1,1 +1,9 @@
-{"questions": 10000, "targets": 400, "examplesPerTarget": 25, "groups": {"생활 단어": 3750, "핵심 표현": 3750, "상태와 묘사": 2500}}
+{
+  "questions": 15432,
+  "targets": 902,
+  "originalPatternExamples": 10000,
+  "businessPatternExamples": 5100,
+  "businessActions": 170,
+  "businessFrames": 30,
+  "newExpressionExamples": 332
+}
