@@ -182,10 +182,10 @@ async function showOfflineStatus() {
   const el = document.querySelector('#offlineStatus');
   if (!el) return;
   try {
-    const cache = await caches.open('wordgarden-v5');
-    const urls = ['./index.html','./dictionary.js','./questions.js','./app.js','./practice.js','./style.css'];
+    const cache = await caches.open('wordgarden-v6-lab');
+    const urls = ['./index.html','./dictionary.js','./questions.js','./app.js','./practice.js','./style.css','./lab-data.js','./lab.js','./lab.css','./lab-attribution.txt'];
     const cached = await Promise.all(urls.map(url => cache.match(url)));
-    el.textContent = cached.every(Boolean) ? '학습 자료가 이 기기에 저장되어 있어요. 인터넷 없이 단어·예문 학습과 녹음을 사용할 수 있습니다. 발음 재생은 기기에 설치된 음성에 따라 달라요.' : '오프라인 자료를 준비 중이에요. 인터넷에 연결한 상태로 잠시 뒤 다시 확인해 주세요.';
+    el.textContent = cached.every(Boolean) ? '학습 자료가 이 기기에 저장되어 있어요. 인터넷 없이 단어·예문 학습, 영어 연구실 전체 자료와 녹음을 사용할 수 있습니다. 발음 재생은 기기에 설치된 음성에 따라 달라요.' : '오프라인 자료를 준비 중이에요. 인터넷에 연결한 상태로 잠시 뒤 다시 확인해 주세요.';
   } catch { el.textContent = '오프라인 저장 상태를 확인할 수 없어요. Safari에서 다시 열어 주세요.'; }
 }
 
