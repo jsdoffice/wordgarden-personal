@@ -24,3 +24,10 @@ does not imply endorsement of Word Garden.
 AAC-LC mono, 64 kbps. 50 lessons per track; use translation-audio-v2.json for the revised lesson cues.
 Legacy translation-audio.json and translation-*.m4a files are retained for
 clients that still have the previous lesson catalog open.
+
+VOA EDITION (2026-11-02)
+The active 3,000-sentence edition uses translation-audio-v3.json and audio/translation-v3-*.m4a.
+The manifest contentSha256 binds the audio cue map to the exact translation-data.json bytes.
+English text: VOA Learning English original content (public domain); see translation-attribution.txt.
+This narration is Piper Joe synthetic speech and is not an original VOA recording.
+Legacy audio and manifests remain for previously opened app versions.

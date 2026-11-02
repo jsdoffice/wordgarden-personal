@@ -1,0 +1,23 @@
+WORD GARDEN — VOA ORIGINAL SENTENCES
+Edition: 2026-11-02-voa-v3
+
+English text: VOA Learning English (Voice of America).
+All 3,000 English answers are excerpts from VOA original content. Only whitespace,
+HTML entities, and typographic quotation marks are normalized; wording is retained.
+The Korean questions, topic labels, grammar notes, and exercise selection were
+prepared for Word Garden and are not official VOA translations or teaching material.
+
+VOA describes its original Learning English material as public domain and requires
+credit. This edition excludes third-party agency copy (including AP, Reuters, and
+AFP), reader letters, quotations from external works, images, and captions.
+
+Official reuse notice: https://learningenglish.voanews.com/p/6861.html
+VOA copyright statement: https://www.voanews.com/p/5338.html
+
+Sentence-level credit: translation-data.json (source field).
+Article titles, authors, dates, URLs and sentence IDs: translation-sources.json.
+Each selected English sentence was checked against the retained original paragraph.
+
+The app is an independent learning tool. VOA does not endorse or provide this app.
+The Joe narration is locally synthesized audio, not an original VOA recording.
+See translation-audio-attribution.txt for the speech model and dataset information.

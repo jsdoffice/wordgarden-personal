@@ -45,22 +45,61 @@
       "type": "original authored examples",
       "count": 1030,
       "note": "All 1,030 added examples, Korean senses, and matching English glosses were newly authored. Candidate Tatoeba text is not used in the final additions; baseline Tatoeba records remain unchanged."
+    },
+    "translation": {
+      "publisher": "VOA Learning English",
+      "rightsStatement": "https://learningenglish.voanews.com/p/6861.html",
+      "terms": "https://www.voanews.com/p/5338.html",
+      "scope": "VOA original text only; excludes agency copy, third-party quotations, reader letters, images and captions.",
+      "english": "Original wording; whitespace and typographic quotation marks normalized only.",
+      "korean": "Translations and learning notes prepared for Word Garden."
     }
   },
   "notes": [
     "Vocabulary IDs and accumulated history are preserved. Old translation progress is archived in the local backup; replaced translations start fresh.",
     "Business examples are integrated into existing menus.",
-    "Core word-example patterns remain; translation exercises were rewritten as independent messages. Card and typing modes share 3,000 sentences."
+    "Core word-example patterns remain; the 3,000 translation exercises now use VOA original wording. Card and typing modes share the same sentences."
   ],
   "translationRevision": {
-    "version": "2026-10-30-distinct-v2",
+    "revision": "2026-11-02-voa-v3",
     "sentences": 3000,
+    "sourceArticles": 666,
+    "sourceCorrespondenceChecked": 3000,
+    "meanWords": 10.676,
+    "minWords": 7,
+    "maxWords": 17,
     "level": "B1–B2",
-    "meanWords": 10.882,
-    "previousMeanWords": 16.413,
-    "lengthReductionPercent": 33.7,
-    "koreanExactDuplicates": 0,
+    "topics": {
+      "자연과 환경": 314,
+      "소통과 표현": 122,
+      "취미와 여가": 157,
+      "사회와 역사": 147,
+      "건강과 운동": 215,
+      "일과 비즈니스": 272,
+      "음식과 요리": 190,
+      "여행과 교통": 255,
+      "가족과 관계": 327,
+      "과학과 기술": 94,
+      "문제와 해결": 60,
+      "문화와 예술": 159,
+      "학습과 성장": 273,
+      "감정과 태도": 115,
+      "쇼핑과 경제": 111,
+      "집과 생활": 189
+    },
+    "series": {
+      "Words and Their Stories": 1110,
+      "Everyday Grammar": 596,
+      "Ask a Teacher": 807,
+      "Let's Learn English — Level 2": 294,
+      "America’s National Parks": 179,
+      "U.S. History": 9,
+      "America’s Presidents": 5
+    },
+    "maxSentencesPerArticle": 15,
     "englishExactDuplicates": 0,
-    "description": "Independent practical messages replace grammar paraphrases of repeated situations. Difficulty labels are an editorial estimate, not a certified CEFR score."
+    "koreanExactDuplicates": 0,
+    "contentSha256": "a276004f561268430fa952034ab44d09bc824c6cee71f91c1e9da737bdbb289f",
+    "description": "Original VOA wording paired with Korean questions; source metadata and paragraph hashes verified against retained article text. Level is an editorial target, not a certified CEFR measurement."
   }
 }
