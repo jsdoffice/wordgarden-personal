@@ -1,5 +1,5 @@
 {
-  "revision": "2026-11-02-voa-v3",
+  "revision": "2026-11-02-voa-700-v4",
   "publisher": "VOA Learning English",
   "rightsStatement": "https://learningenglish.voanews.com/p/6861.html",
   "terms": "https://www.voanews.com/p/5338.html",
@@ -553,8 +553,7 @@
       "series": "America’s Presidents",
       "articleTextSha256": "c6f67f513263c39c58fad4258bfdfe298c3882094f5fdfd0e37151b7ce6f273d",
       "sentenceIds": [
-        "tr2997",
-        "tr3000"
+        "tr2997"
       ]
     },
     {
@@ -615,9 +614,7 @@
       "series": "Words and Their Stories",
       "articleTextSha256": "b6e3e0d6544a9028d6564c144d0c4ca11b5656cedf966e3e7d3614ef30e340ed",
       "sentenceIds": [
-        "tr2984",
-        "tr2987",
-        "tr2990"
+        "tr2984"
       ]
     },
     {
@@ -774,6 +771,19 @@
         "tr0760",
         "tr0763",
         "tr0766"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/are-you-guilty-of-sitting-on-the-fence-/6539500.html",
+      "title": "Are You Guilty of 'Sitting on the Fence'?",
+      "date": "2022-04-23",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "daab3c23586f747fab1dde5e44bc151c25074611c7f738fe17da8f13fe6ececc",
+      "sentenceIds": [
+        "tr2995"
       ]
     },
     {
@@ -982,6 +992,19 @@
       "articleTextSha256": "84cf313bba72f7bfcb3fd8e780c51c2324fb1d88aeffd38a78aef0e16166c34f",
       "sentenceIds": [
         "tr0711"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/be-bold-break-the-mold-/7637459.html",
+      "title": "Be Bold. 'Break the Mold'!",
+      "date": "2024-06-01",
+      "author": "Anna Matteo and Hai Do",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "addbd375f728383c5fdc1c4354f6d1c1f5740850e3b8e09ac8799454ce4f37e7",
+      "sentenceIds": [
+        "tr2966"
       ]
     },
     {
@@ -1237,6 +1260,19 @@
       "sentenceIds": [
         "tr1042",
         "tr1045"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/boilerplate-language-is-all-business/7288970.html",
+      "title": "'Boilerplate' Language Is All Business",
+      "date": "2023-09-30",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "7c89dd7b58d80ee81f19a9cc4a67477bce5681d1f43153cab48ceabe665d0b55",
+      "sentenceIds": [
+        "tr2974"
       ]
     },
     {
@@ -1910,6 +1946,19 @@
     },
     {
       "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/differences-between-board-on-board-and-aboard-/7170767.html",
+      "title": "Differences Between Board, on Board, Aboard",
+      "date": "2023-07-08",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "4b844e0ba196a5cae9eb109d0d7e2a99c5341d1029ee6b869d462a8b02bb3476",
+      "sentenceIds": [
+        "tr2977"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
       "url": "https://learningenglish.voanews.com/a/differences-between-security-and-safety-/5791194.html",
       "title": "Differences Between ‘Security’ and ‘Safety’",
       "date": "2021-02-26",
@@ -2040,6 +2089,19 @@
     },
     {
       "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/do-you-color-inside-or-outside-the-lines-/7427555.html",
+      "title": "Do You Color Inside or Outside the Lines?",
+      "date": "2024-01-06",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "5a938d3296d95c26f8a6c865b1f2e7eb37051b9b7e5382435f16b33713602686",
+      "sentenceIds": [
+        "tr2969"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
       "url": "https://learningenglish.voanews.com/a/do-you-have-a-doppelg%C3%A4nger-/7467075.html",
       "title": "Do You Have a 'Doppelgänger'?",
       "date": "2024-02-03",
@@ -2117,6 +2179,19 @@
         "tr1749",
         "tr1752",
         "tr1755"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/does-a-good-luck-charm-work-like-a-charm-/7097165.html",
+      "title": "Does a Good Luck Charm 'Work Like a Charm'?",
+      "date": "2023-05-20",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "9d631ef1091dbf57c089d671aacaddd77c1d063be9fc9797551312e09d7d569f",
+      "sentenceIds": [
+        "tr2978"
       ]
     },
     {
@@ -2359,6 +2434,19 @@
         "tr1219",
         "tr1222",
         "tr1225"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/dreamy-expressions/6904149.html",
+      "title": "Dreamy Expressions",
+      "date": "2023-01-07",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "7212287aeadba572a4e10572b9bc1d6e6ea2a47a52b5e1bb3151e4ddabaab97c",
+      "sentenceIds": [
+        "tr2987"
       ]
     },
     {
@@ -2750,6 +2838,19 @@
     },
     {
       "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/expressions-for-new-year-s-resolution/6896754.html",
+      "title": "Expressions for New Year's Resolution",
+      "date": "2024-12-28",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "fbe4f2b3809ea1959132d9c68affbf62d23dedf382dab2d8fd2dab5ef85203ab",
+      "sentenceIds": [
+        "tr2956"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
       "url": "https://learningenglish.voanews.com/a/expressions-that-stop-you-cold-/7897488.html",
       "title": "Expressions That ‘Stop You Cold’",
       "date": "2024-12-21",
@@ -2942,6 +3043,19 @@
         "tr0972",
         "tr0975",
         "tr0978"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/footloose-and-fancy-free/6942202.html",
+      "title": "Footloose and Fancy-free",
+      "date": "2023-02-04",
+      "author": "Andrew Smith",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "4a2085584ac5117d17e003368beae271971997d36f605c14b1208e80bb21d295",
+      "sentenceIds": [
+        "tr2985"
       ]
     },
     {
@@ -3693,6 +3807,19 @@
     },
     {
       "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/have-you-felt-the-walls-are-closing-in-on-you-/6835963.html",
+      "title": "Have You Felt the 'Walls Are Closing in on You'?",
+      "date": "2022-11-19",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "ced831284cc9c0fb2f700a02ef3a46a03bdaaa2f0bf6344c3e107a6f69e5bc0e",
+      "sentenceIds": [
+        "tr2989"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
       "url": "https://learningenglish.voanews.com/a/have-you-met-the-perfect-tenses/3628488.html",
       "title": "Have You Met the Perfect Tenses?",
       "date": "2016-12-29",
@@ -3831,6 +3958,19 @@
         "tr0790",
         "tr0793",
         "tr0796"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/hope-springs-eternal-/6499807.html",
+      "title": "Hope Springs Eternal",
+      "date": "2022-03-26",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "992377288a80fe5e30e77978a81e40e2c3eb0735e9afdc1d7ae51868cd583046",
+      "sentenceIds": [
+        "tr2999"
       ]
     },
     {
@@ -4634,6 +4774,19 @@
     },
     {
       "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/is-pie-in-the-sky-just-a-dream-/7806461.html",
+      "title": "Is ‘Pie in the Sky’ Just a Dream? ",
+      "date": "2024-10-05",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "9b5709312fa57e2c9125c0bc5e6c5f83d53d1af587aea6cd98a260316ce012e2",
+      "sentenceIds": [
+        "tr2958"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
       "url": "https://learningenglish.voanews.com/a/is-there-a-pot-of-gold-at-the-end-of-the-rainbow-/5810673.html",
       "title": "Is There a 'Pot of Gold at the End of the Rainbow'?",
       "date": "2021-03-13",
@@ -4657,6 +4810,19 @@
       "articleTextSha256": "1f9de90e5e30fa3462ad864f5d4992ead573f0f8cc406c0b27602760106176dd",
       "sentenceIds": [
         "tr0162"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/it-is-not-nice-to-dump-on-others/7039864.html",
+      "title": "It Is Not Nice to 'Dump on' Others",
+      "date": "2023-04-08",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "d578373e3c0a1864fa77fbfc68b12587d7885c672ed66749127f960de1486cf8",
+      "sentenceIds": [
+        "tr2981"
       ]
     },
     {
@@ -4687,6 +4853,19 @@
         "tr1687",
         "tr1690",
         "tr1693"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/it-s-showtime-/7663598.html",
+      "title": "It’s Showtime!",
+      "date": "2024-06-22",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "87dd5268aee433a620d1a40ce008b3eae8c51290a30df8f9ed37137f7cfeafc0",
+      "sentenceIds": [
+        "tr2965"
       ]
     },
     {
@@ -4725,6 +4904,32 @@
     },
     {
       "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/it-s-time-to-see-the-light-/7377698.html",
+      "title": "It's Time to 'See the Light'",
+      "date": "2023-12-02",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "54fb9e179b2a2aefd15f33d5a1f60d62bd00d6c7bd16b8aba5f98ef580f80c7c",
+      "sentenceIds": [
+        "tr2970"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/it-s-time-to-separate-the-wheat-from-the-chaff-/7604971.html",
+      "title": "It's Time to 'Separate the Wheat from the Chaff'",
+      "date": "2024-05-11",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "8a9a10fff6ea9a5266fd4e795d8fbec321d87649068a9e8c069a94ea3ac0cf30",
+      "sentenceIds": [
+        "tr2967"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
       "url": "https://learningenglish.voanews.com/a/jack-o--lantern-why-is-it-named-jack-/5630153.html",
       "title": "Jack-o'-Lantern: Why Is It Named 'Jack'?",
       "date": "2020-10-24",
@@ -4750,9 +4955,7 @@
       "series": "America’s Presidents",
       "articleTextSha256": "7b9afdb776ba2eb4a98b16c28c8d5ae9c766dc5a81e12f3635275e4a02e6f825",
       "sentenceIds": [
-        "tr2988",
-        "tr2991",
-        "tr2994"
+        "tr2988"
       ]
     },
     {
@@ -4772,6 +4975,19 @@
         "tr1801",
         "tr1804",
         "tr1807"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/keep-your-nose-to-the-grindstone/7796985.html",
+      "title": "Keep Your Nose to the Grindstone",
+      "date": "2024-09-28",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "a5dce3c3ecc872c78c23a5d20a1203e7e18ba895e90dcfc840053be65d1d1473",
+      "sentenceIds": [
+        "tr2959"
       ]
     },
     {
@@ -5965,6 +6181,19 @@
     },
     {
       "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/low-hanging-fruit/7025641.html",
+      "title": "Low-hanging Fruit",
+      "date": "2023-04-01",
+      "author": "Andrew Smith",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "d3f9910328d38979922ec257de5a37ab111ac397ce2b42275b5eab8e4f215d90",
+      "sentenceIds": [
+        "tr2982"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
       "url": "https://learningenglish.voanews.com/a/made-and-prepositions-/6964407.html",
       "title": "Made and Prepositions ",
       "date": "2023-02-17",
@@ -6409,6 +6638,19 @@
         "tr1449",
         "tr1452",
         "tr1455"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/no-need-to-gild-the-lily-/7277458.html",
+      "title": "No Need to 'Gild the Lily'",
+      "date": "2023-09-23",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "4026ec09070480361bf6573a4119f75104b0d3492f2c0c847b653c401de0e195",
+      "sentenceIds": [
+        "tr2975"
       ]
     },
     {
@@ -7016,9 +7258,7 @@
         "tr2941",
         "tr2944",
         "tr2947",
-        "tr2953",
-        "tr2956",
-        "tr2959"
+        "tr2953"
       ]
     },
     {
@@ -7377,6 +7617,19 @@
         "tr2230",
         "tr2233",
         "tr2236"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/run-something-up-the-flagpole-to-test-an-idea/7205585.html",
+      "title": "'Run Something Up the Flagpole' to Test an Idea",
+      "date": "2023-08-05",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "7dac4e87d7b59342b8e8fdf4f3b97fa5e82c6f43f88fe1294a27f08ac7ebc002",
+      "sentenceIds": [
+        "tr2976"
       ]
     },
     {
@@ -7879,6 +8132,32 @@
     },
     {
       "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/state-of-the-art/7359251.html",
+      "title": "'State-of-the-Art' Is the Best of Its Time",
+      "date": "2023-11-18",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "9adb6b9cdaab7073a2fb628e50599a1df9f790e61d88375688c6120f303b3f96",
+      "sentenceIds": [
+        "tr2973"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/stay-on-time-with-clock-watch-expressions/6677529.html",
+      "title": "Stay on Time with Clock, Watch Expressions",
+      "date": "2022-07-30",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "4ab4901e2a91744c582b8afb08b1b3341cdd614916f6686950cac37f3de4a27b",
+      "sentenceIds": [
+        "tr2992"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
       "url": "https://learningenglish.voanews.com/a/stepping-stone-is-a-way-up-and-out/5924102.html",
       "title": "‘Stepping-Stone’ Is a Way Up and Out",
       "date": "2021-06-12",
@@ -7940,6 +8219,19 @@
     },
     {
       "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/sugarcoat-pills-and-bad-news/6446328.html",
+      "title": "'Sugarcoat' Pills and Bad News",
+      "date": "2022-02-19",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "4793e126b10c4ae1c76e0957e2cae32b0cfa3d78c5a1b54594e4e4dac74e0927",
+      "sentenceIds": [
+        "tr3000"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
       "url": "https://learningenglish.voanews.com/a/summer-fun-with-family-expressions/5972820.html",
       "title": "Summer Fun with Family Expressions",
       "date": "2021-07-24",
@@ -7985,8 +8277,7 @@
       "series": "Words and Their Stories",
       "articleTextSha256": "b01b357dbe09b03052bb570434231333e225a3e7c64ab5b4c540af8370b52ca8",
       "sentenceIds": [
-        "tr2996",
-        "tr2999"
+        "tr2996"
       ]
     },
     {
@@ -8531,6 +8822,19 @@
     },
     {
       "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/the-road-to-hell-is-paved-with-good-intentions-/6705835.html",
+      "title": "'The Road to Hell Is Paved With Good Intentions'",
+      "date": "2022-08-20",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "b153f851428e6ac07378b19e1161076039bc1e7e6a1080ff3fc582f16e1a7608",
+      "sentenceIds": [
+        "tr2991"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
       "url": "https://learningenglish.voanews.com/a/the-word-which-in-the-news/4871382.html",
       "title": "The Word 'Which' in the News",
       "date": "2019-04-11",
@@ -8594,14 +8898,20 @@
       "series": "America’s National Parks",
       "articleTextSha256": "d3588a3491e219d9510503461785a751e38d191e1327f506aad6cc1d3b7c1624",
       "sentenceIds": [
-        "tr2964",
-        "tr2967",
-        "tr2970",
-        "tr2973",
-        "tr2976",
-        "tr2979",
-        "tr2982",
-        "tr2985"
+        "tr2964"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/things-are-serious-if-you-cross-the-rubicon-/6915477.html",
+      "title": "Things Are Serious If You 'Cross the Rubicon'",
+      "date": "2023-01-14",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "a8cc20176b98d045515d8de4b25caea2f30b081da3dae24879873807269aec98",
+      "sentenceIds": [
+        "tr2986"
       ]
     },
     {
@@ -8760,6 +9070,19 @@
     },
     {
       "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/to-pull-or-not-to-pull-punches/7585008.html",
+      "title": "To Pull or Not to Pull Punches",
+      "date": "2024-04-27",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "2a10a51c2e3e05ab18b08b679b06dcbdd7e80828b33c6ec8e0a62790cc929a04",
+      "sentenceIds": [
+        "tr2968"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
       "url": "https://learningenglish.voanews.com/a/to-sink-or-swim-is-up-to-you/7177670.html",
       "title": "'To Sink or Swim' Is Up to You",
       "date": "2023-07-15",
@@ -8901,6 +9224,19 @@
         "tr0528",
         "tr0531",
         "tr0534"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/ups-and-downs-highs-and-lows/6994660.html",
+      "title": "Ups and Downs, Highs and Lows",
+      "date": "2023-03-11",
+      "author": "Andrew Smith",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "7c83694945bc9688d1b4ae3f68fd6e56de20c1e15246a6472625943424542d72",
+      "sentenceIds": [
+        "tr2983"
       ]
     },
     {
@@ -9202,10 +9538,7 @@
       "sentenceIds": [
         "tr2946",
         "tr2949",
-        "tr2952",
-        "tr2955",
-        "tr2958",
-        "tr2961"
+        "tr2952"
       ]
     },
     {
@@ -9526,6 +9859,19 @@
     },
     {
       "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/what-does-it-mean-to-get-the-greenlight-/6529949.html",
+      "title": "What Does It Mean to 'Get the Greenlight'?",
+      "date": "2022-04-16",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "4d215b8c250f2bb37a6915487d336fb8e815e9eb32bc04938b38a8bb39816aa7",
+      "sentenceIds": [
+        "tr2998"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
       "url": "https://learningenglish.voanews.com/a/what-does-it-mean-to-hit-pay-dirt-/7864126.html",
       "title": "What Does It Mean to ‘Hit Pay Dirt'?",
       "date": "2024-11-16",
@@ -9536,6 +9882,19 @@
       "sentenceIds": [
         "tr0157",
         "tr0160"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/what-does-it-mean-to-hit-the-nail-on-the-head-/6548950.html",
+      "title": "What Does It Mean to 'Hit the Nail on the Head'?",
+      "date": "2022-04-30",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "207048c57d814dd90aa7659ef905d8edf733bea9b8cd3649edfe00e97fc022ab",
+      "sentenceIds": [
+        "tr2994"
       ]
     },
     {
@@ -9804,6 +10163,19 @@
     },
     {
       "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/what-is-your-north-star-/7782072.html",
+      "title": "What Is Your 'North Star'?",
+      "date": "2024-09-14",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "bdb8dcab6179be3a4c9981061ec1b507e8f65418634b0dba0a383e4e49d0ad73",
+      "sentenceIds": [
+        "tr2961"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
       "url": "https://learningenglish.voanews.com/a/what-s-the-difference-so-and-so-that-/4627372.html",
       "title": "What’s the Difference? ‘So’ and ‘So That’",
       "date": "2018-10-25",
@@ -9862,6 +10234,19 @@
       "articleTextSha256": "0fdb9774d7a96edd3bf53a6739c23e3b6e59d5fcb351485476bd09fbeae632ce",
       "sentenceIds": [
         "tr0517"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/when-in-rome-/7816325.html",
+      "title": "When in Rome …",
+      "date": "2024-10-12",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "7bea8299dab70771f3673d90df2b3f633a24a8095e00c0cf912ce3202493aba3",
+      "sentenceIds": [
+        "tr2957"
       ]
     },
     {
@@ -9998,6 +10383,19 @@
       "articleTextSha256": "dcbae5245e62b4866b91a06a4593e829b24bef641970ab2a3e705a31a9b33506",
       "sentenceIds": [
         "tr0530"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/where-is-the-wrong-side-of-the-tracks-/6724799.html",
+      "title": "Where Is the 'Wrong Side of the Tracks'?",
+      "date": "2022-09-03",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "bea7d0d8d1fb585e27b05da9ce8d1c32150c03bd95ca7a19468d7cd7443ee821",
+      "sentenceIds": [
+        "tr2990"
       ]
     },
     {
@@ -10143,6 +10541,19 @@
         "tr2596",
         "tr2599",
         "tr2602"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/why-is-this-bird-a-burden-/7067549.html",
+      "title": "Why Is This Bird a 'Burden'?",
+      "date": "2023-04-29",
+      "author": "Anna Matteo",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "e657818222d53f8c0ac3eddd4228692426909f935be08383a06be08dc02f5b75",
+      "sentenceIds": [
+        "tr2979"
       ]
     },
     {
@@ -10364,8 +10775,7 @@
       "sentenceIds": [
         "tr0268",
         "tr1429",
-        "tr1492",
-        "tr2998"
+        "tr1492"
       ]
     },
     {
@@ -10468,8 +10878,7 @@
         "tr2945",
         "tr2948",
         "tr2951",
-        "tr2954",
-        "tr2957"
+        "tr2954"
       ]
     },
     {
@@ -10519,10 +10928,7 @@
       "series": "Words and Their Stories",
       "articleTextSha256": "ff55fcb9fa236349c51b0f3795abf6f1e7fab43a915e33def517e83a5fee6cee",
       "sentenceIds": [
-        "tr2972",
-        "tr2975",
-        "tr2978",
-        "tr2981"
+        "tr2972"
       ]
     },
     {
@@ -10576,6 +10982,19 @@
     },
     {
       "publisher": "VOA Learning English",
+      "url": "https://learningenglish.voanews.com/a/words-and-their-stories-green-idioim-expressions-garden-jealousy/2688277.html",
+      "title": "Green Means Spring and Other Things",
+      "date": "2025-03-08",
+      "author": "Marilyn Christiano",
+      "license": "Public domain — VOA original content",
+      "series": "Words and Their Stories",
+      "articleTextSha256": "e4fd9552abae26f864d540bf3cf3c39685549c4f471540761d2f6d5449945a16",
+      "sentenceIds": [
+        "tr2955"
+      ]
+    },
+    {
+      "publisher": "VOA Learning English",
       "url": "https://learningenglish.voanews.com/a/words-and-their-stories-in-the-drivers-seat/4162374.html",
       "title": "Are You in the 'Driver's Seat' or 'Asleep at the Wheel'?",
       "date": "2017-12-16",
@@ -10597,9 +11016,7 @@
       "series": "Words and Their Stories",
       "articleTextSha256": "c74405d0be89d837b44251a6caed30420c4b4d551bf062e74b7b14085b6fe590",
       "sentenceIds": [
-        "tr2963",
-        "tr2966",
-        "tr2969"
+        "tr2963"
       ]
     },
     {
@@ -10676,12 +11093,7 @@
       "series": "Words and Their Stories",
       "articleTextSha256": "d8e227902ed3ae3d7497be3180550e70e8bf36e5462c3ea3f09ae770183acadf",
       "sentenceIds": [
-        "tr2980",
-        "tr2983",
-        "tr2986",
-        "tr2989",
-        "tr2992",
-        "tr2995"
+        "tr2980"
       ]
     },
     {
@@ -10710,9 +11122,7 @@
       "series": "Words and Their Stories",
       "articleTextSha256": "dfcc857322d7ca30fb50777f8776735d0217a960e49e0e0fffc1d896c4ad2ac8",
       "sentenceIds": [
-        "tr2962",
-        "tr2965",
-        "tr2968"
+        "tr2962"
       ]
     },
     {
@@ -10763,9 +11173,7 @@
       "series": "Words and Their Stories",
       "articleTextSha256": "70e5038e10d5bd4c60041c2e3e126071ceb6c4d0b3609507e650c51eaf7bebca",
       "sentenceIds": [
-        "tr2971",
-        "tr2974",
-        "tr2977"
+        "tr2971"
       ]
     },
     {

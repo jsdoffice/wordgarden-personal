@@ -1,8 +1,8 @@
 WORD GARDEN — VOA ORIGINAL SENTENCES
-Edition: 2026-11-02-voa-v3
+Edition: 2026-11-02-voa-700-v4
 
 English text: VOA Learning English (Voice of America).
-All 3,000 English answers are excerpts from VOA original content. Only whitespace,
+All 3,000 English answers are excerpts from 700 original VOA articles. Only whitespace,
 HTML entities, and typographic quotation marks are normalized; wording is retained.
 The Korean questions, topic labels, grammar notes, and exercise selection were
 prepared for Word Garden and are not official VOA translations or teaching material.

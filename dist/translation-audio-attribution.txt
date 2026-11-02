@@ -31,3 +31,8 @@ The manifest contentSha256 binds the audio cue map to the exact translation-data
 English text: VOA Learning English original content (public domain); see translation-attribution.txt.
 This narration is Piper Joe synthetic speech and is not an original VOA recording.
 Legacy audio and manifests remain for previously opened app versions.
+
+700-ARTICLE EDITION (2026-11-02)
+The active 3,000-sentence edition uses translation-audio-v4.json.
+Unchanged bundles retain audio/translation-v3-*.m4a; the changed final bundle uses audio/translation-v4-60.m4a.
+All 3,000 cues were checked against the active English text. Legacy files remain immutable for older app versions.
