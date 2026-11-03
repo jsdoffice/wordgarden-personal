@@ -1,0 +1,70 @@
+{
+  "retrievedAt": "2026-11-03T08:23:26Z",
+  "model": "hexgrad/Kokoro-82M v1.0",
+  "modelRevision": "f3ff3571791e39611d31c381e3a41a3af07b4987",
+  "onnxRelease": "model-files-v1.1",
+  "onnxReleaseTagCommit": "b85309f90fd2660ea3309cf0f2581360e4327555",
+  "onnxAssetUpdatedAt": "2026-08-18",
+  "onnxCodeRevision": "3596b26764286a7de9d90c363e988d50578918e5",
+  "files": [
+    {
+      "name": "kokoro-v1.0.onnx",
+      "url": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/kokoro-v1.0.onnx",
+      "bytes": 325505369,
+      "sha256": "beb0d1848dee9a49da392cc3df26958d46cfa35d321edf434f52949153f0df3a"
+    },
+    {
+      "name": "voices-v1.0.bin",
+      "url": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/voices-v1.0.bin",
+      "bytes": 28214398,
+      "sha256": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d"
+    }
+  ],
+  "notices": [
+    {
+      "name": "Kokoro-MODEL-CARD.md",
+      "url": "https://huggingface.co/hexgrad/Kokoro-82M/raw/f3ff3571791e39611d31c381e3a41a3af07b4987/README.md",
+      "bytes": 6348,
+      "sha256": "91dcabced89db6f109b8786642f50402d3ee87450e8189589b6f85520e7f4d78"
+    },
+    {
+      "name": "Kokoro-VOICES.md",
+      "url": "https://huggingface.co/hexgrad/Kokoro-82M/raw/f3ff3571791e39611d31c381e3a41a3af07b4987/VOICES.md",
+      "bytes": 7625,
+      "sha256": "ec7e4941ad7e194af61e3455928528a9ff5360c7c505e412efab27d6a69ea106"
+    },
+    {
+      "name": "Kokoro-EVAL.md",
+      "url": "https://huggingface.co/hexgrad/Kokoro-82M/raw/f3ff3571791e39611d31c381e3a41a3af07b4987/EVAL.md",
+      "bytes": 534,
+      "sha256": "9b4d7a54809bf22127d19d936d9e749249e1a655e2e0a1df8a6546f77a819658"
+    },
+    {
+      "name": "Kokoro-Apache-2.0-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/hexgrad/kokoro/main/LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "name": "kokoro-onnx-MIT-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/thewh1teagle/kokoro-onnx/3596b26764286a7de9d90c363e988d50578918e5/LICENSE",
+      "bytes": 1080,
+      "sha256": "f61fdd0217de9ece8fa699912848d91187d84879fc2e689f0906d0c1299e955e"
+    },
+    {
+      "name": "kokoro-onnx-english-example.py",
+      "url": "https://raw.githubusercontent.com/thewh1teagle/kokoro-onnx/3596b26764286a7de9d90c363e988d50578918e5/examples/english.py",
+      "bytes": 1178,
+      "sha256": "743ae737f3f90cca1a52dccebd5ec679ea8ad6acba70da07dfdb2d1358bcd85e"
+    }
+  ],
+  "license": {
+    "modelAndVoices": "Apache-2.0",
+    "kokoro-onnx": "MIT"
+  },
+  "requestedPackages": {
+    "kokoro-onnx": "0.6.1",
+    "misaki-fork[en]": "0.9.6",
+    "soundfile": "resolve-and-pin-installed-version"
+  }
+}
