@@ -1,0 +1,115 @@
+{
+  "package": "hama-js",
+  "version": "1.7.0",
+  "sourceArchive": "https://registry.npmjs.org/hama-js/-/hama-js-1.7.0.tgz",
+  "archiveSha1": "43d7008f9fde8db8872322e42098046783322a4f",
+  "archiveSha256": "e2b742db41e0266cfe709882acdfd67f7d68dc59553803785ec0329c5ff25cf2",
+  "repository": "https://github.com/hamanlp/hama/tree/fb81fe97e54c00b3f73192b9351f96fcd4427b03",
+  "licenseDeclarations": {
+    "repositoryLicense": "MIT",
+    "npmPackageLicense": "Apache-2.0",
+    "note": "Upstream declarations differ. Both notices are retained without assuming a code/model split."
+  },
+  "changes": [
+    "Replace tokenizer.js JSON import with an inline copy of the same vocabulary for native browser module compatibility.",
+    "Do not ship unused P2G model weights or source maps."
+  ],
+  "files": [
+    {
+      "path": "APACHE-2.0.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "originalSha256": null
+    },
+    {
+      "path": "UPSTREAM-MIT-LICENSE.txt",
+      "bytes": 1074,
+      "sha256": "b7e46d5ab986c9a50be9e36f504be5bb8342d1c30516c81db1c766b1545276ee",
+      "originalSha256": null
+    },
+    {
+      "path": "UPSTREAM-PACKAGE.json",
+      "bytes": 4342,
+      "sha256": "a8f719cd366982d2b5008ad7daa183e99e0a445df429535680ef72239916020e",
+      "originalSha256": null
+    },
+    {
+      "path": "assets/asr_waveform.hama",
+      "bytes": 4723088,
+      "sha256": "a9fcfe73e179ca48e399cd76a90a6b3e1887bf5037ecc52b778d13a149563328",
+      "originalSha256": "a9fcfe73e179ca48e399cd76a90a6b3e1887bf5037ecc52b778d13a149563328"
+    },
+    {
+      "path": "assets/decoder_step.hama",
+      "bytes": 385840,
+      "sha256": "9ac34717f88b7bed2ef84a779b6fda1ec24b0b88d37bb813631493116581369d",
+      "originalSha256": "9ac34717f88b7bed2ef84a779b6fda1ec24b0b88d37bb813631493116581369d"
+    },
+    {
+      "path": "assets/encoder.hama",
+      "bytes": 3819312,
+      "sha256": "ae527c1aa758cd1b038c63d4d768d05313adce7c50706c5366600ab4f4ef8d75",
+      "originalSha256": "ae527c1aa758cd1b038c63d4d768d05313adce7c50706c5366600ab4f4ef8d75"
+    },
+    {
+      "path": "assets/g2p_vocab.json",
+      "bytes": 220107,
+      "sha256": "520d19e4e6ae58658eed53594e0feab8ea8e1b4b04a7746e25e50c16c29b91bf",
+      "originalSha256": "520d19e4e6ae58658eed53594e0feab8ea8e1b4b04a7746e25e50c16c29b91bf"
+    },
+    {
+      "path": "assets/hama.wasm",
+      "bytes": 47465,
+      "sha256": "4525bd3d75df567434cd1ac6d01bbf26173136d2594289524ab780c9b636e661",
+      "originalSha256": "4525bd3d75df567434cd1ac6d01bbf26173136d2594289524ab780c9b636e661"
+    },
+    {
+      "path": "browser.js",
+      "bytes": 17109,
+      "sha256": "87d06a7424b1b2f9b262267ad4747be1e9e27378148a9c168cf8f443af8fd70e",
+      "originalSha256": "87d06a7424b1b2f9b262267ad4747be1e9e27378148a9c168cf8f443af8fd70e"
+    },
+    {
+      "path": "ctc.js",
+      "bytes": 1682,
+      "sha256": "5e746e940fdf09e92a63848eb9af2e830ee984f44f1e5d03b8bfd937a3744879",
+      "originalSha256": "5e746e940fdf09e92a63848eb9af2e830ee984f44f1e5d03b8bfd937a3744879"
+    },
+    {
+      "path": "engine.browser.js",
+      "bytes": 585,
+      "sha256": "7f7de569aae103e775532adcc0c3773a7c9a2e47945e2bcdaf9ffb606a9d4cf3",
+      "originalSha256": "7f7de569aae103e775532adcc0c3773a7c9a2e47945e2bcdaf9ffb606a9d4cf3"
+    },
+    {
+      "path": "engine.js",
+      "bytes": 7792,
+      "sha256": "89d38ad2791c3f758b9dd0bffe01f457e3c9233d9360ec475f25fc049f3ed693",
+      "originalSha256": "89d38ad2791c3f758b9dd0bffe01f457e3c9233d9360ec475f25fc049f3ed693"
+    },
+    {
+      "path": "jamo.js",
+      "bytes": 3431,
+      "sha256": "4e8450e0a63d496797e205d923f166bb66e84daed974b0519d8e5d2505aa0253",
+      "originalSha256": "4e8450e0a63d496797e205d923f166bb66e84daed974b0519d8e5d2505aa0253"
+    },
+    {
+      "path": "p2g-text.js",
+      "bytes": 3022,
+      "sha256": "5140206eba2907272a7dee7f6f9825909f006981f213fdf44b727cf99e94a848",
+      "originalSha256": "5140206eba2907272a7dee7f6f9825909f006981f213fdf44b727cf99e94a848"
+    },
+    {
+      "path": "pronunciation.js",
+      "bytes": 57678,
+      "sha256": "9e8706e8acababd56d135fd6b4ae2b23ef6fbf29cdc1fcd0a79d568bb3aaad66",
+      "originalSha256": "9e8706e8acababd56d135fd6b4ae2b23ef6fbf29cdc1fcd0a79d568bb3aaad66"
+    },
+    {
+      "path": "tokenizer.js",
+      "bytes": 224376,
+      "sha256": "694b6eae177fc7a55bd3ea6b74820112bd955f89e63f1432bde93d46ac3e9ea7",
+      "originalSha256": "02851ff793ca2112d22a8765b40b0a4f1f1c9282ed26be9bf9a8f0957d5b0fec"
+    }
+  ]
+}

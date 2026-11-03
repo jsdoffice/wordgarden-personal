@@ -1,0 +1,142 @@
+{
+  "name": "hama-js",
+  "version": "1.7.0",
+  "description": "G2P, phoneme-ASR, and P2G inference for Node, Bun, and browsers, powered by a self-contained WASM engine (no onnxruntime).",
+  "homepage": "https://hamalnp.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hamanlp/hama.git",
+    "directory": "ts"
+  },
+  "bugs": {
+    "url": "https://github.com/hamanlp/hama/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "dist/node/index.js",
+  "module": "dist/node/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/node/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./g2p": {
+      "import": "./dist/node/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./asr": {
+      "import": "./dist/node/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./p2g": {
+      "import": "./dist/node/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./p2g/browser": {
+      "import": "./dist/browser/browser.js",
+      "types": "./dist/types/browser.d.ts"
+    },
+    "./browser": {
+      "import": "./dist/browser/browser.js",
+      "types": "./dist/types/browser.d.ts"
+    },
+    "./g2p/browser": {
+      "import": "./dist/browser/browser.js",
+      "types": "./dist/types/browser.d.ts"
+    },
+    "./asr/browser": {
+      "import": "./dist/browser/browser.js",
+      "types": "./dist/types/browser.d.ts"
+    },
+    "./jamo": {
+      "import": "./dist/node/jamo.js",
+      "types": "./dist/types/jamo.d.ts"
+    },
+    "./tokenizer": {
+      "import": "./dist/node/tokenizer.js",
+      "types": "./dist/types/tokenizer.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=18",
+    "bun": ">=1.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/hamanlp"
+  },
+  "typesVersions": {
+    "*": {
+      "g2p": [
+        "dist/types/index.d.ts"
+      ],
+      "asr": [
+        "dist/types/index.d.ts"
+      ],
+      "p2g": [
+        "dist/types/index.d.ts"
+      ],
+      "g2p/browser": [
+        "dist/types/browser.d.ts"
+      ],
+      "asr/browser": [
+        "dist/types/browser.d.ts"
+      ],
+      "p2g/browser": [
+        "dist/types/browser.d.ts"
+      ],
+      "browser": [
+        "dist/types/browser.d.ts"
+      ],
+      "jamo": [
+        "dist/types/jamo.d.ts"
+      ],
+      "tokenizer": [
+        "dist/types/tokenizer.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "bun run build:wasm && bun run build:node && bun run build:browser",
+    "build:wasm": "(cd ../zig && zig build wasm) && cp ../zig/zig-out/bin/hama.wasm src/assets/hama.wasm",
+    "build:node": "tsc -p tsconfig.node.json && rm -rf dist/node/assets && mkdir -p dist/node/assets && cp -R src/assets/. dist/node/assets",
+    "build:browser": "tsc -p tsconfig.browser.json && rm -rf dist/browser/assets && mkdir -p dist/browser/assets && cp -R src/assets/. dist/browser/assets",
+    "test": "bun test",
+    "demo:build": "bun build demo/main.ts --outdir demo/dist --format esm --target browser && cp demo/index.html demo/dist/index.html && mkdir -p demo/dist/assets && cp src/assets/hama.wasm src/assets/encoder.hama src/assets/decoder_step.hama src/assets/asr_waveform.hama src/assets/p2g.hama src/assets/p2g_vocab.json src/assets/g2p_vocab.json demo/dist/assets/",
+    "demo": "bun run demo:build && cd demo/dist && python3 -m http.server 8123 --bind 127.0.0.1",
+    "prepublishOnly": "bun run build",
+    "validate:model": "bun run scripts/validate-model.ts",
+    "validate:model:split": "bun run scripts/validate-split-model.ts",
+    "validate:asr": "bun run scripts/validate-asr-model.ts",
+    "validate:browser": "bun run scripts/validate-browser-model.ts",
+    "validate:browser:asr": "bun run scripts/validate-browser-asr-model.ts",
+    "live:asr:silero": "bun run scripts/live-asr-silero.ts"
+  },
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "asr",
+    "g2p",
+    "phoneme",
+    "wasm",
+    "zig",
+    "bun"
+  ],
+  "author": "Seongmin Park",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@ricky0123/vad-node": "^0.0.3",
+    "@types/node": "^20.19.25",
+    "bun-types": "^1.3.3",
+    "node-record-lpcm16": "^1.0.1",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {},
+  "packageManager": "bun@1.1.0"
+}
