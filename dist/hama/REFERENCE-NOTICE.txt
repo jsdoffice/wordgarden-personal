@@ -1,0 +1,7 @@
+Prepared pronunciation references
+
+Sentence references reproduce the actual Misaki American English phoneme input used for the 3000 Michael narration clips, including the 27 corrected sentence pronunciations. The compact notation is expanded into IPA; syllabic consonant notation is approximated with a schwa for readability. This is a phonetic reference, not a human-certified pronunciation grade.
+
+Word references are regenerated from Misaki US gold/silver lexicons, with eSpeak fallback for missing forms. Heteronym variants are retained. Old dictionary IPA is not used as the comparison target. Misaki source: https://github.com/hexgrad/misaki/tree/fba1236595f2d2bf21d414ba6e57d25256afada3 . Misaki is Apache-2.0; see MISAKI-LICENSE.txt. The English/Korean dictionary word selection and meanings retain the attribution in data-credits.html.
+
+Hama is used only to estimate phonemes heard in the learner recording, not to generate reference pronunciation or evaluate stress. Both observed differences and model errors are possible.

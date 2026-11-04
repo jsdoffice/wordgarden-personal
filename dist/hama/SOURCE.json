@@ -11,8 +11,9 @@
     "note": "Upstream declarations differ. Both notices are retained without assuming a code/model split."
   },
   "changes": [
-    "Replace tokenizer.js JSON import with an inline copy of the same vocabulary for native browser module compatibility.",
-    "Do not ship unused P2G model weights or source maps."
+    "Replace JSON imports in browser.js and tokenizer.js with inline copies of the same upstream vocabularies for native browser module compatibility.",
+    "Do not ship unused P2G model weights or source maps.",
+    "Use only Hama phoneme ASR. Omit G2P weights; use prepared references from the existing dictionary and Michael narration input instead."
   ],
   "files": [
     {
@@ -40,18 +41,6 @@
       "originalSha256": "a9fcfe73e179ca48e399cd76a90a6b3e1887bf5037ecc52b778d13a149563328"
     },
     {
-      "path": "assets/decoder_step.hama",
-      "bytes": 385840,
-      "sha256": "9ac34717f88b7bed2ef84a779b6fda1ec24b0b88d37bb813631493116581369d",
-      "originalSha256": "9ac34717f88b7bed2ef84a779b6fda1ec24b0b88d37bb813631493116581369d"
-    },
-    {
-      "path": "assets/encoder.hama",
-      "bytes": 3819312,
-      "sha256": "ae527c1aa758cd1b038c63d4d768d05313adce7c50706c5366600ab4f4ef8d75",
-      "originalSha256": "ae527c1aa758cd1b038c63d4d768d05313adce7c50706c5366600ab4f4ef8d75"
-    },
-    {
       "path": "assets/g2p_vocab.json",
       "bytes": 220107,
       "sha256": "520d19e4e6ae58658eed53594e0feab8ea8e1b4b04a7746e25e50c16c29b91bf",
@@ -65,8 +54,8 @@
     },
     {
       "path": "browser.js",
-      "bytes": 17109,
-      "sha256": "87d06a7424b1b2f9b262267ad4747be1e9e27378148a9c168cf8f443af8fd70e",
+      "bytes": 387572,
+      "sha256": "a7e2b825fbad919ada96aeb6af3942c2cfdc7e66027a0e5d92296af651e8d422",
       "originalSha256": "87d06a7424b1b2f9b262267ad4747be1e9e27378148a9c168cf8f443af8fd70e"
     },
     {
@@ -111,5 +100,11 @@
       "sha256": "694b6eae177fc7a55bd3ea6b74820112bd955f89e63f1432bde93d46ac3e9ea7",
       "originalSha256": "02851ff793ca2112d22a8765b40b0a4f1f1c9282ed26be9bf9a8f0957d5b0fec"
     }
-  ]
+  ],
+  "preparedReferences": {
+    "path": "../pronunciation-targets.json",
+    "misakiSource": "https://raw.githubusercontent.com/hexgrad/misaki/fba1236595f2d2bf21d414ba6e57d25256afada3",
+    "license": "Apache-2.0",
+    "changes": "Expanded compact phoneme notation into readable IPA; preserved known word pronunciation variants."
+  }
 }

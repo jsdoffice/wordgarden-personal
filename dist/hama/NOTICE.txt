@@ -6,7 +6,7 @@ Package: https://www.npmjs.com/package/hama-js/v/1.7.0
 
 The upstream repository LICENSE declares MIT, while npm package metadata and the official website declare Apache-2.0. Both upstream notices are preserved as UPSTREAM-MIT-LICENSE.txt and APACHE-2.0.txt. No unsupported separation of model and code licensing is asserted. Original package metadata is preserved in UPSTREAM-PACKAGE.json.
 
-Changes: inline the original g2p_vocab.json in tokenizer.js instead of a JSON module import; omit source maps and unused P2G weights. The ASR, G2P and WASM weights are otherwise unchanged. SOURCE.json records file hashes.
+Changes: inline original vocabulary JSON in browser.js and tokenizer.js instead of JSON module imports; omit source maps and unused P2G weights. Only the ASR and WASM weights are shipped and they are unchanged. G2P is not used; its weights are omitted. Expected pronunciation comes from prepared Michael narration input and the existing dictionary. SOURCE.json records file hashes.
 
 The Word Garden comparison worker and UI are project additions. No affiliation or endorsement is implied. Hama predicts phonemes, not calibrated human pronunciation grades or lexical stress. Published robust PER is 22.08%; clean LibriSpeech PER is 10.94%. Normal speech may be misrecognized. See https://www.hamanlp.org/blog/hama-v1-7-0-v3-phoneme-asr/ .
 
