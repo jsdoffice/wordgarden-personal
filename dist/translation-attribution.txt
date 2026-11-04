@@ -19,5 +19,5 @@ Article titles, authors, dates, URLs and sentence IDs: translation-sources.json.
 Each selected English sentence was checked against the retained original paragraph.
 
 The app is an independent learning tool. VOA does not endorse or provide this app.
-The Joe narration is locally synthesized audio, not an original VOA recording.
+The active Kokoro Michael narration is locally synthesized audio, not an original VOA recording. Legacy Joe narration is retained for older app versions.
 See translation-audio-attribution.txt for the speech model and dataset information.

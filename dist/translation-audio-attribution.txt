@@ -1,3 +1,41 @@
+Word Garden current lesson audio — Kokoro v5
+
+Voice: Michael (am_michael), American English male synthetic speech.
+Engine/model: Kokoro-82M v1.0 via kokoro-onnx 0.6.1.
+This is locally generated narration, not a human performance or a VOA recording.
+No paid TTS API is called, and no speech engine or model weights are deployed.
+
+Model and voice data: Apache-2.0 (upstream model license).
+Model revision: f3ff3571791e39611d31c381e3a41a3af07b4987
+Model card: https://huggingface.co/hexgrad/Kokoro-82M/tree/f3ff3571791e39611d31c381e3a41a3af07b4987
+ONNX release: model-files-v1.1
+ONNX model source: https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/kokoro-v1.0.onnx
+ONNX model SHA-256: beb0d1848dee9a49da392cc3df26958d46cfa35d321edf434f52949153f0df3a
+Voice bank source: https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/voices-v1.0.bin
+Voice bank SHA-256: bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d
+Selected voice ID: am_michael
+kokoro-onnx runtime license: MIT
+Runtime source: https://github.com/thewh1teagle/kokoro-onnx/tree/3596b26764286a7de9d90c363e988d50578918e5
+
+Preserved notices: KOKORO-MODEL-CARD.md, KOKORO-VOICES.md,
+KOKORO-APACHE-2.0.txt and KOKORO-ONNX-MIT.txt in the audio directory.
+This project notice is not an upstream NOTICE file and does not claim endorsement.
+Model licenses are not a blanket license for all content in this repository.
+
+Active cue map: translation-audio-v5.json
+Active tracks: audio/translation-v5-01.m4a through translation-v5-60.m4a
+3000 sentences in 60 tracks; 113319063 bytes; 13950.250000 seconds.
+AAC-LC mono, 64 kbps; 24000 Hz; sentence gap 0.3 seconds.
+Content SHA-256: a9552efbb733572ebb9e3b9aec7067e10c458b6e404a1925238f82f2f64a61bd
+English text: VOA Learning English original content; see translation-attribution.txt.
+
+Legacy Joe/Piper recordings, manifests and their original notices are retained
+unchanged for previously opened app versions. audio/ATTRIBUTION.txt and
+audio/VOICE_MODEL_CARD.txt describe those legacy recordings, not Kokoro v5.
+
+
+=== LEGACY NOTICES: V1–V4 ONLY (historical text retained below) ===
+
 Word Garden lesson audio
 
 Voice: Joe — US English male synthetic speech (en_US-joe-medium).
