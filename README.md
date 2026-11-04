@@ -23,6 +23,7 @@
 ## 학습 기능
 
 - 단어 뜻 맞히기, 문장 빈칸, 단어장 검색·저장, 직접 단어 추가
+- 나의 단어장 목록·카드 보기: 미국식 발음기호, 품사·뜻, 카드 안 영한 예문 최대 3개, 이전·다음 이동. 검색과 필터는 모드를 바꿔도 유지합니다. 기본 60개에는 3개씩 예문을 갖추고, 연결된 예문이 없는 단어는 미등록으로 표시합니다. 직접 추가할 때 품사·발음기호·예문 번역도 입력할 수 있습니다.
 - VOA 자체 제작 원문 기반 중급 중심 B1–B2 번역 3,000문장의 단어 카드 배열과 문장 전체 직접 입력
 - 오늘의 학습에서 기존 단어 문제·번역 카드·직접 입력 혼합 출제
 - 카드와 타이핑의 복습 일정을 따로 관리하고, 날짜별 기록에 함께 반영
@@ -76,6 +77,8 @@ Michael 음성은 50문장씩 묶은 AAC 파일 60개(약 113.3MB, 232.5분)를 
 - 번역 원문: VOA Learning English 자체 제작 자료, 공개 도메인. [공식 재사용 안내](https://learningenglish.voanews.com/p/6861.html). 외부 통신사 기사·외부 인용·청취자 편지·사진·캡션은 제외합니다. 문장별 출처는 `dist/translation-data.json`, 기사별 작성자·날짜·링크는 `dist/translation-sources.json`에 있습니다. 한국어 번역과 해설은 앱을 위해 작성했으며 VOA의 공식 번역이 아닙니다. 영어 정답은 각 원문 단락과 대조했습니다.
 - 현재 음성: Kokoro-82M v1.0 `am_michael` (Michael), 모델·음성 데이터 Apache-2.0, kokoro-onnx MIT. 로컬 합성 결과만 배포하며 유료 TTS API를 호출하지 않습니다. 선택 모델·voice 파일 해시와 보존한 원문 이용 조건은 `dist/audio/KOKORO-NOTICE.txt`에 있습니다.
 - 구버전 음성: Piper 1.8.0 `en_US-joe-medium`, 원본 데이터셋 CC0, 모델 저장소 MIT. 이전 파일과 `dist/audio/ATTRIBUTION.txt`, `dist/audio/VOICE_MODEL_CARD.txt`는 기존 버전을 위해 그대로 보존합니다.
+
+품사 표시는 기존 로컬 spaCy 3.8.0에 포함된 WordNet 3.0 lemma index와 굴절형 규칙, 기능어 및 기본 단어의 검수 표기를 사용합니다. 이는 가능한 품사 목록이며 원본의 통합 한국어 뜻을 품사별 정의로 나누지 않습니다. WordNet 전문은 `dist/wordbook-notice.txt`에 보존합니다. 기본 60개 발음은 음절 앞 강세 표기로 다듬고, 그 외 단어는 합성용 강세 표시를 생략했습니다. 발음기호는 교정된 Misaki 미국 영어 기준을 우선하며 새 표현도 같은 로컬 도구로 생성했습니다. 단어장 예문 120개를 새로 작성했으며 퀴즈 문제 수와 복습 기록은 바꾸지 않습니다.
 
 전체 출처·라이선스: `dist/data-credits.html`, `dist/translation-attribution.txt`, `dist/lab-attribution.txt`, `dist/translation-audio-attribution.txt`. 저장소 전체에 하나의 라이선스를 새로 부여하지 않았습니다.
 
