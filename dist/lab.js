@@ -46,7 +46,18 @@
   function card({ section, item, index }) {
     const label = source.sections.find(value => value.id === section).label;
     const badge = `<span class="lab-badge">${esc(label)}</span>`;
-    const open = `<article class="lab-card${Array.isArray(item) ? '' : ' lab-card-wide'}" data-lab-entry="${esc(section)}-${index}">`;
+    const open = `<article class="lab-card${section === 'patterns' ? ' lab-pattern-card' : Array.isArray(item) ? '' : ' lab-card-wide'}" data-lab-entry="${esc(section)}-${index}">`;
+    if (section === 'patterns') {
+      const sources=(item.sources||[]).filter(source=>{
+        try { const url=new URL(source.url);return url.protocol==='https:'&&['learnenglish.britishcouncil.org','learnenglishteens.britishcouncil.org','dictionary.cambridge.org'].includes(url.hostname); } catch { return false; }
+      });
+      return open + `<div class="lab-pattern-meta"><span>${highlight(item.category)}</span><span>${esc(item.level)} 중심</span></div><div class="lab-card-top"><h3 lang="en">${highlight(item.title)}</h3>${badge}</div>
+        <p class="lab-meaning">${highlight(item.meaning)}</p><p class="lab-formula" lang="en">${highlight(item.formula)}</p>
+        <h4 class="lab-pattern-caption">이렇게 말해 보세요 <span>영한 예문 3개</span></h4>
+        <ol class="lab-pattern-examples">${(item.examples||[]).map(([en,ko],i)=>`<li><p lang="en">${highlight(en)}</p><p class="lab-translation" lang="ko">${highlight(ko)}</p>${speech(en,`예문 ${i+1} 듣기`)}</li>`).join('')}</ol>
+        <p class="lab-note"><strong>쓰임과 주의점</strong> ${highlight(item.note)}</p>
+        <div class="lab-pattern-sources"><span>용법 참고</span>${sources.map(source=>`<a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.publisher)} · ${esc(source.title)} ↗</a>`).join('')}<small>예문·한국어 설명은 단어정원에서 작성했어요.</small></div></article>`;
+    }
     if (Array.isArray(item)) {
       const [word, meaning, example, type, ipa, englishGloss, translation] = item;
       return open + `<div class="lab-card-top"><div><h3>${highlight(word)}</h3>${ipa ? `<p class="lab-pronunciation">${highlight(ipa)}</p>` : ''}</div>${badge}</div>
@@ -90,7 +101,7 @@
     root.querySelector('#lab-categories').innerHTML = source.sections.map(section => `<button type="button" class="lab-category" data-lab-section="${esc(section.id)}" aria-pressed="${view.section === section.id && !view.query}"><span class="lab-category-icon" aria-hidden="true">${esc(section.icon)}</span><span>${esc(section.label)}<small>${number((source.library[section.id] || []).length)}개 항목</small></span></button>`).join('');
     root.querySelector('#lab-kicker').textContent = view.query ? 'SEARCH RESULTS' : selected.english;
     root.querySelector('#lab-section-title').textContent = view.query ? `“${view.query}” 검색 결과` : selected.label;
-    root.querySelector('#lab-description').textContent = view.query ? '단어·숙어·구동사·문법 자료 전체에서 찾은 결과입니다.' : selected.description;
+    root.querySelector('#lab-description').textContent = view.query ? '단어·숙어·구동사·문법·패턴 영어 전체에서 찾은 결과입니다.' : selected.description;
     const tip = root.querySelector('#lab-tip');
     tip.textContent = view.query ? '검색어와 일치하는 부분을 표시했어요. 분류를 선택하면 해당 자료 전체로 돌아갑니다.' : selected.tip;
     root.querySelector('#lab-count').textContent = `${number(results.length)}개 항목 · ${number(Math.min(view.visible, results.length))}개 표시`;
@@ -113,10 +124,10 @@
       main.innerHTML = title('ENGLISH STUDY LIBRARY', '영어 연구실', '학습 자료를 불러오지 못했어요.') + '<section class="card"><p>인터넷에 연결한 뒤 페이지를 새로고침해 주세요.</p></section>';
       return;
     }
-    main.innerHTML = `<div class="wg-lab">${title('ENGLISH STUDY LIBRARY', '영어 연구실', '토익 어휘부터 문장 구조까지, 필요한 영어를 바로 찾아 익히세요.', `<span class="lab-total">${number(entries.length)}개 학습 자료</span>`)}
+    main.innerHTML = `<div class="wg-lab">${title('ENGLISH STUDY LIBRARY', '영어 연구실', '어휘·문법·패턴 영어, 필요한 표현을 문장으로 익히세요.', `<span class="lab-total">${number(entries.length)}개 학습 자료</span>`)}
       <section class="lab-search-panel" aria-label="영어 연구실 검색">
-        <label for="lab-search">전체 자료 빠른 검색</label><div class="lab-search-box"><span class="lab-search-icon" aria-hidden="true">⌕</span><input id="lab-search" type="search" autocomplete="off" maxlength="160" placeholder="단어, 숙어, 뜻, 문법 규칙 검색" aria-describedby="lab-search-help" value="${esc(view.query)}"><button type="button" id="lab-clear" data-lab-clear aria-label="연구실 검색어 지우기">×</button><kbd aria-hidden="true">⌘ / Ctrl K</kbd></div>
-        <div id="lab-search-help" class="lab-search-help"><span>이렇게 찾아보세요</span>${['견적', '주어와 동사', '관계대명사'].map(query => `<button type="button" data-lab-query="${esc(query)}">${esc(query)} ↗</button>`).join('')}</div>
+        <label for="lab-search">전체 자료 빠른 검색</label><div class="lab-search-box"><span class="lab-search-icon" aria-hidden="true">⌕</span><input id="lab-search" type="search" autocomplete="off" maxlength="160" placeholder="단어, 뜻, 문법, 영어 패턴 검색" aria-describedby="lab-search-help" value="${esc(view.query)}"><button type="button" id="lab-clear" data-lab-clear aria-label="연구실 검색어 지우기">×</button><kbd aria-hidden="true">⌘ / Ctrl K</kbd></div>
+        <div id="lab-search-help" class="lab-search-help"><span>이렇게 찾아보세요</span>${['견적', '주어와 동사', 'used to', 'Would you mind'].map(query => `<button type="button" data-lab-query="${esc(query)}">${esc(query)} ↗</button>`).join('')}</div>
       </section>
       <div id="lab-categories" class="lab-categories" role="group" aria-label="영어 연구실 자료 분류"></div>
       <section class="lab-library" aria-labelledby="lab-section-title"><div class="lab-section-heading"><div><p id="lab-kicker" class="eyebrow"></p><h2 id="lab-section-title"></h2><p id="lab-description"></p></div><p id="lab-count" class="lab-count" role="status" aria-live="polite" aria-atomic="true"></p></div><p id="lab-tip" class="lab-tip"></p><div id="lab-results" class="lab-results"></div><div id="lab-more" class="lab-more"></div></section>
@@ -162,6 +173,12 @@
       }
     });
     render(root);
+  };
+
+  window.openPatternLibrary = function openPatternLibrary() {
+    view.section='patterns';view.query='';view.visible=40;
+    show('lab');
+    document.querySelector('#lab-section-title')?.scrollIntoView({block:'start'});
   };
 
   document.addEventListener('keydown', event => {
