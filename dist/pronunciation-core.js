@@ -1,4 +1,5 @@
 import { ASRBrowserModel } from './hama/browser.js';
+import { buildFeedback } from './pronunciation-feedback.js';
 export const MAX_SECONDS = 20;
 let enginePromise;
 let referencePromise;
@@ -21,7 +22,7 @@ export function tokenizeIpa(value) {
   const s=canonical(value),result=[];
   for(let i=0;i<s.length;) {
     const ch=String.fromCodePoint(s.codePointAt(i));
-    if(/[\s.,;:!?()\[\]{}\/\\|"'—–…]/u.test(ch)){i+=ch.length;continue;}
+    if(/[\s.,;:!?()\[\]{}\/\\|"'“”‘’—–…-]/u.test(ch)){i+=ch.length;continue;}
     if(s.startsWith('<',i)){const end=s.indexOf('>',i);result.push(end<0?s.slice(i):s.slice(i,end+1));i=end<0?s.length:end+1;continue;}
     const group=multi.find(p=>s.startsWith(p,i));let token=group||ch;i+=token.length;
     token=token.replace(/[͜͡]/gu,'');
@@ -78,5 +79,6 @@ export async function analyzeAudio({samples,sampleRate,text}) {
   const best=choices.reduce((a,b)=>b.alignment.filter(x=>x.status!=='match').length<a.alignment.filter(x=>x.status!=='match').length?b:a),reference=best.reference;
   const alignment=best.alignment.map(a=>({...a,wordIndex:a.expectedIndex===null?null:reference.owners[a.expectedIndex]})),count=status=>alignment.filter(a=>a.status===status).length;
   const matched=count('match'),substitutions=count('substitute'),missing=count('missing'),extra=count('extra');
-  return {expectedIpa:reference.expectedIpa,heardIpa:observed.phonemes.join(' '),expectedWords:reference.expectedWords,alignment,summary:{matched,differences:substitutions+missing+extra,substitutions,missing,extra,expectedCount:reference.tokens.length,heardCount:heard.length},quality,engine:'hama-js 1.7.0 ASR; prepared reference',elapsedMs:Math.round(performance.now()-started),limitations:['바르게 읽어도 모델이 다르게 인식할 수 있어요.','차이는 연습 참고 후보이며 발음 오류 판정이나 점수가 아닙니다.','강세·억양·유창성·원어민 수준은 평가하지 않습니다.']};
+  const feedback=buildFeedback({words:reference.expectedWords,tokens:reference.tokens,alignment,tokenize:tokenizeIpa});
+  return {expectedIpa:reference.expectedIpa,heardIpa:observed.phonemes.join(' '),expectedWords:reference.expectedWords,alignment,feedback,summary:{matched,differences:substitutions+missing+extra,substitutions,missing,extra,expectedCount:reference.tokens.length,heardCount:heard.length},quality,engine:'hama-js 1.7.0 ASR; prepared reference',elapsedMs:Math.round(performance.now()-started),limitations:['바르게 읽어도 모델이 다르게 인식할 수 있어요.','점수와 등급은 인식된 음소의 일치 비율이며 사람이 검증한 발음 정확도가 아닙니다.','음절 경계는 추정값이며 강세·억양·유창성·원어민 수준은 평가하지 않습니다.']};
 }

@@ -43,7 +43,7 @@ function practicePage() {
           <p class="muted">최대 30초. 녹음은 이 화면에서만 사용하며 서버로 전송하지 않아요. 다른 화면으로 이동하면 삭제됩니다.</p>
         </div>
         <details class="practice-checklist"><summary>내 발음 스스로 확인하기</summary><label><input type="checkbox"> 빠뜨린 단어 없이 끝까지 말했나요?</label><label><input type="checkbox"> 강하게 들리는 음절을 따라 말했나요?</label><label><input type="checkbox"> 단어 사이를 자연스럽게 이어 말했나요?</label></details>
-        <p class="muted">이 기능은 녹음과 듣기 연습입니다. 음소·강세를 분석하는 자동 발음 채점은 제공하지 않아요.</p>
+        <p class="muted">이곳에서는 녹음과 듣기를 연습해요. 100점 만점과 음절별 등급은 발음 평가에서 확인할 수 있어요.</p><button class="secondary" data-page="pronunciation">점수 · 음절별 등급으로 연습하기 ↗</button><p class="muted">발음 평가의 기본 문장 3,000개 또는 단어를 선택해 새로 녹음하세요.</p>
       </section>
       <section class="card chat-practice">
         <div class="eyebrow">CONTINUE IN CHATGPT</div><h2>ChatGPT와 영어로 대화하기</h2>
@@ -182,7 +182,7 @@ async function showOfflineStatus() {
   const el = document.querySelector('#offlineStatus');
   if (!el) return;
   try {
-    const cache = await caches.open('wordgarden-v21-patterns-20261105-final');
+    const cache = await caches.open('wordgarden-v22-syllable-scores-20261110-final');
     const urls = ['./index.html','./dictionary.js','./questions.js','./app.js','./practice.js','./style.css','./lab-data.js','./lab.js','./lab.css','./lab-attribution.txt','./translation-data.js','./translation.js','./translation.css','./focus-theme.css','./translation-audio-v5.json'];
     const cached = await Promise.all(urls.map(url => cache.match(url)));
     el.textContent = cached.every(Boolean) ? '학습 자료가 이 기기에 저장되어 있어요. 인터넷 없이 단어·예문 학습, 영어 연구실 전체 자료, 번역 카드·직접 입력과 녹음을 사용할 수 있습니다. 미국 남성 음성 연속 듣기는 인터넷이 필요하며, 한국어 읽기와 기존 발음은 기기에 설치된 음성에 따라 달라요.' : '오프라인 자료를 준비 중이에요. 인터넷에 연결한 상태로 잠시 뒤 다시 확인해 주세요.';
