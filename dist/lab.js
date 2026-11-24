@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const view = { section: 'vocabulary', query: '', visible: 40 };
+  const view = { section: 'vocabulary', query: '', topic: '', visible: 40 };
   const quizAnswers = new Map();
   let source, entries = [];
   const number = value => value.toLocaleString('ko-KR');
@@ -12,7 +12,7 @@
     if (source !== current) {
       source = current;
       entries = source.sections.flatMap(section => (source.library[section.id] || []).map((item, index) => ({
-        section: section.id, item, index, search: JSON.stringify(item).toLocaleLowerCase()
+        section: section.id, item, index, search: (JSON.stringify(item)+' '+(section.id==='rules'?source.ruleTopics?.[index]||'':'')).toLocaleLowerCase()
       })));
     }
     return source;
@@ -35,6 +35,17 @@
     return `<button type="button" class="lab-listen" data-lab-speech="${esc(text)}" aria-label="${esc(label)}"><span aria-hidden="true">◖</span> ${esc(label)}</button>`;
   }
 
+  function topicOf(entry) {
+    return entry.item.category || (entry.section === 'rules' ? source.ruleTopics?.[entry.index] : '') || '기타';
+  }
+
+  function references(item) {
+    const sources=(item.sources||[]).filter(value=>{
+      try { const url=new URL(value.url);return url.protocol==='https:'&&['learnenglish.britishcouncil.org','learnenglishteens.britishcouncil.org','dictionary.cambridge.org'].includes(url.hostname); } catch { return false; }
+    });
+    return sources.length ? `<div class="lab-pattern-sources"><span>용법 참고</span>${sources.map(value=>`<a href="${esc(value.url)}" target="_blank" rel="noopener noreferrer">${esc(value.publisher)} · ${esc(value.title)}</a>`).join('')}<small>예문·한국어 설명은 단어정원에서 작성했어요.</small></div>` : '';
+  }
+
   function miniQuiz(item, section, index) {
     const quiz = item.quiz;
     if (!quiz || !Array.isArray(quiz.options)) return '';
@@ -48,15 +59,12 @@
     const badge = `<span class="lab-badge">${esc(label)}</span>`;
     const open = `<article class="lab-card${section === 'patterns' ? ' lab-pattern-card' : Array.isArray(item) ? '' : ' lab-card-wide'}" data-lab-entry="${esc(section)}-${index}">`;
     if (section === 'patterns') {
-      const sources=(item.sources||[]).filter(source=>{
-        try { const url=new URL(source.url);return url.protocol==='https:'&&['learnenglish.britishcouncil.org','learnenglishteens.britishcouncil.org','dictionary.cambridge.org'].includes(url.hostname); } catch { return false; }
-      });
       return open + `<div class="lab-pattern-meta"><span>${highlight(item.category)}</span><span>${esc(item.level)} 중심</span></div><div class="lab-card-top"><h3 lang="en">${highlight(item.title)}</h3>${badge}</div>
         <p class="lab-meaning">${highlight(item.meaning)}</p><p class="lab-formula" lang="en">${highlight(item.formula)}</p>
         <h4 class="lab-pattern-caption">이렇게 말해 보세요 <span>영한 예문 3개</span></h4>
         <ol class="lab-pattern-examples">${(item.examples||[]).map(([en,ko],i)=>`<li><p lang="en">${highlight(en)}</p><p class="lab-translation" lang="ko">${highlight(ko)}</p>${speech(en,`예문 ${i+1} 듣기`)}</li>`).join('')}</ol>
         <p class="lab-note"><strong>쓰임과 주의점</strong> ${highlight(item.note)}</p>
-        <div class="lab-pattern-sources"><span>용법 참고</span>${sources.map(source=>`<a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.publisher)} · ${esc(source.title)} ↗</a>`).join('')}<small>예문·한국어 설명은 단어정원에서 작성했어요.</small></div></article>`;
+        ${references(item)}</article>`;
     }
     if (Array.isArray(item)) {
       const [word, meaning, example, type, ipa, englishGloss, translation] = item;
@@ -81,29 +89,34 @@
         ${item.note ? `<p class="lab-note"><strong>기억하기</strong> ${highlight(item.note)}</p>` : ''}${miniQuiz(item, section, index)}</article>`;
     }
     const correct = item.correct || item.example;
-    return open + heading + `<p class="lab-formula">${highlight(item.formula)}</p>
+    return open + `<p class="lab-rule-topic">${highlight(topicOf({section,item,index}))}</p>` + heading + `<p class="lab-formula">${highlight(item.formula)}</p>
       <p class="lab-meaning">${highlight(item.meaning)}</p>
       ${correct ? `<div class="lab-correct"><span class="lab-example-label">✓ 맞는 문장</span><p>${highlight(correct)}</p>${speech(correct)}</div>` : ''}
       ${item.correct && item.example && item.correct !== item.example ? `<p class="lab-example">${highlight(item.example)}</p>` : ''}
       ${item.translation ? `<p class="lab-translation">${highlight(item.translation)}</p>` : ''}
+      ${item.moreExamples?.length ? `<ol class="lab-more-examples">${item.moreExamples.map(([en,ko])=>`<li><p lang="en">${highlight(en)}</p><p class="lab-translation" lang="ko">${highlight(ko)}</p>${speech(en)}</li>`).join('')}</ol>` : ''}
       ${item.wrong ? `<div class="lab-wrong"><span class="lab-example-label">✕ 틀린 문장</span><p>${highlight(item.wrong)}</p></div>` : ''}
-      ${item.note ? `<p class="lab-note"><strong>기억하기</strong> ${highlight(item.note)}</p>` : ''}${miniQuiz(item, section, index)}</article>`;
+      ${item.note ? `<p class="lab-note"><strong>기억하기</strong> ${highlight(item.note)}</p>` : ''}${miniQuiz(item, section, index)}${references(item)}</article>`;
   }
 
   function matching() {
-    return view.query ? entries.filter(entry => entry.search.includes(view.query.toLocaleLowerCase())) : entries.filter(entry => entry.section === view.section);
+    return view.query ? entries.filter(entry => entry.search.includes(view.query.toLocaleLowerCase())) : entries.filter(entry => entry.section === view.section && (!view.topic || topicOf(entry) === view.topic));
   }
 
   function render(root) {
     if (!root?.isConnected) return;
     const selected = source.sections.find(section => section.id === view.section) || source.sections[0];
     const results = matching();
+    const topicEntries=entries.filter(entry=>entry.section===view.section),topics=[...new Set(topicEntries.map(topicOf))];
+    const topicWrap=root.querySelector('#lab-topic-wrap');
+    topicWrap.hidden=Boolean(view.query)||!['rules','patterns'].includes(view.section);
+    root.querySelector('#lab-topic').innerHTML='<option value="">전체 주제 · '+number(topicEntries.length)+'개</option>'+topics.map(topic=>`<option value="${esc(topic)}" ${view.topic===topic?'selected':''}>${esc(topic)} · ${number(topicEntries.filter(entry=>topicOf(entry)===topic).length)}개</option>`).join('');
     root.querySelector('#lab-categories').innerHTML = source.sections.map(section => `<button type="button" class="lab-category" data-lab-section="${esc(section.id)}" aria-pressed="${view.section === section.id && !view.query}"><span class="lab-category-icon" aria-hidden="true">${esc(section.icon)}</span><span>${esc(section.label)}<small>${number((source.library[section.id] || []).length)}개 항목</small></span></button>`).join('');
     root.querySelector('#lab-kicker').textContent = view.query ? 'SEARCH RESULTS' : selected.english;
     root.querySelector('#lab-section-title').textContent = view.query ? `“${view.query}” 검색 결과` : selected.label;
     root.querySelector('#lab-description').textContent = view.query ? '단어·숙어·구동사·문법·패턴 영어 전체에서 찾은 결과입니다.' : selected.description;
     const tip = root.querySelector('#lab-tip');
-    tip.textContent = view.query ? '검색어와 일치하는 부분을 표시했어요. 분류를 선택하면 해당 자료 전체로 돌아갑니다.' : selected.tip;
+    tip.textContent = view.query ? '검색어와 일치하는 부분을 표시했어요. 분류를 선택하면 해당 자료 전체로 돌아갑니다.' : (view.topic ? `${view.topic} · ${results.length}개 항목. 전체 주제를 선택하면 모든 자료로 돌아갑니다.` : selected.tip);
     root.querySelector('#lab-count').textContent = `${number(results.length)}개 항목 · ${number(Math.min(view.visible, results.length))}개 표시`;
     root.querySelector('#lab-clear').hidden = !view.query;
     root.querySelector('#lab-results').innerHTML = results.length ? results.slice(0, view.visible).map(card).join('') : '<div class="lab-empty"><span aria-hidden="true">⌕</span><h3>검색 결과가 없어요</h3><p>영어 표현이나 한국어 뜻을 짧게 입력해 보세요.</p><button type="button" class="secondary" data-lab-clear>검색 지우기</button></div>';
@@ -112,6 +125,7 @@
 
   function changeQuery(root, query, focus) {
     view.query = String(query).trim();
+    view.topic = '';
     view.visible = 40;
     const input = root.querySelector('#lab-search');
     input.value = query;
@@ -130,13 +144,17 @@
         <div id="lab-search-help" class="lab-search-help"><span>이렇게 찾아보세요</span>${['견적', '주어와 동사', 'used to', 'Would you mind'].map(query => `<button type="button" data-lab-query="${esc(query)}">${esc(query)} ↗</button>`).join('')}</div>
       </section>
       <div id="lab-categories" class="lab-categories" role="group" aria-label="영어 연구실 자료 분류"></div>
-      <section class="lab-library" aria-labelledby="lab-section-title"><div class="lab-section-heading"><div><p id="lab-kicker" class="eyebrow"></p><h2 id="lab-section-title"></h2><p id="lab-description"></p></div><p id="lab-count" class="lab-count" role="status" aria-live="polite" aria-atomic="true"></p></div><p id="lab-tip" class="lab-tip"></p><div id="lab-results" class="lab-results"></div><div id="lab-more" class="lab-more"></div></section>
+      <section class="lab-library" aria-labelledby="lab-section-title"><div class="lab-section-heading"><div><p id="lab-kicker" class="eyebrow"></p><h2 id="lab-section-title"></h2><p id="lab-description"></p></div><p id="lab-count" class="lab-count" role="status" aria-live="polite" aria-atomic="true"></p></div><label id="lab-topic-wrap" class="lab-topic-filter" hidden>주제별로 보기<select id="lab-topic" aria-controls="lab-results"></select></label><p id="lab-tip" class="lab-tip"></p><div id="lab-results" class="lab-results"></div><div id="lab-more" class="lab-more"></div></section>
       <p class="lab-footnote">사전의 뜻과 예문은 문맥에 따라 다른 의미일 수 있어요. 뜻풀이와 문장 속 쓰임을 함께 확인하세요. <a href="data-credits.html" target="_blank" rel="noopener">자료 출처와 이용 조건 ↗</a></p></div>`;
     const root = main.querySelector('.wg-lab');
     root.querySelector('#lab-search').addEventListener('input', event => {
       view.query = event.target.value.trim();
+      view.topic = '';
       view.visible = 40;
       render(root);
+    });
+    root.querySelector('#lab-topic').addEventListener('change',event=>{
+      view.topic=event.target.value;view.visible=40;render(root);
     });
     root.addEventListener('click', event => {
       const button = event.target.closest('button');
@@ -176,7 +194,13 @@
   };
 
   window.openPatternLibrary = function openPatternLibrary() {
-    view.section='patterns';view.query='';view.visible=40;
+    view.section='patterns';view.query='';view.topic='';view.visible=40;
+    show('lab');
+    document.querySelector('#lab-section-title')?.scrollIntoView({block:'start'});
+  };
+
+  window.openGrammarLibrary = function openGrammarLibrary() {
+    view.section='rules';view.query='';view.topic='';view.visible=40;
     show('lab');
     document.querySelector('#lab-section-title')?.scrollIntoView({block:'start'});
   };
