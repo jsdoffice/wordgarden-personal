@@ -1,0 +1,9 @@
+Word Garden Everyday English audio
+
+1000 original English sentences with app-authored Korean translations.
+Voice: am_michael (Michael), American English male synthetic speech.
+Engine/model: Kokoro-82M v1.0, kokoro-onnx, generated locally without a paid API.
+Existing provenance, model/voices hashes and licenses remain in KOKORO-NOTICE.txt, KOKORO-SOURCE.json, KOKORO-APACHE-2.0.txt and KOKORO-ONNX-MIT.txt in this directory.
+Content and references: ../everyday-data.json, ../everyday-sources.json.
+Cue and audio file hashes: ../everyday-audio.json.
+These are original practice sentences informed by official educational usage references, not quoted VOA/NPR news sentences or institution-certified examples.
