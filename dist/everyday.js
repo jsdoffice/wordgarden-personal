@@ -1,96 +1,67 @@
-/* Everyday English: original bilingual practice, with official usage references. */
+/* Original everyday English: mobile reading cards and existing practice/audio. */
 (() => {
   'use strict';
-  const E = {topic:'', query:'', view:'card', index:0, visible:20, reveal:true, mode:'cards'};
-  const bank = () => window.EVERYDAY_BANK || [];
-  const sources = () => window.EVERYDAY_SOURCES || [];
-  const normal = text => String(text || '').toLocaleLowerCase().trim();
-  const filtered = () => bank().filter(item => (!E.topic || item.topic === E.topic) && (!E.query || normal(`${item.english} ${item.korean} ${item.note}`).includes(normal(E.query))));
-  const topicOptions = selected => '<option value="">모든 상황</option>' + [...new Set(bank().map(item => item.topic))].map(topic => `<option value="${esc(topic)}" ${topic === selected ? 'selected' : ''}>${esc(topic)}</option>`).join('');
-  function progressCount() {
-    const progress = state.progress || {};
-    return bank().filter(item => {
-      const suffix = item.id.replace(/^everyday-/, '');
-      return progress[`ec${suffix}`]?.attempts > 0 || progress[`et${suffix}`]?.attempts > 0;
-    }).length;
+  const E={topic:'',query:'',view:'card',index:0,visible:20,reveal:true,mode:'cards',filters:false,audioOptions:false};
+  const bank=()=>window.EVERYDAY_BANK||[],sources=()=>window.EVERYDAY_SOURCES||[];
+  const normal=text=>String(text||'').toLocaleLowerCase().trim();
+  const filtered=()=>bank().filter(item=>(!E.topic||item.topic===E.topic)&&(!E.query||normal(`${item.english} ${item.korean} ${item.note}`).includes(normal(E.query))));
+  const topicOptions=selected=>'<option value="">모든 상황</option>'+[...new Set(bank().map(item=>item.topic))].map(topic=>`<option value="${esc(topic)}" ${topic===selected?'selected':''}>${esc(topic)}</option>`).join('');
+  function progressCount(){const progress=state.progress||{};return bank().filter(item=>{const n=item.id.replace(/^everyday-/,'');return progress[`ec${n}`]?.attempts>0||progress[`et${n}`]?.attempts>0;}).length;}
+  function startPractice(sourceId){
+    const ids=new Set(filtered().map(item=>item.id));
+    const items=(window.everydayLearningItems?.()||[]).filter(item=>ids.has(item.sourceId)&&(!sourceId||item.sourceId===sourceId));
+    if(!items.length){toast('학습할 문장이 없어요.');return;}
+    window.MobileUI?.cardMode(false);startTranslation(items,E.mode);
   }
-  function startPractice(sourceId) {
-    const visibleIds = new Set(filtered().map(item => item.id));
-    const items = (window.everydayLearningItems?.() || []).filter(item => visibleIds.has(item.sourceId) && (!sourceId || item.sourceId === sourceId));
-    if (!items.length) { toast('학습할 문장이 없어요.'); return; }
-    startTranslation(items, E.mode);
+  function references(item){return(item.sourceIds||[]).map(id=>sources().find(source=>source.id===id)).filter(Boolean).flatMap(source=>{try{const url=new URL(source.url);if(url.protocol!=='https:'||!['learnenglish.britishcouncil.org','learnenglishteens.britishcouncil.org','dictionary.cambridge.org','americanenglish.state.gov','www.americanenglish.org','americanenglish.org'].includes(url.hostname))return[];return[`<a href="${esc(url.href)}" target="_blank" rel="noopener noreferrer">${esc(source.title)} ↗</a>`];}catch{return[];}}).join('');}
+  function card(item){return`<article class="card everyday-card sentence-card" data-everyday-id="${esc(item.id)}"><div class="sentence-card-meta"><span class="pill">${esc(item.topic)}</span><details class="everyday-reference sentence-details" data-everyday-details="${esc(item.id)}"><summary>해설·출처</summary><div class="sentence-detail-panel"><button class="text-btn sentence-panel-close" data-everyday-close-detail="${esc(item.id)}">닫기 ×</button><h3>표현과 용법</h3><p class="everyday-note" ${!E.reveal?'hidden':''}>${esc(item.note)}</p><p>자체 작성 예문·번역입니다. 공식 자료는 용법 참고용이에요.</p>${references(item)}</div></details></div><div class="sentence-copy" data-language="${E.reveal?'english':'korean'}"><p class="everyday-english sentence-english" lang="en" ${!E.reveal?'hidden':''}>${esc(item.english)}</p><p class="everyday-korean sentence-korean">${esc(item.korean)}</p></div><div class="sentence-card-actions"><button class="listen" data-everyday-listen="${esc(item.id)}">듣기</button><button class="primary" data-everyday-practice="${esc(item.id)}" aria-label="이 문장 연습">연습하기</button><button class="secondary" data-everyday-speak="${esc(item.id)}">말하기</button><button class="secondary" data-everyday-score="${esc(item.id)}">발음 평가</button></div></article>`;}
+  function queueMatches(items){const ids=new Set(TranslationAudio.queue.map(item=>item.sourceId||item.id));return items.length===TranslationAudio.queue.length&&items.every(item=>ids.has(item.id));}
+  function turn(delta){
+    if(E.filters||E.audioOptions||document.querySelector('[data-everyday-details][open]'))return;
+    const size=filtered().length,next=Math.max(0,Math.min(size-1,E.index+delta));
+    if(!size||next===E.index)return;E.index=next;renderResults();
   }
-  function references(item) {
-    return (item.sourceIds || []).map(id => sources().find(source => source.id === id)).filter(Boolean).flatMap(source => {
-      try {
-        const url = new URL(source.url);
-        if (url.protocol !== 'https:' || !['learnenglish.britishcouncil.org','learnenglishteens.britishcouncil.org','dictionary.cambridge.org','americanenglish.state.gov','www.americanenglish.org','americanenglish.org'].includes(url.hostname)) return [];
-        return [`<a href="${esc(url.href)}" target="_blank" rel="noopener noreferrer">${esc(source.title)}</a>`];
-      } catch { return []; }
-    }).join('');
+  function setPanel(kind,open){const filter=kind==='filters';if(open){E.filters=false;E.audioOptions=false;document.querySelector('#everydayFilters').hidden=true;document.querySelector('#everydayAudioOptionsPanel').hidden=true;document.querySelector('#everydayFilterToggle').setAttribute('aria-expanded','false');document.querySelector('#everydayAudioOptions').setAttribute('aria-expanded','false');}E[filter?'filters':'audioOptions']=open;document.querySelector(filter?'#everydayFilters':'#everydayAudioOptionsPanel').hidden=!open;document.querySelector(filter?'#everydayFilterToggle':'#everydayAudioOptions').setAttribute('aria-expanded',String(open));}
+  function renderResults(){
+    const items=filtered();E.index=Math.max(0,Math.min(E.index,items.length-1));
+    document.querySelector('#everydayCount').textContent=`${items.length.toLocaleString('ko-KR')}문장`;
+    document.querySelector('#everydayLearnedCount').textContent=`${progressCount().toLocaleString('ko-KR')} / ${bank().length.toLocaleString('ko-KR')} 학습`;
+    document.querySelector('#everydayPracticeInfo').textContent=items.length?`${items.length.toLocaleString('ko-KR')}문장 · 오늘의 학습에 반영`:'검색 결과가 없어요';
+    const selected=E.view==='card'?items.slice(E.index,E.index+1):items.slice(0,E.visible);
+    document.querySelector('#everydayResults').innerHTML=selected.length?selected.map(card).join(''):'<section class="card sentence-empty"><h2>문장이 없어요</h2><button class="secondary" id="everydayResetFilters">필터 초기화</button></section>';
+    document.querySelector('#everydayPagination').innerHTML=E.view==='card'?`<button class="secondary" id="everydayPrevious" ${!items.length||E.index===0?'disabled':''}>← 이전</button><span>${items.length?E.index+1:0} / ${items.length.toLocaleString('ko-KR')}</span><button class="secondary" id="everydayNext" ${!items.length||E.index>=items.length-1?'disabled':''}>다음 →</button>`:(E.visible<items.length?`<button class="secondary" id="everydayMore">더 보기 (${Math.min(E.visible,items.length)} / ${items.length})</button>`:'');
+    document.querySelector('#everydayPrevious')?.addEventListener('click',()=>turn(-1));document.querySelector('#everydayNext')?.addEventListener('click',()=>turn(1));
+    document.querySelector('#everydayMore')?.addEventListener('click',()=>{E.visible+=20;renderResults();});
+    document.querySelector('#everydayResetFilters')?.addEventListener('click',()=>{E.topic='';E.query='';E.index=0;everydayPage();});
+    for(const b of document.querySelectorAll('[data-everyday-listen]'))b.onclick=()=>{const item=bank().find(row=>row.id===b.dataset.everydayListen);if(item)TranslationAudio.start([item],0,true);};
+    for(const b of document.querySelectorAll('[data-everyday-speak]'))b.onclick=()=>window.openSpeakingPractice('everyday',b.dataset.everydaySpeak);
+    for(const b of document.querySelectorAll('[data-everyday-score]'))b.onclick=()=>window.Pronunciation.open('everyday',b.dataset.everydayScore);
+    for(const b of document.querySelectorAll('[data-everyday-practice]'))b.onclick=()=>startPractice(b.dataset.everydayPractice);
+    for(const b of document.querySelectorAll('[data-everyday-close-detail]'))b.onclick=()=>{document.querySelector(`[data-everyday-details="${b.dataset.everydayCloseDetail}"]`).open=false;};
+    for(const id of ['everydayStart','everydayPlay','everydayRandom','everydayOpenSpeaking','everydayOpenPronunciation'])document.querySelector('#'+id).disabled=!items.length;
   }
-  function card(item, number) {
-    return `<article class="card everyday-card" data-everyday-id="${esc(item.id)}"><div class="section-head"><span class="pill">${esc(item.topic)}</span><span class="muted">${number} · ${esc(item.level)}</span></div><p class="everyday-korean">${esc(item.korean)}</p><p class="everyday-english" lang="en" ${!E.reveal ? 'hidden' : ''}>${esc(item.english)}</p><p class="everyday-note" ${!E.reveal ? 'hidden' : ''}>${esc(item.note)}</p><div class="actions"><button class="primary" data-everyday-practice="${esc(item.id)}">이 문장 연습</button><button class="listen" data-everyday-listen="${esc(item.id)}">문장 듣기</button><button class="secondary" data-everyday-speak="${esc(item.id)}">따라 말하기</button><button class="secondary" data-everyday-score="${esc(item.id)}">발음 평가</button></div><details class="everyday-reference"><summary>표현·용법 참고 자료</summary><p>공식 교육 자료의 표현과 용법을 참고해 문장과 한국어 번역을 자체 작성했어요. 아래 자료를 인용한 원문이나 해당 기관이 검수한 예문은 아닙니다.</p>${references(item)}</details></article>`;
-  }
-  function queueMatches(items) {
-    const ids = new Set(TranslationAudio.queue.map(item => item.sourceId || item.id));
-    return items.length === TranslationAudio.queue.length && items.every(item => ids.has(item.id));
-  }
-  function renderResults() {
-    const items = filtered();
-    E.index = Math.max(0, Math.min(E.index, items.length - 1));
-    document.querySelector('#everydayCount').textContent = `${items.length.toLocaleString('ko-KR')}문장${E.view === 'card' && items.length ? ` · ${E.index + 1} / ${items.length}` : ''}`;
-    document.querySelector('#everydayLearnedCount').textContent = `${progressCount().toLocaleString('ko-KR')} / ${bank().length.toLocaleString('ko-KR')}`;
-    document.querySelector('#everydayPracticeInfo').textContent = items.length ? `선택한 상황과 검색 결과 ${items.length.toLocaleString('ko-KR')}문장에서 출제해요.` : '연습할 문장이 없어요. 검색어나 상황을 바꿔 보세요.';
-    const selected = E.view === 'card' ? items.slice(E.index,E.index + 1) : items.slice(0,E.visible);
-    document.querySelector('#everydayResults').innerHTML = selected.length ? selected.map((item, index) => card(item,E.view === 'card' ? E.index + 1 : index + 1)).join('') : '<section class="card empty"><h2>찾는 문장이 없어요</h2><p>검색어나 상황을 바꿔 보세요.</p></section>';
-    document.querySelector('#everydayPagination').innerHTML = E.view === 'card' ? `<button class="secondary" id="everydayPrevious" ${!items.length || E.index === 0 ? 'disabled' : ''}>이전</button><span>${items.length ? E.index + 1 : 0} / ${items.length}</span><button class="primary" id="everydayNext" ${!items.length || E.index >= items.length - 1 ? 'disabled' : ''}>다음</button>` : (E.visible < items.length ? `<button class="secondary" id="everydayMore">더 보기 (${Math.min(E.visible,items.length)} / ${items.length})</button>` : '');
-    document.querySelector('#everydayPrevious')?.addEventListener('click', () => { E.index--; renderResults(); });
-    document.querySelector('#everydayNext')?.addEventListener('click', () => { E.index++; renderResults(); });
-    document.querySelector('#everydayMore')?.addEventListener('click', () => { E.visible += 20; renderResults(); });
-    for (const control of document.querySelectorAll('[data-everyday-listen]')) control.onclick = () => {
-      const item = bank().find(row => row.id === control.dataset.everydayListen);
-      if (item) TranslationAudio.start([item],0,true);
-    };
-    for (const control of document.querySelectorAll('[data-everyday-speak]')) control.onclick = () => window.openSpeakingPractice('everyday',control.dataset.everydaySpeak);
-    for (const control of document.querySelectorAll('[data-everyday-score]')) control.onclick = () => window.Pronunciation.open('everyday',control.dataset.everydayScore);
-    for (const control of document.querySelectorAll('[data-everyday-practice]')) {
-      control.disabled = !items.length;
-      control.onclick = () => startPractice(control.dataset.everydayPractice);
-    }
-    for (const id of ['everydayStart','everydayPlay','everydayRandom','everydayOpenSpeaking','everydayOpenPronunciation']) document.querySelector('#'+id).disabled = !items.length;
-  }
-  window.everydayPage = function () {
-    main.innerHTML = title('EVERYDAY ENGLISH','매일 쓰는 영어, 한 문장씩.','생활영어 1,000문장을 20가지 상황으로 나눴어요. 한국어를 보고 영어 문장으로 만들어 보세요.') + `
-      <section class="card everyday-intro"><span class="pill">A2–B1 중심 · 생활영어 1,000문장</span><p>British Council·Cambridge·미국 국무부의 공식 교육 자료를 참고한 자체 제작 학습 문장입니다. 문장마다 참고 자료를 확인하고, 같은 문장으로 말하기와 발음 평가를 이어갈 수 있어요.</p><div class="actions"><button class="secondary" id="everydayOpenSpeaking">생활영어 말하기</button><button class="secondary" id="everydayOpenPronunciation">생활영어 발음 평가</button></div></section>
-      <div class="everyday-filters"><label>상황<select id="everydayTopic">${topicOptions(E.topic)}</select></label><label>문장 찾기<input id="everydaySearch" type="search" value="${esc(E.query)}" placeholder="영어 또는 한국어 검색" autocomplete="off"></label></div>
-      <section class="card everyday-practice" aria-labelledby="everydayPracticeTitle"><div class="section-head"><h2 id="everydayPracticeTitle">생활영어 번역 연습</h2><div class="everyday-learning-count"><span>학습한 문장</span><strong id="everydayLearnedCount" role="status" aria-live="polite"></strong></div></div><div class="everyday-practice-controls"><label for="everydayMode">문제 풀이 방식<select id="everydayMode" aria-describedby="everydayPracticeInfo"><option value="cards" ${E.mode === 'cards' ? 'selected' : ''}>카드 배열</option><option value="typing" ${E.mode === 'typing' ? 'selected' : ''}>직접 입력</option><option value="mixed" ${E.mode === 'mixed' ? 'selected' : ''}>카드 배열·직접 입력 번갈아</option></select></label><button class="primary" id="everydayStart">학습 시작 ↗</button></div><p id="everydayPracticeInfo" class="muted"></p><p class="everyday-practice-note">생활영어 연습도 오늘의 학습 기록과 복습에 함께 반영돼요.</p></section>
-      <div class="everyday-toolbar"><div role="group" aria-label="생활영어 읽기 보기 방식"><button class="secondary" id="everydayCardView" aria-pressed="${E.view === 'card'}">카드 보기</button><button class="secondary" id="everydayListView" aria-pressed="${E.view === 'list'}">목록 보기</button></div><label><input id="everydayReveal" type="checkbox" ${E.reveal ? 'checked' : ''}> 영어·표현 설명 보기</label><p id="everydayCount" role="status"></p></div>
-      <section class="card everyday-player"><div class="section-head"><h2>생활영어 연속 듣기</h2><span class="pill">Michael · 미국 영어 남성 합성음성</span></div><p id="everydayNow" lang="en">선택한 상황과 검색 결과를 이어서 들어 보세요.</p><p id="everydayNowKo" class="muted"></p><div class="actions"><button class="primary" id="everydayPlay">연속 듣기</button><button class="secondary" id="everydayPause">일시 정지</button><button class="secondary" id="everydayAudioPrevious" aria-label="이전 음성">이전 문장</button><button class="secondary" id="everydayAudioNext" aria-label="다음 음성">다음 문장</button><button class="secondary" id="everydayRandom">무작위 카드</button></div><p class="muted" id="everydayAudioStatus" role="status">음성 파일은 인터넷으로 재생해요. 텍스트는 저장 후 오프라인에서도 볼 수 있어요.</p></section><section id="everydayResults" class="everyday-results" aria-label="생활영어 문장"></section><div id="everydayPagination" class="everyday-pagination"></div>`;
-    document.querySelector('#everydayTopic').onchange = event => { E.topic = event.target.value; E.index = 0; E.visible = 20; renderResults(); };
-    document.querySelector('#everydaySearch').oninput = event => { E.query = event.target.value; E.index = 0; E.visible = 20; renderResults(); };
-    document.querySelector('#everydayMode').onchange = event => { if (['cards','typing','mixed'].includes(event.target.value)) E.mode = event.target.value; };
-    document.querySelector('#everydayStart').onclick = () => startPractice();
-    for (const [id,view] of [['everydayCardView','card'],['everydayListView','list']]) document.querySelector('#'+id).onclick = () => { E.view = view; E.index = 0; E.visible = 20; everydayPage(); };
-    document.querySelector('#everydayReveal').onchange = event => { E.reveal = event.target.checked; renderResults(); };
-    document.querySelector('#everydayRandom').onclick = () => { const size = filtered().length; if (size) { E.view = 'card'; E.index = Math.floor(Math.random()*size); everydayPage(); } };
-    document.querySelector('#everydayPlay').onclick = () => { const items = filtered(); if (queueMatches(items)) TranslationAudio.resume(); else TranslationAudio.start(items); };
-    document.querySelector('#everydayPause').onclick = () => TranslationAudio.pause();
-    document.querySelector('#everydayAudioPrevious').onclick = () => { if (TranslationAudio.queue[0]?.id?.startsWith('everyday-')) TranslationAudio.step(-1); };
-    document.querySelector('#everydayAudioNext').onclick = () => { if (TranslationAudio.queue[0]?.id?.startsWith('everyday-')) TranslationAudio.step(1); };
-    document.querySelector('#everydayOpenSpeaking').onclick = () => window.openSpeakingPractice('everyday',filtered()[E.index]?.id);
-    document.querySelector('#everydayOpenPronunciation').onclick = () => window.Pronunciation.open('everyday',filtered()[E.index]?.id);
-    renderResults();
+  window.everydayPage=function(){
+    E.filters=false;E.audioOptions=false;window.MobileUI?.cardMode(E.view==='card');
+    main.innerHTML=`<section class="sentence-browser everyday-browser ${E.view==='card'?'is-card':'is-list'}" aria-label="생활영어 1,000문장">
+      <header class="sentence-browser-header"><div><h1>생활영어</h1><p id="everydayLearnedCount" class="sentence-learning-count" role="status"></p></div><button class="secondary sentence-filter-toggle" id="everydayFilterToggle" aria-expanded="false" aria-controls="everydayFilters">필터</button></header>
+      <div class="browser-popover" id="everydayFilters" hidden><div class="sentence-panel-heading"><h2>문장 찾기</h2><button class="text-btn" id="everydayFilterClose">닫기 ×</button></div><div class="everyday-filters"><label>상황<select id="everydayTopic">${topicOptions(E.topic)}</select></label><label>검색<input id="everydaySearch" type="search" value="${esc(E.query)}" placeholder="영어·한국어" autocomplete="off"></label></div><div class="actions"><button class="secondary" id="everydayRandom">무작위 카드</button><button class="primary" id="everydayFilterDone">적용</button></div></div>
+      <div class="sentence-viewbar"><div class="sentence-view-switch" role="group" aria-label="읽기 보기 방식"><button id="everydayCardView" aria-pressed="${E.view==='card'}">카드 보기</button><button id="everydayListView" aria-pressed="${E.view==='list'}">목록 보기</button></div><label class="sentence-reveal"><input id="everydayReveal" type="checkbox" ${E.reveal?'checked':''}> <span class="sentence-reveal-normal">영어 보기</span><span class="sentence-reveal-compact">영어 ↔ 한국어</span></label><span id="everydayCount" class="sentence-count"></span></div>
+      <div class="sentence-practicebar"><select id="everydayMode" aria-label="문제 풀이 방식"><option value="cards" ${E.mode==='cards'?'selected':''}>카드 배열</option><option value="typing" ${E.mode==='typing'?'selected':''}>직접 입력</option><option value="mixed" ${E.mode==='mixed'?'selected':''}>번갈아 연습</option></select><button class="primary" id="everydayStart">학습 시작</button><span id="everydayPracticeInfo" class="sentence-sr-only"></span></div>
+      <section id="everydayResults" class="everyday-results sentence-stage" aria-label="생활영어 문장" tabindex="0"></section><div id="everydayPagination" class="everyday-pagination sentence-pagination"></div>
+      <section class="sentence-audio everyday-player" aria-label="생활영어 연속 듣기"><div class="sentence-audio-controls"><button class="secondary" id="everydayAudioPrevious" aria-label="이전 음성">⏮</button><button class="primary" id="everydayPlay">연속 듣기</button><button class="secondary" id="everydayAudioNext" aria-label="다음 음성">⏭</button><button class="secondary" id="everydayAudioOptions" aria-controls="everydayAudioOptionsPanel" aria-expanded="false">옵션</button></div><p id="everydayAudioStatus" class="sentence-audio-status" role="status">Michael · 미국 영어</p><div id="everydayAudioOptionsPanel" class="browser-popover" hidden><div class="sentence-panel-heading"><h2>듣기·말하기</h2><button class="text-btn" id="everydayAudioClose">닫기 ×</button></div><p id="everydayNow" lang="en">문장을 골라 들을 수 있어요.</p><p id="everydayNowKo" class="muted"></p><div class="actions"><button class="secondary" id="everydayPause">일시 정지</button><button class="secondary" id="everydayOpenSpeaking">생활영어 말하기</button><button class="secondary" id="everydayOpenPronunciation">생활영어 발음 평가</button></div><p class="sentence-audio-note">음성 재생은 인터넷 연결이 필요해요.</p></div></section>
+    </section>`;
+    document.querySelector('#everydayFilterToggle').onclick=()=>setPanel('filters',!E.filters);for(const id of ['everydayFilterClose','everydayFilterDone'])document.querySelector('#'+id).onclick=()=>setPanel('filters',false);
+    document.querySelector('#everydayAudioOptions').onclick=()=>setPanel('audio',!E.audioOptions);document.querySelector('#everydayAudioClose').onclick=()=>setPanel('audio',false);
+    document.querySelector('#everydayTopic').onchange=e=>{E.topic=e.target.value;E.index=0;E.visible=20;renderResults();};document.querySelector('#everydaySearch').oninput=e=>{E.query=e.target.value;E.index=0;E.visible=20;renderResults();};
+    document.querySelector('#everydayMode').onchange=e=>{if(['cards','typing','mixed'].includes(e.target.value))E.mode=e.target.value;};document.querySelector('#everydayStart').onclick=()=>startPractice();
+    for(const[id,view]of[['everydayCardView','card'],['everydayListView','list']])document.querySelector('#'+id).onclick=()=>{E.view=view;E.index=0;E.visible=20;everydayPage();};
+    document.querySelector('#everydayReveal').onchange=e=>{E.reveal=e.target.checked;renderResults();};
+    document.querySelector('#everydayRandom').onclick=()=>{const size=filtered().length;if(size){E.view='card';E.index=Math.floor(Math.random()*size);everydayPage();}};
+    document.querySelector('#everydayPlay').onclick=()=>{const items=filtered();if(queueMatches(items)){if(TranslationAudio.playing)TranslationAudio.pause();else TranslationAudio.resume();}else TranslationAudio.start(items);};
+    document.querySelector('#everydayPause').onclick=()=>TranslationAudio.pause();
+    document.querySelector('#everydayAudioPrevious').onclick=()=>{if((TranslationAudio.queue[0]?.sourceId||TranslationAudio.queue[0]?.id||'').startsWith('everyday-'))TranslationAudio.step(-1);};document.querySelector('#everydayAudioNext').onclick=()=>{if((TranslationAudio.queue[0]?.sourceId||TranslationAudio.queue[0]?.id||'').startsWith('everyday-'))TranslationAudio.step(1);};
+    document.querySelector('#everydayOpenSpeaking').onclick=()=>window.openSpeakingPractice('everyday',filtered()[E.index]?.id);document.querySelector('#everydayOpenPronunciation').onclick=()=>window.Pronunciation.open('everyday',filtered()[E.index]?.id);
+    renderResults();if(E.view==='card')window.MobileUI?.bindSwipe(document.querySelector('#everydayResults'),{prev:()=>turn(-1),next:()=>turn(1)});
   };
-  window.Everyday = {
-    items:bank,
-    topicOptions,
-    audioUpdated(item,status) {
-      if (!document.querySelector('#everydayNow') || !item?.id?.startsWith('everyday-')) return;
-      document.querySelector('#everydayNow').textContent = item.english;
-      document.querySelector('#everydayNowKo').textContent = item.korean;
-      document.querySelector('#everydayAudioStatus').textContent = status;
-      document.querySelector('#everydayPlay').textContent = queueMatches(filtered()) ? (TranslationAudio.playing ? '재생 중' : '이어 듣기') : '연속 듣기';
-    }
-  };
+  window.Everyday={items:bank,topicOptions,audioUpdated(item,status){if(!document.querySelector('#everydayNow')||!(item?.sourceId||item?.id||'').startsWith('everyday-'))return;document.querySelector('#everydayNow').textContent=item.english;document.querySelector('#everydayNowKo').textContent=item.korean;document.querySelector('#everydayAudioStatus').textContent=status;document.querySelector('#everydayPlay').textContent=queueMatches(filtered())?(TranslationAudio.playing?'일시 정지':'이어 듣기'):'연속 듣기';}};
 })();

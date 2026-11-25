@@ -1,13 +1,13 @@
 {
   "id": "/",
-  "name": "단어정원 · 나의 영어 루틴",
-  "short_name": "단어정원",
+  "name": "정보카 · 영어 학습",
+  "short_name": "정보카",
   "lang": "ko",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#f7f8fc",
-  "theme_color": "#263cff",
+  "background_color": "#f4f7fb",
+  "theme_color": "#3178ef",
   "icons": [
     {
       "src": "icon-192.png",

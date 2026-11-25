@@ -32,45 +32,59 @@
     const details = [s.author, s.date?.slice(0, 10)].filter(Boolean).join(' · ');
     return `<div class="tr-source"><a href="${esc(url.href)}" target="_blank" rel="noopener noreferrer">VOA 원문 ↗ · ${esc(s.title || 'Learning English')}</a>${details ? `<span>${esc(details)}</span>` : ''}</div>`;
   }
-  let topic = 'all', search = '', visible = 12, mode = 'cards';
-  const bank = () => window.TRANSLATION_BANK || [];
-  const filtered = () => bank().filter(w => (topic === 'all' || w.topic === topic) && (!search || `${w.english} ${w.korean} ${w.grammar}`.toLowerCase().includes(search.toLowerCase())));
-  const progressCount = () => bank().filter(w => state.progress[w.id]?.attempts > 0 || state.progress[w.id.replace(/^tr/,'tt')]?.attempts > 0).length;
-  const badgeText = () => `${progressCount().toLocaleString()} / ${bank().length.toLocaleString()}문장 학습`;
-
-  window.translationPage = function () {
-    const topics = [...new Set(bank().map(w => w.topic))];
-    main.innerHTML = title('VOA ORIGINALS', '세계의 이야기를, 나의 영어로.', 'VOA Learning English 글 700편에서 고른 3,000문장을 한국어 문제와 영어 정답으로 익히세요. 중급 중심 B1–B2 수준입니다.') + `
-      <section class="card tr-intro"><div><span class="pill">중급 중심 · B1–B2</span><h2>실제 원문으로 완성하는 영어</h2><p class="muted">생활·문화·과학·사회 등 다양한 주제의 VOA 자체 제작 문장.<br>카드 배열과 직접 입력 모두 오늘의 목표와 복습에 반영돼요.</p><p class="tr-completed">${badgeText()}</p>${state.translationArchives?.length?'<p class="tr-small">VOA 글 700편으로 확장했어요. 바뀐 문장의 이전 복습 기록은 백업에 보관하고, 나머지 복습과 누적 학습 기록은 유지합니다.</p>':''}</div><div class="tr-start-options"><label for="translationMode">연습 방식</label><select id="translationMode"><option value="cards" ${mode === 'cards' ? 'selected' : ''}>단어 카드 배열</option><option value="typing" ${mode === 'typing' ? 'selected' : ''}>처음부터 직접 입력</option><option value="mixed" ${mode === 'mixed' ? 'selected' : ''}>두 방식 번갈아 연습</option></select><button class="primary" id="translationStart">번역 학습 시작 ↗</button></div></section>
-      <div class="tr-filters"><label>주제<select id="translationTopic"><option value="all">모든 주제</option>${topics.map(t => `<option value="${esc(t)}" ${topic === t ? 'selected' : ''}>${esc(t)}</option>`).join('')}</select></label><label>문장 찾기<input id="translationSearch" type="search" value="${esc(search)}" placeholder="한국어, 영어, 문법 검색"></label></div>
-      <section class="card tr-player" aria-label="미국 영어 연속 듣기"><div class="section-head"><div><div class="eyebrow">LISTEN & SHADOW</div><h2>미국 영어 연속 듣기</h2></div><span class="pill">Michael · 미국 영어 남성 합성음성</span></div><p class="muted">3,000문장의 실제 음성 파일을 재생합니다. 선택한 주제·검색 결과를 이어 듣거나 한 문장씩 반복해 보세요.</p><div class="tr-now"><p id="tr-now-en" lang="en">재생을 누르면 첫 문장부터 시작해요.</p><p id="tr-now-ko" class="muted"></p><div id="tr-now-source"></div></div><div class="tr-audio-progress"><div id="tr-audio-bar"></div></div><div class="tr-player-buttons"><button class="secondary" id="tr-prev" aria-label="이전 문장">⏮</button><button class="primary" id="tr-play">▶ 연속 듣기</button><button class="secondary" id="tr-next" aria-label="다음 문장">⏭</button></div><div class="tr-player-options"><label>속도<select id="tr-speed">${[.75,.9,1,1.1,1.25].map(r => `<option value="${r}" ${r === TranslationAudio.rate ? 'selected' : ''}>${r}×</option>`).join('')}</select></label><label><input type="checkbox" id="tr-repeat" ${TranslationAudio.repeat ? 'checked' : ''}> 한 문장 반복</label><label><input type="checkbox" id="tr-shuffle" ${TranslationAudio.random ? 'checked' : ''}> 무작위 재생</label></div><p id="tr-audio-status" role="status" class="muted">음성 파일은 인터넷으로 재생합니다. 문장 학습은 저장 후 오프라인에서도 가능해요.</p><p class="tr-small">끝까지 들으면 처음부터 이어 재생해요. 듣기만 한 문장은 학습 완료로 집계하지 않습니다. iPhone의 화면 잠금·절전 상태에서는 연속 재생이 중단될 수 있어요.</p></section>
-      <div class="section-head tr-list-head"><h2>문장 둘러보기</h2><span id="translationCount" class="muted"></span></div><div id="translationList" class="tr-library"></div><p class="tr-small">VOA 자체 제작 원문을 바탕으로 한국어 문제와 학습 해설을 만들었습니다. 영어 정답은 원문의 어순과 표현을 그대로 사용하며, 기사에서 고른 짧은 문장들로 연습합니다. <a href="translation-data.json" download>전체 문장 내려받기</a> · <a href="translation-sources.json" download>기사별 출처</a> · <a href="translation-attribution.txt" target="_blank" rel="noopener">원문 이용 안내</a> · <a href="translation-audio-attribution.txt" target="_blank" rel="noopener">음성 출처</a></p>`;
-    document.querySelector('#translationStart').onclick = () => startTranslation(filtered(), mode);
-    document.querySelector('#translationMode').onchange = e => { mode = e.target.value; };
-    document.querySelector('#translationTopic').onchange = e => { topic = e.target.value; visible = 12; TranslationAudio.stop(); renderLibrary(); };
-    document.querySelector('#translationSearch').oninput = e => { search = e.target.value; visible = 12; TranslationAudio.stop(); renderLibrary(); };
-    document.querySelector('#tr-play').onclick = () => { if (TranslationAudio.playing) TranslationAudio.pause(); else if (TranslationAudio.queue.length) TranslationAudio.resume(); else TranslationAudio.start(filtered()); };
-    document.querySelector('#tr-prev').onclick = () => TranslationAudio.step(-1);
-    document.querySelector('#tr-next').onclick = () => TranslationAudio.step(1);
-    document.querySelector('#tr-speed').onchange = e => TranslationAudio.setRate(Number(e.target.value));
-    document.querySelector('#tr-repeat').onchange = e => { TranslationAudio.repeat = e.target.checked; };
-    document.querySelector('#tr-shuffle').onchange = e => { TranslationAudio.random = e.target.checked; if (TranslationAudio.queue.length) TranslationAudio.start(filtered()); };
-    renderLibrary(); updatePlayer();
+  let topic='all',search='',visible=12,mode='cards',view='card',cardIndex=0,reveal=true,filtersOpen=false,audioOptionsOpen=false;
+  const bank=()=>window.TRANSLATION_BANK||[];
+  const filtered=()=>bank().filter(w=>(topic==='all'||w.topic===topic)&&(!search||`${w.english} ${w.korean} ${w.grammar}`.toLowerCase().includes(search.toLowerCase())));
+  const progressCount=()=>bank().filter(w=>state.progress[w.id]?.attempts>0||state.progress[w.id.replace(/^tr/,'tt')]?.attempts>0).length;
+  const badgeText=()=>`${progressCount().toLocaleString()} / ${bank().length.toLocaleString()} 학습`;
+  function practiceRows(rows){if(!rows.length){toast('학습할 문장이 없어요.');return;}window.MobileUI?.cardMode(false);startTranslation(rows,mode);}
+  function turnCard(delta){
+    if(filtersOpen||audioOptionsOpen||document.querySelector('[data-tr-details][open]'))return;
+    const size=filtered().length,next=Math.max(0,Math.min(size-1,cardIndex+delta));if(!size||next===cardIndex)return;cardIndex=next;renderLibrary();
+  }
+  function panel(kind,open){
+    const filter=kind==='filters';
+    if(open){filtersOpen=false;audioOptionsOpen=false;document.querySelector('#translationFilters').hidden=true;document.querySelector('#trAudioOptionsPanel').hidden=true;document.querySelector('#translationFilterToggle').setAttribute('aria-expanded','false');document.querySelector('#trAudioOptions').setAttribute('aria-expanded','false');}
+    if(filter)filtersOpen=open;else audioOptionsOpen=open;
+    document.querySelector(filter?'#translationFilters':'#trAudioOptionsPanel').hidden=!open;
+    document.querySelector(filter?'#translationFilterToggle':'#trAudioOptions').setAttribute('aria-expanded',String(open));
+  }
+  function readingCard(w){return`<article class="card tr-library-card sentence-card" data-tr-card="${esc(w.id)}"><div class="sentence-card-meta"><span class="pill">${esc(w.topic)}</span><details class="sentence-details" data-tr-details="${esc(w.id)}"><summary>해설·출처</summary><div class="sentence-detail-panel"><button class="text-btn sentence-panel-close" data-tr-close-detail="${esc(w.id)}">닫기 ×</button><h3>표현과 원문</h3><p>${esc(w.note)}</p>${sourceHTML(w)}</div></details></div><div class="sentence-copy" data-language="${reveal?'english':'korean'}"><p class="sentence-english" lang="en" ${!reveal?'hidden':''}>${esc(w.english)}</p><p class="sentence-korean">${esc(w.korean)}</p></div><div class="sentence-card-actions tr-reading-actions"><button class="listen" data-tr-listen="${esc(w.id)}">문장 듣기</button><button class="primary" data-tr-practice="${esc(w.id)}">이 문장 연습</button></div></article>`;}
+  window.translationPage=function(){
+    const topics=[...new Set(bank().map(w=>w.topic))];filtersOpen=false;audioOptionsOpen=false;window.MobileUI?.cardMode(view==='card');
+    main.innerHTML=`<section class="sentence-browser translation-browser ${view==='card'?'is-card':'is-list'}" aria-label="VOA 번역 연습 3,000문장">
+      <header class="sentence-browser-header"><div><h1>번역 연습</h1><p class="sentence-learning-count tr-completed">${badgeText()}</p></div><button class="secondary sentence-filter-toggle" id="translationFilterToggle" aria-expanded="false" aria-controls="translationFilters">필터</button></header>
+      <div id="translationFilters" class="browser-popover" hidden><div class="sentence-panel-heading"><h2>문장 찾기</h2><button class="text-btn" id="translationFilterClose">닫기 ×</button></div><div class="tr-filters"><label>주제<select id="translationTopic"><option value="all">모든 주제</option>${topics.map(t=>`<option value="${esc(t)}" ${topic===t?'selected':''}>${esc(t)}</option>`).join('')}</select></label><label>검색<input id="translationSearch" type="search" value="${esc(search)}" placeholder="한국어·영어·문법"></label></div><button class="primary" id="translationFilterDone">적용</button></div>
+      <div class="sentence-viewbar"><div class="sentence-view-switch" role="group" aria-label="읽기 보기 방식"><button id="translationCardView" aria-pressed="${view==='card'}">카드 보기</button><button id="translationListView" aria-pressed="${view==='list'}">목록 보기</button></div><label class="sentence-reveal"><input id="translationReveal" type="checkbox" ${reveal?'checked':''}> <span class="sentence-reveal-normal">영어 보기</span><span class="sentence-reveal-compact">영어 ↔ 한국어</span></label><span id="translationCount" class="sentence-count"></span></div>
+      <div class="sentence-practicebar"><select id="translationMode" aria-label="문제 풀이 방식"><option value="cards" ${mode==='cards'?'selected':''}>카드 배열</option><option value="typing" ${mode==='typing'?'selected':''}>직접 입력</option><option value="mixed" ${mode==='mixed'?'selected':''}>번갈아 연습</option></select><button class="primary" id="translationStart">학습 시작</button></div>
+      <section id="translationList" class="tr-library sentence-stage" aria-label="번역 문장" tabindex="0"></section><div id="translationPagination" class="sentence-pagination"></div>
+      <section class="sentence-audio tr-player" aria-label="VOA 연속 듣기"><div class="sentence-audio-controls"><button class="secondary" id="tr-prev" aria-label="이전 음성">⏮</button><button class="primary" id="tr-play">연속 듣기</button><button class="secondary" id="tr-next" aria-label="다음 음성">⏭</button><button class="secondary" id="trAudioOptions" aria-controls="trAudioOptionsPanel" aria-expanded="false">옵션</button></div><div class="tr-audio-progress"><div id="tr-audio-bar"></div></div><p id="tr-audio-status" role="status" class="sentence-audio-status">Michael · 미국 영어</p><div class="browser-popover" id="trAudioOptionsPanel" hidden><div class="sentence-panel-heading"><h2>듣기 설정</h2><button class="text-btn" id="trAudioClose">닫기 ×</button></div><p id="tr-now-en" lang="en"></p><p id="tr-now-ko" class="muted"></p><div id="tr-now-source"></div><div class="tr-player-options"><label>속도<select id="tr-speed">${[.75,.9,1,1.1,1.25].map(r=>`<option value="${r}" ${r===TranslationAudio.rate?'selected':''}>${r}×</option>`).join('')}</select></label><label><input type="checkbox" id="tr-repeat" ${TranslationAudio.repeat?'checked':''}> 한 문장 반복</label><label><input type="checkbox" id="tr-shuffle" ${TranslationAudio.random?'checked':''}> 무작위 재생</label></div><p class="sentence-audio-note">음성 재생은 인터넷 연결이 필요해요.</p><details class="tr-small"><summary>자료·이용 안내</summary><p>VOA 자체 제작 원문 3,000문장 · 글 700편</p><a href="translation-data.json" download>전체 문장</a> · <a href="translation-sources.json" download>기사별 출처</a> · <a href="translation-attribution.txt" target="_blank" rel="noopener">원문 이용 안내</a> · <a href="translation-audio-attribution.txt" target="_blank" rel="noopener">음성 출처</a></details></div></section>
+    </section>`;
+    document.querySelector('#translationFilterToggle').onclick=()=>panel('filters',!filtersOpen);for(const id of ['translationFilterClose','translationFilterDone'])document.querySelector('#'+id).onclick=()=>panel('filters',false);
+    document.querySelector('#trAudioOptions').onclick=()=>panel('audio',!audioOptionsOpen);document.querySelector('#trAudioClose').onclick=()=>panel('audio',false);
+    document.querySelector('#translationStart').onclick=()=>practiceRows(filtered());document.querySelector('#translationMode').onchange=e=>{if(['cards','typing','mixed'].includes(e.target.value))mode=e.target.value;};
+    document.querySelector('#translationTopic').onchange=e=>{topic=e.target.value;visible=12;cardIndex=0;TranslationAudio.stop();renderLibrary();};document.querySelector('#translationSearch').oninput=e=>{search=e.target.value;visible=12;cardIndex=0;TranslationAudio.stop();renderLibrary();};
+    for(const[id,next]of[['translationCardView','card'],['translationListView','list']])document.querySelector('#'+id).onclick=()=>{view=next;visible=12;cardIndex=0;translationPage();};
+    document.querySelector('#translationReveal').onchange=e=>{reveal=e.target.checked;renderLibrary();};
+    document.querySelector('#tr-play').onclick=()=>{const rows=filtered(),ids=new Set(rows.map(w=>w.id)),same=rows.length===TranslationAudio.queue.length&&TranslationAudio.queue.every(w=>ids.has(w.sourceId||w.id));if(same&&TranslationAudio.playing)TranslationAudio.pause();else if(same&&rows.length)TranslationAudio.resume();else TranslationAudio.start(rows);};
+    document.querySelector('#tr-prev').onclick=()=>TranslationAudio.step(-1);document.querySelector('#tr-next').onclick=()=>TranslationAudio.step(1);
+    document.querySelector('#tr-speed').onchange=e=>TranslationAudio.setRate(Number(e.target.value));document.querySelector('#tr-repeat').onchange=e=>{TranslationAudio.repeat=e.target.checked;};document.querySelector('#tr-shuffle').onchange=e=>{TranslationAudio.random=e.target.checked;if(TranslationAudio.queue.length)TranslationAudio.start(filtered());};
+    renderLibrary();if(view==='card')window.MobileUI?.bindSwipe(document.querySelector('#translationList'),{prev:()=>turnCard(-1),next:()=>turnCard(1)});
   };
-  function renderLibrary() {
-    const rows = filtered();
-    document.querySelector('#translationCount').textContent = `${rows.length.toLocaleString()}문장`;
-    document.querySelector('#translationStart').disabled = !rows.length;
-    document.querySelector('#translationList').innerHTML = rows.slice(0, visible).map(w => `<article class="card tr-library-card"><div class="section-head"><span class="pill">${esc(w.topic)}</span><span class="tr-small">${esc(w.grammar)}</span></div><p>${esc(w.korean)}</p><details><summary>영어 문장 보기</summary><p lang="en">${esc(w.english)}</p><p class="muted">${esc(w.note)}</p>${sourceHTML(w)}</details><div class="actions"><button class="listen" data-tr-listen="${w.id}">◖ 듣기</button><button class="text-btn" data-tr-practice="${w.id}">이 문장 연습하기 ↗</button></div></article>`).join('') || '<section class="card"><p>검색 결과가 없어요. 다른 단어나 주제를 선택해 주세요.</p></section>';
-    if (rows.length > visible) document.querySelector('#translationList').insertAdjacentHTML('beforeend', `<button class="secondary tr-more" id="translationMore">더 보기 (${Math.min(visible, rows.length)} / ${rows.length})</button>`);
-    document.querySelector('#translationMore')?.addEventListener('click', () => { visible += 12; renderLibrary(); });
-    document.querySelectorAll('[data-tr-listen]').forEach(b => b.onclick = () => TranslationAudio.start([bank().find(w => w.id === b.dataset.trListen)], 0, true));
-    document.querySelectorAll('[data-tr-practice]').forEach(b => b.onclick = () => startTranslation([bank().find(w => w.id === b.dataset.trPractice)], mode));
-    // A new filter starts a fresh playlist on the next play gesture.
-    if (!TranslationAudio.playing) { TranslationAudio.stop(); updatePlayer(); }
+  function renderLibrary(){
+    const rows=filtered();cardIndex=Math.max(0,Math.min(cardIndex,rows.length-1));document.querySelector('#translationCount').textContent=`${rows.length.toLocaleString()}문장`;document.querySelector('#translationStart').disabled=!rows.length;document.querySelector('#tr-play').disabled=!rows.length;
+    const selected=view==='card'?rows.slice(cardIndex,cardIndex+1):rows.slice(0,visible);
+    document.querySelector('#translationList').innerHTML=selected.length?selected.map(readingCard).join(''):'<section class="card sentence-empty"><h2>문장이 없어요</h2><button class="secondary" id="translationResetFilters">필터 초기화</button></section>';
+    document.querySelector('#translationPagination').innerHTML=view==='card'?`<button class="secondary" id="translationPrevious" ${!rows.length||cardIndex===0?'disabled':''}>← 이전</button><span>${rows.length?cardIndex+1:0} / ${rows.length.toLocaleString()}</span><button class="secondary" id="translationNext" ${!rows.length||cardIndex>=rows.length-1?'disabled':''}>다음 →</button>`:(visible<rows.length?`<button class="secondary tr-more" id="translationMore">더 보기 (${Math.min(visible,rows.length)} / ${rows.length})</button>`:'');
+    document.querySelector('#translationPrevious')?.addEventListener('click',()=>turnCard(-1));document.querySelector('#translationNext')?.addEventListener('click',()=>turnCard(1));document.querySelector('#translationMore')?.addEventListener('click',()=>{visible+=12;renderLibrary();});
+    document.querySelector('#translationResetFilters')?.addEventListener('click',()=>{topic='all';search='';cardIndex=0;translationPage();});
+    document.querySelectorAll('[data-tr-listen]').forEach(b=>b.onclick=()=>TranslationAudio.start([bank().find(w=>w.id===b.dataset.trListen)],0,true));document.querySelectorAll('[data-tr-practice]').forEach(b=>b.onclick=()=>practiceRows([bank().find(w=>w.id===b.dataset.trPractice)]));
+    document.querySelectorAll('[data-tr-close-detail]').forEach(b=>b.onclick=()=>{document.querySelector(`[data-tr-details="${b.dataset.trCloseDetail}"]`).open=false;});
+    updatePlayer();
   }
 
   window.renderTranslationQuiz = function (w, s) {
+    window.MobileUI?.cardMode(false);
     TranslationAudio.stop();
     const questionIndex = s.index, isCurrent = () => currentQuestion(w,s,questionIndex);
     const source = tokenise(w.english).map((word, id) => ({id, word: word === 'I' ? word : word.toLowerCase()}));
@@ -132,6 +146,7 @@
     speechSynthesis.speak(utterance);
   }
   window.renderTypingQuiz = function (w, s) {
+    window.MobileUI?.cardMode(false);
     TranslationAudio.stop();
     const questionIndex = s.index, isCurrent = () => currentQuestion(w,s,questionIndex);
     let submitted = false, advanced = false, selfCorrected = false;
@@ -230,7 +245,7 @@
       clearInterval(interval); interval = setInterval(tick, 70);
       updatePlayer();
       if ('mediaSession' in navigator) {
-        if (typeof MediaMetadata === 'function') navigator.mediaSession.metadata = new MediaMetadata({title:current().english,artist:'단어정원 · Michael · 미국 영어',album:collectionFor(current()) === 'everyday' ? '생활영어 1,000문장' : 'VOA 원문 번역 3,000문장'});
+        if (typeof MediaMetadata === 'function') navigator.mediaSession.metadata = new MediaMetadata({title:current().english,artist:'정보카 · Michael · 미국 영어',album:collectionFor(current()) === 'everyday' ? '생활영어 1,000문장' : 'VOA 원문 번역 3,000문장'});
         for (const [name, action] of [['play', () => TranslationAudio.resume()], ['pause', () => TranslationAudio.pause()], ['nexttrack', () => TranslationAudio.step(1)], ['previoustrack', () => TranslationAudio.step(-1)]]) { try { navigator.mediaSession.setActionHandler(name, action); } catch {} }
       }
     } catch (error) {
@@ -259,7 +274,7 @@
     playCurrent();
   }
   function updatePlayer() {
-    const w = current(), status = TranslationAudio.message || (w ? `${TranslationAudio.index + 1} / ${TranslationAudio.queue.length}문장 · ${TranslationAudio.playing ? '재생 중' : '일시 정지'}` : '음성 파일은 인터넷으로 재생합니다. 문장 학습은 저장 후 오프라인에서도 가능해요.');
+    const w = current(), status = TranslationAudio.message || (w ? `${TranslationAudio.index + 1} / ${TranslationAudio.queue.length}문장 · ${TranslationAudio.playing ? '재생 중' : '일시 정지'}` : 'Michael · 미국 영어');
     const en = document.querySelector('#tr-now-en'); if (en) en.textContent = w?.english || '재생을 누르면 첫 문장부터 시작해요.';
     const ko = document.querySelector('#tr-now-ko'); if (ko) ko.textContent = w?.korean || '';
     const source = document.querySelector('#tr-now-source'); if (source) source.innerHTML = sourceHTML(w);
