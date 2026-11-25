@@ -253,7 +253,7 @@
       if(active){button.setAttribute('aria-current','page');button.scrollIntoView?.({block:'nearest',inline:'nearest',behavior:'auto'});}else button.removeAttribute('aria-current');
     });
   }
-  window.MobileUI = {cardMode,homeMode,lessonMode,fitLesson,bindSwipe,transitionCard,updateNav};
+  window.MobileUI = {cardMode,homeMode,lessonMode,fitLesson,bindSwipe,transitionCard,cancelMotion:cancelCardMotion,updateNav};
   window.addEventListener('resize',viewport);
   window.addEventListener('resize',cancelCardMotion);
   window.addEventListener('pagehide',cancelCardMotion);

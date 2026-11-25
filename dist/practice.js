@@ -7,12 +7,17 @@ let practiceTopic = '카페에서 주문하기';
 let practiceLevel = '중급 B1–B2';
 let practiceSource = 'words';
 let speakingCategory = '';
+let practiceNavigationEpoch = 0;
+let practiceSwipeCleanup = null;
 function speakingExamples() {
   if (practiceSource === 'everyday') return (window.EVERYDAY_BANK || []).filter(item => !speakingCategory || item.topic === speakingCategory).map(item => ({...item, sourceId:item.id, word:'생활영어',meaning:item.topic,sentence:item.english,translation:item.korean}));
   if (practiceSource === 'voa') return translationItems().filter(item => !speakingCategory || item.topic === speakingCategory).map(item => ({...item, sourceId:item.id,word:'VOA 원문',meaning:item.topic,sentence:item.english,translation:item.korean}));
   return words().filter(item => item.sentence && item.sentence !== item.word);
 }
 window.openSpeakingPractice = function (source = 'words', itemId) {
+  if(page==='practice'&&activeRecording)return;
+  window.MobileUI?.cancelMotion?.();
+  ++practiceNavigationEpoch;
   practiceSource = ['words','voa','everyday'].includes(source) ? source : 'words';
   speakingCategory = ''; practiceIndex = 0;
   const rows = speakingExamples();
@@ -21,6 +26,46 @@ window.openSpeakingPractice = function (source = 'words', itemId) {
   if (practiceSource === 'everyday') { practiceTopic = '일상 대화'; practiceLevel = '초중급 A2–B1'; }
   show('practice');
 };
+
+function practiceCardKey(){return practiceTarget?`${practiceSource}:${practiceTarget.id}`:null;}
+function practiceMotion(){
+  const epoch=practiceNavigationEpoch,source=practiceSource,category=speakingCategory;
+  const target=()=>document.querySelector('#practiceSentenceStage')?.querySelectorAll('.practice-sentence-motion-card')[0]||null;
+  const key=()=>target()?.dataset.practiceKey||null;
+  const isActive=()=>Boolean(page==='practice'&&epoch===practiceNavigationEpoch&&source===practiceSource&&category===speakingCategory&&!activeRecording&&target()&&target().isConnected!==false&&key()===practiceCardKey()&&!Array.from(document.querySelectorAll('.practice-source-tools')).some(detail=>detail.open));
+  const canMove=direction=>{if(!isActive()||![-1,1].includes(direction))return false;const rows=speakingExamples(),index=rows.findIndex(item=>item.id===practiceTarget?.id);return index>=0&&index+direction>=0&&index+direction<rows.length;};
+  return{target,key,isActive,canMove};
+}
+function movePracticeTo(id){
+  if(activeRecording||page!=='practice')return false;
+  const examples=speakingExamples(),index=examples.findIndex(item=>item.id===id);
+  if(index<0||examples[index].id===practiceTarget?.id)return false;
+  practiceIndex=index;practiceTarget=examples[index];practicePage();return true;
+}
+function movePractice(direction,motion=practiceMotion()){
+  if(!motion.canMove(direction))return false;
+  const rows=speakingExamples(),index=rows.findIndex(item=>item.id===practiceTarget?.id);
+  return movePracticeTo(rows[index+direction].id);
+}
+function choosePractice(id,direction=1){
+  const motion=practiceMotion(),key=motion.key(),target=motion.target();
+  const canMove=()=>motion.isActive()&&speakingExamples().some(item=>item.id===id)&&id!==practiceTarget?.id;
+  if(!canMove())return false;
+  const navigate=()=>motion.isActive()&&motion.key()===key&&motion.target()===target&&canMove()?movePracticeTo(id):false;
+  if(window.MobileUI?.transitionCard)return window.MobileUI.transitionCard({direction,...motion,canMove,navigate});
+  return navigate();
+}
+function bindPracticeSwipe(){
+  practiceSwipeCleanup?.();practiceSwipeCleanup=null;
+  const stage=document.querySelector('#practiceSentenceStage');if(!stage||page!=='practice')return;
+  const motion=practiceMotion();practiceSwipeCleanup=window.MobileUI?.bindSwipe(stage,{prev:()=>movePractice(-1,motion),next:()=>movePractice(1,motion),motion})||null;
+}
+function updatePracticeNavigation(){
+  const busy=Boolean(activeRecording),examples=speakingExamples(),index=examples.findIndex(item=>item.id===practiceTarget?.id);
+  for(const id of ['speakingSource','speakingCategory','speakingChoice','practiceScore']){const node=document.querySelector('#'+id);if(node)node.disabled=busy||(id==='practiceScore'&&node.dataset.unsupported==='true');}
+  const previous=document.querySelector('#previousPractice'),next=document.querySelector('#nextPractice');
+  if(previous)previous.disabled=busy||index<=0;if(next)next.disabled=busy||index<0||index>=examples.length-1;
+}
 
 function stopPractice() {
   TranslationAudio?.stop();
@@ -37,9 +82,11 @@ function stopPractice() {
   if (audio) { audio.pause(); audio.removeAttribute('src'); audio.load(); }
   if (recordingURL) URL.revokeObjectURL(recordingURL);
   recordingURL = null;
+  updatePracticeNavigation();
 }
 
 function practicePage() {
+  practiceSwipeCleanup?.();practiceSwipeCleanup=null;
   stopPractice();
   const examples = speakingExamples();
   if (!practiceTarget || !examples.some(item => item.id === practiceTarget.id)) practiceTarget = examples[practiceIndex % examples.length];
@@ -50,10 +97,10 @@ function practicePage() {
       <section class="card speaking-card">
         <div class="section-head"><h2>${practiceSource === 'everyday' ? '생활영어 따라 말하기' : practiceSource === 'voa' ? 'VOA 문장 따라 말하기' : '따라 말하기'}</h2><span class="pill">기기에서 녹음</span></div>
         <details class="practice-source-tools"><summary>자료 · 문장 선택</summary><div class="speaking-source"><label>연습 자료<select id="speakingSource"><option value="words" ${practiceSource === 'words' ? 'selected' : ''}>단어장 예문</option><option value="voa" ${practiceSource === 'voa' ? 'selected' : ''}>VOA 원문 3,000문장</option><option value="everyday" ${practiceSource === 'everyday' ? 'selected' : ''}>생활영어 1,000문장</option></select></label>${practiceSource !== 'words' ? `<label>상황·주제<select id="speakingCategory"><option value="">모든 상황·주제</option>${[...new Set((practiceSource === 'everyday' ? EVERYDAY_BANK : translationItems()).map(item => item.topic))].map(topic => `<option value="${esc(topic)}" ${speakingCategory === topic ? 'selected' : ''}>${esc(topic)}</option>`).join('')}</select></label>` : ''}<label class="speaking-choice">문장 선택 (${examples.length.toLocaleString('ko-KR')}개)<select id="speakingChoice">${examples.map(item => `<option value="${esc(item.id)}" ${w.id === item.id ? 'selected' : ''}>${esc(item.sentence)}</option>`).join('')}</select></label></div>
-        </details><span class="practice-word">${esc(w.word)} <small>· ${esc(w.meaning)}</small></span>
+        </details><div id="practiceSentenceStage" class="practice-sentence-motion-stage" tabindex="0" aria-label="따라 말할 문장, 좌우로 밀어서 이동"><article class="practice-sentence-motion-card" data-practice-key="${esc(practiceCardKey())}"><span class="practice-word">${esc(w.word)} <small>· ${esc(w.meaning)}</small></span>
         <p class="practice-sentence" lang="en">${esc(w.sentence)}</p>
-        <p class="translation">${esc(w.translation)}</p>
-        <div class="actions"><button class="listen" id="practiceListen">◖ 문장 듣기</button><button class="text-btn" id="nextPractice">다른 문장 ↗</button></div>
+        <p class="translation">${esc(w.translation)}</p></article></div>
+        <div class="actions practice-sentence-navigation"><button class="text-btn" id="previousPractice">← 이전 문장</button><button class="listen" id="practiceListen">◖ 문장 듣기</button><button class="text-btn" id="nextPractice">다음 문장 →</button></div>
         <div class="recorder-box">
           <div class="record-status" id="recordStatus" role="status">준비되면 녹음 버튼을 눌러 주세요.</div>
           <div class="actions"><button class="primary" id="recordStart">● 내 목소리 녹음</button><button class="secondary" id="recordStop" disabled>녹음 끝내기</button></div>
@@ -62,7 +109,7 @@ function practicePage() {
           <p class="muted">최대 30초 · 기기 내 녹음 · 화면 이동 시 삭제</p>
         </div>
         <details class="practice-checklist"><summary>내 발음 스스로 확인하기</summary><label><input type="checkbox"> 빠뜨린 단어 없이 끝까지 말했나요?</label><label><input type="checkbox"> 강하게 들리는 음절을 따라 말했나요?</label><label><input type="checkbox"> 단어 사이를 자연스럽게 이어 말했나요?</label></details>
-        <button class="secondary" id="practiceScore" ${practiceSource === 'words' && !scoringWord ? 'disabled' : ''}>${practiceSource === 'words' ? '이 단어 발음 평가' : '이 문장 발음 평가'}</button>
+        <button class="secondary" id="practiceScore" data-unsupported="${practiceSource === 'words' && !scoringWord}" ${practiceSource === 'words' && !scoringWord ? 'disabled' : ''}>${practiceSource === 'words' ? '이 단어 발음 평가' : '이 문장 발음 평가'}</button>
       </section>
       <section class="card chat-practice">
         <details class="chat-tools"><summary>ChatGPT 대화 연습 ↗</summary>
@@ -74,16 +121,18 @@ function practicePage() {
         <div class="practice-note"><strong>선택한 ChatGPT 계정의 사용 한도 안에서</strong><p>ChatGPT의 사용 한도가 적용됩니다. 한도에 도달하면 연습을 멈추고 초기화를 기다리세요. 추가 크레딧이나 유료 서비스는 이 웹앱에서 구매하지 않습니다.</p><p>음성 연습은 ChatGPT에서 제공되는 음성 버튼으로 시작하세요. 이 웹앱에는 ChatGPT 계정 연결이나 앱 내부 AI 대화 기능이 없으며, 대화 내용과 사용량을 이 웹앱이 읽거나 제어하지 않습니다.</p></div></details>
       </section>
     </div>`;
-  document.querySelector('#practiceListen').onclick = () => { document.querySelector('#myRecording')?.pause(); TranslationAudio.stop(); if (practiceSource === 'words') speak(w.sentence); else TranslationAudio.start([w],0,true); };
+  const stage=document.querySelector('#practiceSentenceStage'),source=practiceSource,category=speakingCategory,key=practiceCardKey();
+  const isCurrent=()=>page==='practice'&&document.querySelector('#practiceSentenceStage')===stage&&practiceCardKey()===key;
+  document.querySelector('#practiceListen').onclick = () => { if(!isCurrent())return;document.querySelector('#myRecording')?.pause(); TranslationAudio.stop(); if (practiceSource === 'words') speak(w.sentence); else TranslationAudio.start([w],0,true); };
   document.querySelector('#myRecording').onplay = () => { TranslationAudio.stop(); if ('speechSynthesis' in window) speechSynthesis.cancel(); };
-  document.querySelector('#speakingSource').onchange = event => openSpeakingPractice(event.target.value);
-  document.querySelector('#speakingCategory')?.addEventListener('change', event => { speakingCategory = event.target.value; practiceTarget = null; practiceIndex = 0; practicePage(); });
-  document.querySelector('#speakingChoice').onchange = event => { practiceTarget = examples.find(item => item.id === event.target.value); practiceIndex = Math.max(0,examples.findIndex(item => item.id === event.target.value)); TranslationAudio.stop(); practicePage(); };
-  document.querySelector('#practiceScore').onclick = () => { if (practiceSource === 'everyday') Pronunciation.open('everyday',w.sourceId); else if (practiceSource === 'voa') Pronunciation.open('sentence',w.sourceId); else if (scoringWord) Pronunciation.open('word',scoringWord.id); };
-  document.querySelector('#nextPractice').onclick = () => { practiceIndex = (practiceIndex + 1) % examples.length; practiceTarget = examples[practiceIndex]; practicePage(); };
-  document.querySelector('#recordStart').onclick = startPracticeRecording;
-  document.querySelector('#recordStop').onclick = finishPracticeRecording;
-  document.querySelector('#discardRecording').onclick = () => { stopPractice(); resetRecorderUI(); };
+  document.querySelector('#speakingSource').onchange = event => {if(!isCurrent()||activeRecording||event.target!==document.querySelector('#speakingSource')||!['words','voa','everyday'].includes(event.target.value)){event.target.value=source;return;}openSpeakingPractice(event.target.value);};
+  document.querySelector('#speakingCategory')?.addEventListener('change', event => { const categories=new Set((practiceSource==='everyday'?EVERYDAY_BANK:translationItems()).map(item=>item.topic));if(!isCurrent()||activeRecording||event.target!==document.querySelector('#speakingCategory')||(event.target.value&&!categories.has(event.target.value))){event.target.value=category;return;}window.MobileUI?.cancelMotion?.();++practiceNavigationEpoch;speakingCategory=event.target.value;practiceTarget=null;practiceIndex=0;practicePage(); });
+  document.querySelector('#speakingChoice').onchange = event => {const wanted=event.target.value,index=examples.findIndex(item=>item.id===wanted);event.target.value=w.id;if(!isCurrent()||activeRecording||event.target!==document.querySelector('#speakingChoice')||index<0)return;for(const detail of document.querySelectorAll('.practice-source-tools'))detail.open=false;choosePractice(wanted,index>=practiceIndex?1:-1);};
+  document.querySelector('#practiceScore').onclick = () => { if(!isCurrent()||activeRecording)return;if (practiceSource === 'everyday') Pronunciation.open('everyday',w.sourceId); else if (practiceSource === 'voa') Pronunciation.open('sentence',w.sourceId); else if (scoringWord) Pronunciation.open('word',scoringWord.id); };
+  for(const[id,direction]of[['previousPractice',-1],['nextPractice',1]])document.querySelector('#'+id).onclick=()=>{if(!isCurrent()||activeRecording)return;const motion=practiceMotion();if(!motion.canMove(direction))return;const index=examples.findIndex(item=>item.id===practiceTarget?.id);choosePractice(examples[index+direction].id,direction);};
+  document.querySelector('#recordStart').onclick = () => {if(isCurrent()&&!activeRecording)startPracticeRecording();};
+  document.querySelector('#recordStop').onclick = () => {if(isCurrent())finishPracticeRecording();};
+  document.querySelector('#discardRecording').onclick = () => { if(!isCurrent())return;stopPractice(); resetRecorderUI(); };
   for (const id of ['practiceTopic','practiceLevel']) document.querySelector('#'+id).onchange = () => {
     practiceTopic = document.querySelector('#practiceTopic').value;
     practiceLevel = document.querySelector('#practiceLevel').value;
@@ -92,6 +141,7 @@ function practicePage() {
   document.querySelector('#copyPractice').onclick = copyPracticePrompt;
   document.querySelector('#openChatGPT').onclick = () => { stopPractice(); resetRecorderUI(); };
   updatePracticePrompt();
+  updatePracticeNavigation();bindPracticeSwipe();
   if (!window.isSecureContext || !navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) {
     document.querySelector('#recordStart').disabled = true;
     document.querySelector('#recordStatus').textContent = '이 브라우저에서 녹음을 사용할 수 없어요. 최신 Safari에서 HTTPS 주소로 열어 주세요.';
@@ -135,11 +185,15 @@ function resetRecorderUI() {
 }
 
 async function startPracticeRecording() {
+  window.MobileUI?.cancelMotion?.();
+  ++practiceNavigationEpoch;
+  practiceSwipeCleanup?.();practiceSwipeCleanup=null;
   stopPractice();
   resetRecorderUI();
   if ('speechSynthesis' in window) speechSynthesis.cancel();
   const rec = { stream: null, recorder: null, timer: null, chunks: [], failed: false };
   activeRecording = rec;
+  updatePracticeNavigation();bindPracticeSwipe();
   const status = document.querySelector('#recordStatus');
   document.querySelector('#recordStart').disabled = true;
   status.textContent = '마이크 권한을 확인하고 있어요…';
@@ -157,7 +211,7 @@ async function startPracticeRecording() {
       else {
         clearInterval(rec.timer);
         stream.getTracks().forEach(t=>t.stop());
-        if (activeRecording === rec) { activeRecording = null; resetRecorderUI(); status.textContent = '녹음 중 오류가 발생했어요. 다시 시도해 주세요.'; }
+        if (activeRecording === rec) { activeRecording = null; updatePracticeNavigation();resetRecorderUI(); status.textContent = '녹음 중 오류가 발생했어요. 다시 시도해 주세요.'; }
       }
     };
     recorder.onstop = () => {
@@ -165,6 +219,7 @@ async function startPracticeRecording() {
       stream.getTracks().forEach(t=>t.stop());
       if (activeRecording !== rec || page !== 'practice') return;
       activeRecording = null;
+      updatePracticeNavigation();
       document.querySelector('#recordStart').disabled = false;
       document.querySelector('#recordStop').disabled = true;
       if (rec.failed || !rec.chunks.length) { status.textContent = '녹음을 저장하지 못했어요. 다시 시도해 주세요.'; return; }
@@ -188,6 +243,7 @@ async function startPracticeRecording() {
     rec.stream?.getTracks().forEach(t=>t.stop());
     if (activeRecording !== rec || page !== 'practice') return;
     activeRecording = null;
+    updatePracticeNavigation();
     document.querySelector('#recordStart').disabled = false;
     status.textContent = error.name === 'NotAllowedError' ? '마이크 사용이 허용되지 않았어요. Safari의 웹사이트 설정에서 마이크 권한을 확인해 주세요.' : '마이크를 사용할 수 없어요. 다른 녹음 앱을 닫고 다시 시도해 주세요.';
   }
@@ -206,7 +262,7 @@ async function showOfflineStatus() {
   const el = document.querySelector('#offlineStatus');
   if (!el) return;
   try {
-    const cache = await caches.open('wordgarden-v30-card-motion-20261125-release');
+    const cache = await caches.open('wordgarden-v31-inline-cards-20261125-release');
     const urls = ['./mobile.css','./mobile-ui.js','./index.html','./dictionary.js','./questions.js','./app.js','./practice.js','./style.css','./lab-data.js','./lab.js','./lab.css','./lab-attribution.txt','./translation-data.js','./translation.js','./translation.css','./focus-theme.css','./translation-audio-v5.json','./everyday-data.js','./everyday.js','./everyday.css','./everyday-audio.json','./everyday-pronunciation-targets.json','./form-data.js','./forms.js','./forms.css'];
     const cached = await Promise.all(urls.map(url => cache.match(url)));
     el.textContent = cached.every(Boolean) ? '학습 자료가 이 기기에 저장되어 있어요. 인터넷 없이 단어·예문 학습, 영어 연구실 전체 자료, 생활영어 1,000문장, 번역 카드·직접 입력과 녹음을 사용할 수 있습니다. 미국 남성 음성 연속 듣기는 인터넷이 필요하며, 한국어 읽기와 기존 발음은 기기에 설치된 음성에 따라 달라요.' : '오프라인 자료를 준비 중이에요. 인터넷에 연결한 상태로 잠시 뒤 다시 확인해 주세요.';

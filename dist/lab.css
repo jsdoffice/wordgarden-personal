@@ -12,3 +12,37 @@
 .wg-lab .lab-topic-filter select{min-height:44px}
 
 .wg-lab.is-card #lab-results{-webkit-user-select:none;user-select:none}.wg-lab.is-list #lab-results{-webkit-user-select:text;user-select:text}
+
+/* One reading surface keeps the rule and every example together. */
+.wg-lab .lab-focus-card{position:relative}
+.wg-lab .lab-reading-body{display:block;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;touch-action:pan-y pinch-zoom;padding-right:3px;scrollbar-width:thin}
+.lab-core-content{display:grid;gap:12px;margin:0 0 22px}
+.lab-inline-examples>h3{font-size:14px;line-height:1.5;margin:0 0 2px;color:var(--ink,#17243a)}
+.lab-inline-examples>h3 span{font-size:11px;font-weight:400;color:var(--muted,#7c889a);margin-left:4px}
+.wg-lab .lab-reading-body .lab-inline-example{padding:16px 0;border-top:1px solid #e9edf4;gap:9px}
+.wg-lab .lab-reading-body .lab-inline-example .lab-example{font-size:18px;line-height:1.6;margin:0;padding:0;border:0;background:none}
+.wg-lab .lab-reading-body .lab-inline-example .lab-translation{font-size:15px;line-height:1.65;margin:0}
+.lab-example-line{display:flex;align-items:center;gap:8px;min-height:18px}
+.lab-example-number{font-size:11px;font-weight:700;line-height:1.4;color:#93a0b3}
+.wg-lab .lab-inline-example .lab-listen{font-size:12px;min-height:44px;margin-top:2px}
+.wg-lab .lab-focus-actions{display:flex;gap:8px;flex-shrink:0;border-top:1px solid #e9edf4;padding-top:10px;margin:0}
+.wg-lab .lab-focus-actions button{flex:1;min-height:44px;padding:9px 12px;border:1px solid #e0e8f4;border-radius:11px;background:#f4f8ff;color:var(--accent,#3178ef);font-size:13px;font-weight:650}
+.wg-lab .lab-card-overlay{position:absolute;z-index:15;inset:0;display:flex;flex-direction:column;gap:16px;min-height:0;padding:20px;background:var(--surface,#fff);border-radius:inherit}
+.lab-overlay-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-shrink:0;min-height:44px}
+.wg-lab .lab-overlay-heading h3{font-size:18px;line-height:1.4;margin:0;color:var(--ink,#17243a)}
+.wg-lab .lab-overlay-heading button{min-width:64px;min-height:44px;border:1px solid #e4eaf2;border-radius:11px;background:#f4f7fb;color:var(--muted,#7c889a);padding:9px 11px;font-size:12px}
+.lab-overlay-body{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;padding-right:3px;touch-action:pan-y pinch-zoom}
+.wg-lab .lab-card-overlay .lab-mini-quiz{margin:0;border:0;padding:0;background:none;min-width:0}
+.wg-lab .lab-card-overlay .lab-mini-quiz>legend{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.wg-lab .lab-card-overlay .lab-quiz-question{font-size:17px;line-height:1.6;margin:0 0 16px}
+.wg-lab .lab-card-overlay .lab-quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.wg-lab .lab-card-overlay .lab-quiz-options button{font-size:15px;line-height:1.5;min-height:46px;padding:11px;border:1px solid #e0e7f2;background:#f7faff;color:var(--ink,#17243a)}
+.wg-lab .lab-card-overlay .lab-quiz-options button[data-result=correct]{border-color:#aac8ff;background:#eaf2ff;color:#2561c3}
+.wg-lab .lab-card-overlay .lab-quiz-options button[data-result=wrong]{border-color:#e8b9ae;background:#fff1ed;color:#a45547}
+.wg-lab .lab-card-overlay .lab-quiz-feedback{font-size:15px;line-height:1.7;margin-top:18px}
+.wg-lab .lab-card-overlay [data-lab-retry]{min-height:44px;margin-top:8px}
+.lab-overlay-body>.lab-reference-note{margin:0 0 22px}
+.lab-overlay-body>h4{font-size:15px;line-height:1.5;margin:0 0 10px}
+.lab-overlay-body .lab-origin{margin-top:14px}
+.lab-focus-card.has-overlay>.lab-focus-heading,.lab-focus-card.has-overlay>.lab-reading-body,.lab-focus-card.has-overlay>.lab-focus-actions{visibility:hidden}
+@media(max-width:760px){.lab-core-content{gap:10px;margin-bottom:18px}.wg-lab .lab-reading-body .lab-inline-example{padding:15px 0}.wg-lab .lab-card-overlay{padding:18px;gap:12px}.wg-lab .lab-card-overlay .lab-quiz-options{grid-template-columns:1fr}.wg-lab .lab-card-overlay .lab-quiz-question{font-size:17px}.wg-lab .lab-reading-body .lab-inline-example .lab-translation{font-size:14px}}

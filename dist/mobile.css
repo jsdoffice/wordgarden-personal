@@ -141,3 +141,12 @@ body.keyboard-open.lesson-mode .word-gap-quiz.is-vocabulary .word-prompt .questi
 .card-motion-target{transform-origin:50% 50%;backface-visibility:hidden;-webkit-backface-visibility:hidden}
 .sentence-browser.is-card .sentence-stage{overflow:hidden;border-radius:24px}
 @media(prefers-reduced-motion:reduce){.card-motion-target{transition:none!important;animation:none!important}}
+/* Only the current sentence moves; recording and results remain stable. */
+.practice-sentence-motion-stage{position:relative;min-width:0;outline:none;overflow:hidden}
+.practice-sentence-motion-card{min-width:0}
+.practice-sentence-navigation{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:6px}
+.practice-sentence-navigation button{min-height:44px;padding:9px 5px;font-size:12px;white-space:nowrap}
+.pron-target-navigation{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:-6px 0 14px}
+.pron-target-navigation button{min-height:44px;padding:10px;font-size:13px}
+.pron-target-motion-card{min-width:0}
+.pron-target{overflow:hidden}

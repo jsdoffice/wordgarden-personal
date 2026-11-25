@@ -6,11 +6,13 @@
   const normal=value=>String(value||'').toLocaleLowerCase().trim();
   const supportedWords=new Set(DICTIONARY.map(w=>normal(w.word)));
   let referenceData=null,referenceLoad=null;
+  let navigationEpoch=0,swipeCleanup=null,navigationBusy=false;
   const currentText=()=>P.item?(P.mode!=='word'?P.item.english:P.item.word):'';
   const isHere=()=>Boolean($('pronunciationPage'));
   function status(message){const el=$('pronStatus');if(el)el.textContent=message;}
   function controls(){
     const busy=P.phase!=='idle',ready=Boolean(P.item);
+    if(busy&&!navigationBusy){window.MobileUI?.cancelMotion?.();++navigationEpoch;navigationBusy=true;bindTargetSwipe();}else if(!busy)navigationBusy=false;
     for(const id of ['pronRecord','pronFile','pronListen','pronRandom','pronSearch','pronCategory','pronChoice','pronSentence','pronEveryday','pronWord'])if($(id))$(id).disabled=busy||!ready;
     // Empty results must still allow searching and switching modes.
     for(const id of ['pronSearch','pronCategory','pronSentence','pronEveryday','pronWord'])if($(id))$(id).disabled=busy;
@@ -20,6 +22,9 @@
     if($('pronStop'))$('pronStop').disabled=!['requesting','recording'].includes(P.phase);
     if($('pronCancel'))$('pronCancel').hidden=!busy;
     if($('pronStatus'))$('pronStatus').setAttribute('aria-busy',String(P.phase==='analyzing'));
+    const found=candidates(),index=found.findIndex(item=>item.id===P.item?.id);
+    if($('pronPrevious'))$('pronPrevious').disabled=busy||index<=0;
+    if($('pronNext'))$('pronNext').disabled=busy||index<0||index>=found.length-1;
   }
   function releaseCapture(){
     const c=P.capture;P.capture=null;if(!c)return;clearInterval(c.timer);
@@ -48,8 +53,37 @@
   function model(){if(!P.loaded)P.loaded=rpc('load').catch(error=>{P.loaded=null;throw error;});return P.loaded;}
   function pool(){return P.mode==='everyday'?(window.EVERYDAY_BANK||[]):P.mode==='sentence'?translationItems():vocabulary().filter(w=>supportedWords.has(normal(w.word)));}
   function categoryOf(item){return P.mode!=='word'?item.topic||'기타':item.category||'내 단어';}
+  function candidates(){return pool().filter(item=>(!P.category||categoryOf(item)===P.category)&&(!P.query||normal([item.english,item.korean,item.word,item.meaning].filter(Boolean).join(' ')).includes(normal(P.query))));}
+  function targetKey(){return P.item?`${P.mode}:${P.item.id}`:null;}
+  function targetMotion(){
+    const stage=$('pronTarget'),root=$('pronunciationPage'),epoch=navigationEpoch,mode=P.mode;
+    const target=()=>stage?.querySelectorAll('.pron-target-motion-card')[0]||null,key=()=>target()?.dataset.pronKey||null;
+    const isActive=()=>Boolean(stage&&stage.isConnected!==false&&$('pronTarget')===stage&&$('pronunciationPage')===root&&epoch===navigationEpoch&&P.mode===mode&&P.phase==='idle'&&key()&&key()===targetKey()&&!Array.from(document.querySelectorAll('.pron-tools')).some(detail=>detail.open));
+    const canMove=direction=>{if(!isActive()||![-1,1].includes(direction))return false;const rows=candidates(),index=rows.findIndex(item=>item.id===P.item?.id);return index>=0&&index+direction>=0&&index+direction<rows.length;};
+    return{target,key,isActive,canMove};
+  }
+  function moveTo(id){
+    if(P.phase!=='idle'||!isHere())return false;
+    const item=candidates().find(row=>row.id===id);if(!item||item.id===P.item?.id)return false;
+    resetAttempt();P.item=item;refreshList();return true;
+  }
+  function move(direction,motion=targetMotion()){
+    if(!motion.canMove(direction))return false;
+    const rows=candidates(),index=rows.findIndex(item=>item.id===P.item?.id);return moveTo(rows[index+direction].id);
+  }
+  function chooseTarget(id,direction=1){
+    const motion=targetMotion(),key=motion.key(),target=motion.target();
+    const canMove=()=>motion.isActive()&&candidates().some(item=>item.id===id)&&id!==P.item?.id;
+    if(!canMove())return false;
+    const navigate=()=>motion.isActive()&&motion.key()===key&&motion.target()===target&&canMove()?moveTo(id):false;
+    if(window.MobileUI?.transitionCard)return window.MobileUI.transitionCard({direction,...motion,canMove,navigate});return navigate();
+  }
+  function bindTargetSwipe(){
+    swipeCleanup?.();swipeCleanup=null;const stage=$('pronTarget');if(!stage||!isHere())return;
+    const motion=targetMotion();swipeCleanup=window.MobileUI?.bindSwipe(stage,{prev:()=>move(-1,motion),next:()=>move(1,motion),motion})||null;
+  }
   function refreshList(){
-    const found=pool().filter(item=>(!P.category||categoryOf(item)===P.category)&&(!P.query||normal([item.english,item.korean,item.word,item.meaning].filter(Boolean).join(' ')).includes(normal(P.query))));
+    const found=candidates();
     const visible=found.slice(0,300),prior=P.item;P.item=found.find(item=>item.id===prior?.id)||visible[0]||null;if(P.item&&!visible.some(w=>w.id===P.item.id))visible.unshift(P.item);
     $('pronChoice').innerHTML=visible.map(item=>`<option value="${html(item.id)}">${html(P.mode!=='word'?item.english:item.word+' — '+item.meaning)}</option>`).join('');$('pronChoice').disabled=!visible.length;if(P.item)$('pronChoice').value=P.item.id;
     $('pronCount').textContent=found.length>300?`검색 결과 ${found.length.toLocaleString('ko-KR')}개 중 앞 300개를 표시해요. 검색어로 좁혀 보세요.`:`${found.length.toLocaleString('ko-KR')}개를 선택할 수 있어요.`;
@@ -57,20 +91,23 @@
   }
   function renderTarget(){
     const item=P.item,wordIpa=item&&P.mode==='word'?referenceData?.words?.[normal(item.word)]?.ipa||'':'';
-    $('pronTarget').innerHTML=item?`<p class="pron-target-en" lang="en">${html(currentText())}</p><p class="pron-target-ko">${html(P.mode!=='word'?item.korean:item.meaning)}</p>${wordIpa?`<p class="pron-dictionary-ipa">미국 영어 발음 참고 <span lang="en">${html(wordIpa)}</span></p>`:''}`:'<p class="muted">검색 결과가 없어요. 검색어나 분류를 바꿔 주세요.</p>';
+    $('pronTarget').innerHTML=item?`<article class="pron-target-motion-card" data-pron-key="${html(targetKey())}"><p class="pron-target-en" lang="en">${html(currentText())}</p><p class="pron-target-ko">${html(P.mode!=='word'?item.korean:item.meaning)}</p>${wordIpa?`<p class="pron-dictionary-ipa">미국 영어 발음 참고 <span lang="en">${html(wordIpa)}</span></p>`:''}</article>`:'<p class="muted">검색 결과가 없어요. 검색어나 분류를 바꿔 주세요.</p>';
     if(P.mode==='word'&&!referenceData&&!referenceLoad)referenceLoad=fetch('pronunciation-targets.json').then(r=>{if(!r.ok)throw Error('reference');return r.json();}).then(data=>{referenceData=data;if(isHere()&&P.mode==='word'&&P.phase==='idle')renderTarget();}).catch(()=>{referenceLoad=null;});
-    controls();status(item?'기준 음성을 듣고, 자연스럽게 한 번 읽어 보세요.':'다른 단어나 문장을 찾아보세요.');
+    controls();bindTargetSwipe();status(item?'기준 음성을 듣고, 자연스럽게 한 번 읽어 보세요.':'다른 단어나 문장을 찾아보세요.');
   }
   function renderCategories(){$('pronCategory').innerHTML='<option value="">모든 주제</option>'+[...new Set(pool().map(categoryOf))].sort((a,b)=>a.localeCompare(b,'ko')).map(c=>`<option value="${html(c)}">${html(c)}</option>`).join('');}
   function pageView(){
+    window.MobileUI?.cancelMotion?.();++navigationEpoch;swipeCleanup?.();swipeCleanup=null;
     stop();
-    main.innerHTML=title('','발음 평가','')+`<div class="speech-tabs"><button class="active" data-page="pronunciation">발음 평가</button><button data-page="practice">따라 말하기</button></div>`+`<div id="pronunciationPage" class="pron-page"><section class="card pron-intro"><details><summary>점수 안내 · 실험 기능 ⓘ</summary><p>100점 만점의 기준 소리 일치 점수와 음절별 5단계 등급을 보여줘요. 음성 인식에 따른 연습용 추정치이며, 강세·억양이나 발음 정확도를 검증한 점수는 아닙니다.</p><p class="muted">첫 분석 때 약 5MB의 모델 자료를 내려받아요. 녹음은 서버로 전송하지 않으며, 화면을 나가면 삭제됩니다.</p><button id="pronPrepare" class="secondary" type="button">분석 자료 준비</button></details></section><section class="card pron-workspace"><div class="pron-modes" role="group" aria-label="연습 종류"><button id="pronSentence" type="button">VOA 문장</button><button id="pronEveryday" type="button">생활영어</button><button id="pronWord" type="button">단어</button></div><details class="pron-tools"><summary>검색 · 문장 선택</summary><div class="pron-filters"><label>검색<input id="pronSearch" type="search" placeholder="영어 또는 한국어로 찾기" autocomplete="off"></label><label>주제<select id="pronCategory"></select></label></div><label class="pron-choice-label">연습할 항목<select id="pronChoice" aria-describedby="pronCount"></select></label><p id="pronCount" class="muted" role="status"></p></details><div id="pronTarget" class="pron-target"></div><div class="pron-actions"><button id="pronListen" class="secondary" type="button">기준 음성 듣기</button><button id="pronRandom" class="secondary" type="button">무작위 선택</button><button id="pronRecord" class="primary" type="button">녹음 시작</button><button id="pronStop" class="secondary" type="button" disabled>녹음 끝내기</button><button id="pronCancel" class="text-btn" type="button" hidden>분석 취소</button></div><p id="pronStatus" class="pron-status" role="status" aria-live="polite"></p><p class="pron-help">최대 20초. 조용한 곳에서 마이크를 입에서 조금 떨어뜨려 읽어 주세요.</p><details class="pron-tools"><summary>녹음 파일로 평가하기</summary><label class="pron-file-label">녹음 파일 선택<input id="pronFile" name="녹음 파일 선택" type="file" accept="audio/*" aria-describedby="pronFileHelp"></label><p id="pronFileHelp" class="pron-help">20초 이하, 10MB 이하의 음성 파일도 기기 안에서 분석할 수 있어요. 지원 형식은 브라우저마다 달라요.</p></details><section id="pronPlayback" class="pron-playback" hidden><h2>내 녹음 다시 듣기</h2><audio id="pronRecording" controls playsinline aria-label="내 녹음 다시 듣기"></audio><h3>내 목소리의 리듬</h3><div id="pronBars" class="pron-bars" role="img" aria-label="내 녹음의 상대 음량 흐름"></div><p class="pron-help">높이는 녹음 안에서의 상대 음량이에요. 강세의 옳고 그름을 판단하지 않습니다. 기준 음성과 번갈아 들어보세요.</p></section><section id="pronResult" class="pron-result" aria-live="polite"></section></section></div>`;
+    main.innerHTML=title('','발음 평가','')+`<div class="speech-tabs"><button class="active" data-page="pronunciation">발음 평가</button><button data-page="practice">따라 말하기</button></div>`+`<div id="pronunciationPage" class="pron-page"><section class="card pron-intro"><details><summary>점수 안내 · 실험 기능 ⓘ</summary><p>100점 만점의 기준 소리 일치 점수와 음절별 5단계 등급을 보여줘요. 음성 인식에 따른 연습용 추정치이며, 강세·억양이나 발음 정확도를 검증한 점수는 아닙니다.</p><p class="muted">첫 분석 때 약 5MB의 모델 자료를 내려받아요. 녹음은 서버로 전송하지 않으며, 화면을 나가면 삭제됩니다.</p><button id="pronPrepare" class="secondary" type="button">분석 자료 준비</button></details></section><section class="card pron-workspace"><div class="pron-modes" role="group" aria-label="연습 종류"><button id="pronSentence" type="button">VOA 문장</button><button id="pronEveryday" type="button">생활영어</button><button id="pronWord" type="button">단어</button></div><details class="pron-tools"><summary>검색 · 문장 선택</summary><div class="pron-filters"><label>검색<input id="pronSearch" type="search" placeholder="영어 또는 한국어로 찾기" autocomplete="off"></label><label>주제<select id="pronCategory"></select></label></div><label class="pron-choice-label">연습할 항목<select id="pronChoice" aria-describedby="pronCount"></select></label><p id="pronCount" class="muted" role="status"></p></details><div id="pronTarget" class="pron-target" tabindex="0" aria-label="연습할 항목, 좌우로 밀어서 이동"></div><div class="pron-target-navigation"><button id="pronPrevious" class="secondary" type="button">← 이전</button><button id="pronNext" class="secondary" type="button">다음 →</button></div><div class="pron-actions"><button id="pronListen" class="secondary" type="button">기준 음성 듣기</button><button id="pronRandom" class="secondary" type="button">무작위 선택</button><button id="pronRecord" class="primary" type="button">녹음 시작</button><button id="pronStop" class="secondary" type="button" disabled>녹음 끝내기</button><button id="pronCancel" class="text-btn" type="button" hidden>분석 취소</button></div><p id="pronStatus" class="pron-status" role="status" aria-live="polite"></p><p class="pron-help">최대 20초. 조용한 곳에서 마이크를 입에서 조금 떨어뜨려 읽어 주세요.</p><details class="pron-tools"><summary>녹음 파일로 평가하기</summary><label class="pron-file-label">녹음 파일 선택<input id="pronFile" name="녹음 파일 선택" type="file" accept="audio/*" aria-describedby="pronFileHelp"></label><p id="pronFileHelp" class="pron-help">20초 이하, 10MB 이하의 음성 파일도 기기 안에서 분석할 수 있어요. 지원 형식은 브라우저마다 달라요.</p></details><section id="pronPlayback" class="pron-playback" hidden><h2>내 녹음 다시 듣기</h2><audio id="pronRecording" controls playsinline aria-label="내 녹음 다시 듣기"></audio><h3>내 목소리의 리듬</h3><div id="pronBars" class="pron-bars" role="img" aria-label="내 녹음의 상대 음량 흐름"></div><p class="pron-help">높이는 녹음 안에서의 상대 음량이에요. 강세의 옳고 그름을 판단하지 않습니다. 기준 음성과 번갈아 들어보세요.</p></section><section id="pronResult" class="pron-result" aria-live="polite"></section></section></div>`;
     for(const [id,mode] of [['pronSentence','sentence'],['pronEveryday','everyday'],['pronWord','word']])$(id).setAttribute('aria-pressed',String(P.mode===mode));
-    for(const [id,mode]of [['pronSentence','sentence'],['pronEveryday','everyday'],['pronWord','word']])$(id).onclick=()=>{if(P.mode===mode)return;resetAttempt();P.mode=mode;P.query='';P.category='';P.item=null;$('pronSearch').value='';for(const [button,m] of [['pronSentence','sentence'],['pronEveryday','everyday'],['pronWord','word']])$(button).setAttribute('aria-pressed',String(mode===m));renderCategories();refreshList();};
-    $('pronSearch').value=P.query;$('pronSearch').oninput=e=>{P.query=e.target.value;refreshList();};$('pronCategory').onchange=e=>{P.category=e.target.value;refreshList();};
-    $('pronChoice').onchange=e=>{resetAttempt();P.item=pool().find(x=>x.id===e.target.value)||null;renderTarget();};
+    const root=$('pronunciationPage'),isCurrent=()=>$('pronunciationPage')===root;
+    for(const [id,mode]of [['pronSentence','sentence'],['pronEveryday','everyday'],['pronWord','word']])$(id).onclick=()=>{if(!isCurrent()||P.phase!=='idle'||P.mode===mode)return;window.MobileUI?.cancelMotion?.();++navigationEpoch;resetAttempt();P.mode=mode;P.query='';P.category='';P.item=null;$('pronSearch').value='';for(const [button,m] of [['pronSentence','sentence'],['pronEveryday','everyday'],['pronWord','word']])$(button).setAttribute('aria-pressed',String(mode===m));renderCategories();refreshList();};
+    $('pronSearch').value=P.query;$('pronSearch').oninput=e=>{if(!isCurrent()||P.phase!=='idle'||e.target!==$('pronSearch')){e.target.value=P.query;return;}window.MobileUI?.cancelMotion?.();++navigationEpoch;P.query=e.target.value;refreshList();};$('pronCategory').onchange=e=>{if(!isCurrent()||P.phase!=='idle'||e.target!==$('pronCategory')||(e.target.value&&!pool().some(item=>categoryOf(item)===e.target.value))){e.target.value=P.category;return;}window.MobileUI?.cancelMotion?.();++navigationEpoch;P.category=e.target.value;refreshList();};
+    $('pronChoice').onchange=e=>{const id=e.target.value,rows=candidates(),index=rows.findIndex(item=>item.id===id),prior=rows.findIndex(item=>item.id===P.item?.id),listed=Array.from($('pronChoice').querySelectorAll('option')).some(option=>option.value===id||option.getAttribute?.('value')===id);e.target.value=P.item?.id||'';if(!isCurrent()||P.phase!=='idle'||e.target!==$('pronChoice')||index<0||!listed)return;for(const detail of document.querySelectorAll('.pron-tools'))detail.open=false;chooseTarget(id,index>=prior?1:-1);};
     $('pronListen').onclick=()=>{if(!P.item)return;$('pronRecording')?.pause();if(P.mode!=='word')TranslationAudio.start([P.item],0,true);else{TranslationAudio.stop();speak(P.item.word);}};
-    $('pronRandom').onclick=()=>{const candidates=pool().filter(item=>(!P.category||categoryOf(item)===P.category)&&(!P.query||normal([item.english,item.korean,item.word,item.meaning].filter(Boolean).join(' ')).includes(normal(P.query))));const other=candidates.filter(w=>w.id!==P.item?.id),choices=other.length?other:candidates;if(!choices.length)return;resetAttempt();P.item=choices[Math.floor(Math.random()*choices.length)];refreshList();};
+    $('pronRandom').onclick=()=>{if(!isCurrent()||P.phase!=='idle')return;const choices=candidates().filter(item=>item.id!==P.item?.id);if(!choices.length)return;for(const detail of document.querySelectorAll('.pron-tools'))detail.open=false;chooseTarget(choices[Math.floor(Math.random()*choices.length)].id,1);};
+    for(const[id,direction]of[['pronPrevious',-1],['pronNext',1]])$(id).onclick=()=>{if(!isCurrent()||P.phase!=='idle')return;const motion=targetMotion();if(!motion.canMove(direction))return;const rows=candidates(),index=rows.findIndex(item=>item.id===P.item?.id);chooseTarget(rows[index+direction].id,direction);};
     $('pronPrepare').onclick=async()=>{resetAttempt();const run=P.run;P.phase='preparing';controls();status('분석 모델을 이 기기에 준비하고 있어요…');try{await model();if(run===P.run&&isHere())status('기기 내 분석 준비가 끝났어요. 문장이나 단어를 녹음해 보세요.');}catch(error){if(run===P.run&&isHere())status('분석 자료를 받지 못했어요. 인터넷 연결을 확인하고 다시 시도해 주세요.');}finally{if(run===P.run&&isHere()){P.phase='idle';controls();}}};
     $('pronRecord').onclick=startRecording;$('pronStop').onclick=()=>{if(P.phase==='requesting'){resetAttempt();status('마이크 연결을 취소했어요.');}else finishRecording();};
     $('pronCancel').onclick=()=>{resetAttempt(true);status('분석을 취소했어요. 다시 시작할 수 있어요.');};$('pronFile').onchange=loadFile;
@@ -117,6 +154,6 @@
     $('pronRetry').disabled=$('pronRecord').disabled&&P.phase==='idle';
     $('pronRetry').onclick=()=>{if($('pronRecord')&&!$('pronRecord').disabled)$('pronRecord').click();};
   }
-  window.pronunciationPage=pageView;window.Pronunciation={stop,open(mode='sentence',itemId){P.mode=['sentence','everyday','word'].includes(mode)?mode:'sentence';P.query='';P.category='';P.item=pool().find(item=>item.id===itemId)||null;show('pronunciation');}};window.addEventListener('pagehide',stop);
+  window.pronunciationPage=pageView;window.Pronunciation={stop,open(mode='sentence',itemId){if(isHere()&&P.phase!=='idle')return;P.mode=['sentence','everyday','word'].includes(mode)?mode:'sentence';P.query='';P.category='';P.item=pool().find(item=>item.id===itemId)||null;show('pronunciation');}};window.addEventListener('pagehide',stop);
   document.addEventListener('visibilitychange',()=>{if(document.hidden&&isHere()){stop();status('화면이 숨겨져 녹음과 분석을 중단했어요. 다시 시작해 주세요.');}});
 })();
