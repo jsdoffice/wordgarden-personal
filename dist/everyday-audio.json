@@ -1,0 +1,5133 @@
+{
+  "version": 1,
+  "collection": "everyday",
+  "voice": "am_michael",
+  "voiceName": "Michael",
+  "language": "en-US",
+  "sampleRate": 24000,
+  "generator": "Kokoro-82M v1.0 / kokoro-onnx",
+  "clips": {
+    "everyday-0001": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 0.3,
+      "end": 3.325
+    },
+    "everyday-0002": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 3.625,
+      "end": 6.05
+    },
+    "everyday-0003": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 6.35,
+      "end": 9.25
+    },
+    "everyday-0004": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 9.55,
+      "end": 12.2
+    },
+    "everyday-0005": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 12.5,
+      "end": 15.3
+    },
+    "everyday-0006": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 15.6,
+      "end": 18.0
+    },
+    "everyday-0007": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 18.3,
+      "end": 21.15
+    },
+    "everyday-0008": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 21.45,
+      "end": 23.95
+    },
+    "everyday-0009": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 24.25,
+      "end": 27.6
+    },
+    "everyday-0010": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 27.9,
+      "end": 30.65
+    },
+    "everyday-0011": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 30.95,
+      "end": 33.3
+    },
+    "everyday-0012": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 33.6,
+      "end": 36.35
+    },
+    "everyday-0013": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 36.65,
+      "end": 39.125
+    },
+    "everyday-0014": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 39.425,
+      "end": 41.95
+    },
+    "everyday-0015": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 42.25,
+      "end": 44.875
+    },
+    "everyday-0016": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 45.175,
+      "end": 47.725
+    },
+    "everyday-0017": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 48.025,
+      "end": 51.025
+    },
+    "everyday-0018": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 51.325,
+      "end": 54.3
+    },
+    "everyday-0019": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 54.6,
+      "end": 57.225
+    },
+    "everyday-0020": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 57.525,
+      "end": 60.37
+    },
+    "everyday-0021": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 60.67,
+      "end": 63.245
+    },
+    "everyday-0022": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 63.545,
+      "end": 66.495
+    },
+    "everyday-0023": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 66.795,
+      "end": 69.995
+    },
+    "everyday-0024": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 70.295,
+      "end": 73.22
+    },
+    "everyday-0025": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 73.52,
+      "end": 76.67
+    },
+    "everyday-0026": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 76.97,
+      "end": 79.895
+    },
+    "everyday-0027": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 80.195,
+      "end": 82.82
+    },
+    "everyday-0028": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 83.12,
+      "end": 86.42
+    },
+    "everyday-0029": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 86.72,
+      "end": 89.395
+    },
+    "everyday-0030": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 89.695,
+      "end": 92.845
+    },
+    "everyday-0031": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 93.145,
+      "end": 95.62
+    },
+    "everyday-0032": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 95.92,
+      "end": 98.67
+    },
+    "everyday-0033": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 98.97,
+      "end": 102.32
+    },
+    "everyday-0034": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 102.62,
+      "end": 105.27
+    },
+    "everyday-0035": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 105.57,
+      "end": 108.495
+    },
+    "everyday-0036": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 108.795,
+      "end": 111.42
+    },
+    "everyday-0037": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 111.72,
+      "end": 114.495
+    },
+    "everyday-0038": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 114.795,
+      "end": 117.545
+    },
+    "everyday-0039": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 117.845,
+      "end": 121.195
+    },
+    "everyday-0040": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 121.495,
+      "end": 123.92
+    },
+    "everyday-0041": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 124.22,
+      "end": 127.095
+    },
+    "everyday-0042": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 127.395,
+      "end": 130.345
+    },
+    "everyday-0043": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 130.645,
+      "end": 133.52
+    },
+    "everyday-0044": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 133.82,
+      "end": 136.595
+    },
+    "everyday-0045": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 136.895,
+      "end": 139.745
+    },
+    "everyday-0046": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 140.045,
+      "end": 142.47
+    },
+    "everyday-0047": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 142.77,
+      "end": 145.695
+    },
+    "everyday-0048": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 145.995,
+      "end": 149.07
+    },
+    "everyday-0049": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 149.37,
+      "end": 152.095
+    },
+    "everyday-0050": {
+      "src": "audio/everyday-v1-01.m4a",
+      "start": 152.395,
+      "end": 155.07
+    },
+    "everyday-0051": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 0.3,
+      "end": 3.45
+    },
+    "everyday-0052": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 3.75,
+      "end": 6.95
+    },
+    "everyday-0053": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 7.25,
+      "end": 11.25
+    },
+    "everyday-0054": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 11.55,
+      "end": 14.65
+    },
+    "everyday-0055": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 14.95,
+      "end": 17.9
+    },
+    "everyday-0056": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 18.2,
+      "end": 21.475
+    },
+    "everyday-0057": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 21.775,
+      "end": 24.825
+    },
+    "everyday-0058": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 25.125,
+      "end": 27.8
+    },
+    "everyday-0059": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 28.1,
+      "end": 31.425
+    },
+    "everyday-0060": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 31.725,
+      "end": 35.1
+    },
+    "everyday-0061": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 35.4,
+      "end": 38.275
+    },
+    "everyday-0062": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 38.575,
+      "end": 41.95
+    },
+    "everyday-0063": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 42.25,
+      "end": 45.875
+    },
+    "everyday-0064": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 46.175,
+      "end": 49.7
+    },
+    "everyday-0065": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 50.0,
+      "end": 53.15
+    },
+    "everyday-0066": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 53.45,
+      "end": 55.925
+    },
+    "everyday-0067": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 56.225,
+      "end": 59.225
+    },
+    "everyday-0068": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 59.525,
+      "end": 62.525
+    },
+    "everyday-0069": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 62.825,
+      "end": 65.475
+    },
+    "everyday-0070": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 65.775,
+      "end": 68.875
+    },
+    "everyday-0071": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 69.175,
+      "end": 72.5
+    },
+    "everyday-0072": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 72.8,
+      "end": 75.3
+    },
+    "everyday-0073": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 75.6,
+      "end": 78.4
+    },
+    "everyday-0074": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 78.7,
+      "end": 82.1
+    },
+    "everyday-0075": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 82.4,
+      "end": 85.7
+    },
+    "everyday-0076": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 86.0,
+      "end": 89.425
+    },
+    "everyday-0077": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 89.725,
+      "end": 92.325
+    },
+    "everyday-0078": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 92.625,
+      "end": 95.85
+    },
+    "everyday-0079": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 96.15,
+      "end": 99.1
+    },
+    "everyday-0080": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 99.4,
+      "end": 101.825
+    },
+    "everyday-0081": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 102.125,
+      "end": 105.225
+    },
+    "everyday-0082": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 105.525,
+      "end": 108.55
+    },
+    "everyday-0083": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 108.85,
+      "end": 112.275
+    },
+    "everyday-0084": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 112.575,
+      "end": 115.575
+    },
+    "everyday-0085": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 115.875,
+      "end": 119.125
+    },
+    "everyday-0086": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 119.425,
+      "end": 122.25
+    },
+    "everyday-0087": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 122.55,
+      "end": 124.95
+    },
+    "everyday-0088": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 125.25,
+      "end": 128.6
+    },
+    "everyday-0089": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 128.9,
+      "end": 131.875
+    },
+    "everyday-0090": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 132.175,
+      "end": 135.375
+    },
+    "everyday-0091": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 135.675,
+      "end": 138.85
+    },
+    "everyday-0092": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 139.15,
+      "end": 142.125
+    },
+    "everyday-0093": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 142.425,
+      "end": 145.6
+    },
+    "everyday-0094": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 145.9,
+      "end": 149.025
+    },
+    "everyday-0095": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 149.325,
+      "end": 153.09
+    },
+    "everyday-0096": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 153.39,
+      "end": 156.19
+    },
+    "everyday-0097": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 156.49,
+      "end": 159.64
+    },
+    "everyday-0098": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 159.94,
+      "end": 163.49
+    },
+    "everyday-0099": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 163.79,
+      "end": 166.69
+    },
+    "everyday-0100": {
+      "src": "audio/everyday-v1-02.m4a",
+      "start": 166.99,
+      "end": 169.365
+    },
+    "everyday-0101": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 0.3,
+      "end": 3.425
+    },
+    "everyday-0102": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 3.725,
+      "end": 6.575
+    },
+    "everyday-0103": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 6.875,
+      "end": 9.625
+    },
+    "everyday-0104": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 9.925,
+      "end": 12.675
+    },
+    "everyday-0105": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 12.975,
+      "end": 16.1
+    },
+    "everyday-0106": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 16.4,
+      "end": 19.825
+    },
+    "everyday-0107": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 20.125,
+      "end": 22.95
+    },
+    "everyday-0108": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 23.25,
+      "end": 25.975
+    },
+    "everyday-0109": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 26.275,
+      "end": 29.45
+    },
+    "everyday-0110": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 29.75,
+      "end": 32.775
+    },
+    "everyday-0111": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 33.075,
+      "end": 36.45
+    },
+    "everyday-0112": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 36.75,
+      "end": 40.025
+    },
+    "everyday-0113": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 40.325,
+      "end": 43.1
+    },
+    "everyday-0114": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 43.4,
+      "end": 46.4
+    },
+    "everyday-0115": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 46.7,
+      "end": 49.95
+    },
+    "everyday-0116": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 50.25,
+      "end": 53.3
+    },
+    "everyday-0117": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 53.6,
+      "end": 57.165
+    },
+    "everyday-0118": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 57.465,
+      "end": 60.465
+    },
+    "everyday-0119": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 60.765,
+      "end": 63.29
+    },
+    "everyday-0120": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 63.59,
+      "end": 67.09
+    },
+    "everyday-0121": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 67.39,
+      "end": 70.665
+    },
+    "everyday-0122": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 70.965,
+      "end": 74.54
+    },
+    "everyday-0123": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 74.84,
+      "end": 77.515
+    },
+    "everyday-0124": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 77.815,
+      "end": 80.765
+    },
+    "everyday-0125": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 81.065,
+      "end": 84.34
+    },
+    "everyday-0126": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 84.64,
+      "end": 88.015
+    },
+    "everyday-0127": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 88.315,
+      "end": 91.19
+    },
+    "everyday-0128": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 91.49,
+      "end": 94.465
+    },
+    "everyday-0129": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 94.765,
+      "end": 98.065
+    },
+    "everyday-0130": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 98.365,
+      "end": 101.565
+    },
+    "everyday-0131": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 101.865,
+      "end": 105.14
+    },
+    "everyday-0132": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 105.44,
+      "end": 108.29
+    },
+    "everyday-0133": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 108.59,
+      "end": 111.365
+    },
+    "everyday-0134": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 111.665,
+      "end": 114.965
+    },
+    "everyday-0135": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 115.265,
+      "end": 118.94
+    },
+    "everyday-0136": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 119.24,
+      "end": 122.415
+    },
+    "everyday-0137": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 122.715,
+      "end": 125.79
+    },
+    "everyday-0138": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 126.09,
+      "end": 129.49
+    },
+    "everyday-0139": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 129.79,
+      "end": 133.315
+    },
+    "everyday-0140": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 133.615,
+      "end": 136.765
+    },
+    "everyday-0141": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 137.065,
+      "end": 140.34
+    },
+    "everyday-0142": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 140.64,
+      "end": 143.565
+    },
+    "everyday-0143": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 143.865,
+      "end": 147.24
+    },
+    "everyday-0144": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 147.54,
+      "end": 151.04
+    },
+    "everyday-0145": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 151.34,
+      "end": 154.74
+    },
+    "everyday-0146": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 155.04,
+      "end": 158.115
+    },
+    "everyday-0147": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 158.415,
+      "end": 161.24
+    },
+    "everyday-0148": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 161.54,
+      "end": 164.715
+    },
+    "everyday-0149": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 165.015,
+      "end": 168.265
+    },
+    "everyday-0150": {
+      "src": "audio/everyday-v1-03.m4a",
+      "start": 168.565,
+      "end": 171.79
+    },
+    "everyday-0151": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 0.3,
+      "end": 2.9
+    },
+    "everyday-0152": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 3.2,
+      "end": 6.2
+    },
+    "everyday-0153": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 6.5,
+      "end": 9.45
+    },
+    "everyday-0154": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 9.75,
+      "end": 12.775
+    },
+    "everyday-0155": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 13.075,
+      "end": 15.875
+    },
+    "everyday-0156": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 16.175,
+      "end": 19.9
+    },
+    "everyday-0157": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 20.2,
+      "end": 23.15
+    },
+    "everyday-0158": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 23.45,
+      "end": 26.775
+    },
+    "everyday-0159": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 27.075,
+      "end": 29.825
+    },
+    "everyday-0160": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 30.125,
+      "end": 32.9
+    },
+    "everyday-0161": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 33.2,
+      "end": 36.4
+    },
+    "everyday-0162": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 36.7,
+      "end": 39.475
+    },
+    "everyday-0163": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 39.775,
+      "end": 42.375
+    },
+    "everyday-0164": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 42.675,
+      "end": 45.975
+    },
+    "everyday-0165": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 46.275,
+      "end": 49.275
+    },
+    "everyday-0166": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 49.575,
+      "end": 52.75
+    },
+    "everyday-0167": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 53.05,
+      "end": 55.975
+    },
+    "everyday-0168": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 56.275,
+      "end": 59.05
+    },
+    "everyday-0169": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 59.35,
+      "end": 62.225
+    },
+    "everyday-0170": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 62.525,
+      "end": 65.3
+    },
+    "everyday-0171": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 65.6,
+      "end": 67.8
+    },
+    "everyday-0172": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 68.1,
+      "end": 70.875
+    },
+    "everyday-0173": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 71.175,
+      "end": 74.175
+    },
+    "everyday-0174": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 74.475,
+      "end": 77.55
+    },
+    "everyday-0175": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 77.85,
+      "end": 80.925
+    },
+    "everyday-0176": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 81.225,
+      "end": 84.275
+    },
+    "everyday-0177": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 84.575,
+      "end": 87.2
+    },
+    "everyday-0178": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 87.5,
+      "end": 90.875
+    },
+    "everyday-0179": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 91.175,
+      "end": 93.9
+    },
+    "everyday-0180": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 94.2,
+      "end": 96.825
+    },
+    "everyday-0181": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 97.125,
+      "end": 100.425
+    },
+    "everyday-0182": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 100.725,
+      "end": 103.775
+    },
+    "everyday-0183": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 104.075,
+      "end": 107.1
+    },
+    "everyday-0184": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 107.4,
+      "end": 110.475
+    },
+    "everyday-0185": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 110.775,
+      "end": 113.7
+    },
+    "everyday-0186": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 114.0,
+      "end": 117.15
+    },
+    "everyday-0187": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 117.45,
+      "end": 121.025
+    },
+    "everyday-0188": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 121.325,
+      "end": 124.3
+    },
+    "everyday-0189": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 124.6,
+      "end": 127.475
+    },
+    "everyday-0190": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 127.775,
+      "end": 131.7
+    },
+    "everyday-0191": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 132.0,
+      "end": 135.525
+    },
+    "everyday-0192": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 135.825,
+      "end": 139.725
+    },
+    "everyday-0193": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 140.025,
+      "end": 143.1
+    },
+    "everyday-0194": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 143.4,
+      "end": 146.15
+    },
+    "everyday-0195": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 146.45,
+      "end": 150.2
+    },
+    "everyday-0196": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 150.5,
+      "end": 153.625
+    },
+    "everyday-0197": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 153.925,
+      "end": 157.075
+    },
+    "everyday-0198": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 157.375,
+      "end": 160.45
+    },
+    "everyday-0199": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 160.75,
+      "end": 164.415
+    },
+    "everyday-0200": {
+      "src": "audio/everyday-v1-04.m4a",
+      "start": 164.715,
+      "end": 168.515
+    },
+    "everyday-0201": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 0.3,
+      "end": 3.775
+    },
+    "everyday-0202": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 4.075,
+      "end": 7.05
+    },
+    "everyday-0203": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 7.35,
+      "end": 10.4
+    },
+    "everyday-0204": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 10.7,
+      "end": 13.675
+    },
+    "everyday-0205": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 13.975,
+      "end": 16.8
+    },
+    "everyday-0206": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 17.1,
+      "end": 20.175
+    },
+    "everyday-0207": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 20.475,
+      "end": 23.585
+    },
+    "everyday-0208": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 23.885,
+      "end": 26.485
+    },
+    "everyday-0209": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 26.785,
+      "end": 29.785
+    },
+    "everyday-0210": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 30.085,
+      "end": 33.11
+    },
+    "everyday-0211": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 33.41,
+      "end": 36.385
+    },
+    "everyday-0212": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 36.685,
+      "end": 39.46
+    },
+    "everyday-0213": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 39.76,
+      "end": 43.085
+    },
+    "everyday-0214": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 43.385,
+      "end": 46.61
+    },
+    "everyday-0215": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 46.91,
+      "end": 50.035
+    },
+    "everyday-0216": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 50.335,
+      "end": 53.46
+    },
+    "everyday-0217": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 53.76,
+      "end": 57.185
+    },
+    "everyday-0218": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 57.485,
+      "end": 60.41
+    },
+    "everyday-0219": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 60.71,
+      "end": 64.435
+    },
+    "everyday-0220": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 64.735,
+      "end": 67.685
+    },
+    "everyday-0221": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 67.985,
+      "end": 70.66
+    },
+    "everyday-0222": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 70.96,
+      "end": 74.16
+    },
+    "everyday-0223": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 74.46,
+      "end": 77.085
+    },
+    "everyday-0224": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 77.385,
+      "end": 80.435
+    },
+    "everyday-0225": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 80.735,
+      "end": 84.11
+    },
+    "everyday-0226": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 84.41,
+      "end": 87.335
+    },
+    "everyday-0227": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 87.635,
+      "end": 90.72
+    },
+    "everyday-0228": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 91.02,
+      "end": 93.37
+    },
+    "everyday-0229": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 93.67,
+      "end": 96.82
+    },
+    "everyday-0230": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 97.12,
+      "end": 99.745
+    },
+    "everyday-0231": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 100.045,
+      "end": 102.795
+    },
+    "everyday-0232": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 103.095,
+      "end": 106.52
+    },
+    "everyday-0233": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 106.82,
+      "end": 109.395
+    },
+    "everyday-0234": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 109.695,
+      "end": 112.495
+    },
+    "everyday-0235": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 112.795,
+      "end": 116.295
+    },
+    "everyday-0236": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 116.595,
+      "end": 119.42
+    },
+    "everyday-0237": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 119.72,
+      "end": 122.37
+    },
+    "everyday-0238": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 122.67,
+      "end": 125.845
+    },
+    "everyday-0239": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 126.145,
+      "end": 129.295
+    },
+    "everyday-0240": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 129.595,
+      "end": 132.745
+    },
+    "everyday-0241": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 133.045,
+      "end": 135.845
+    },
+    "everyday-0242": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 136.145,
+      "end": 139.62
+    },
+    "everyday-0243": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 139.92,
+      "end": 143.02
+    },
+    "everyday-0244": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 143.32,
+      "end": 146.02
+    },
+    "everyday-0245": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 146.32,
+      "end": 148.67
+    },
+    "everyday-0246": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 148.97,
+      "end": 151.845
+    },
+    "everyday-0247": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 152.145,
+      "end": 154.77
+    },
+    "everyday-0248": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 155.07,
+      "end": 157.945
+    },
+    "everyday-0249": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 158.245,
+      "end": 161.395
+    },
+    "everyday-0250": {
+      "src": "audio/everyday-v1-05.m4a",
+      "start": 161.695,
+      "end": 164.62
+    },
+    "everyday-0251": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 0.3,
+      "end": 3.825
+    },
+    "everyday-0252": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 4.125,
+      "end": 6.875
+    },
+    "everyday-0253": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 7.175,
+      "end": 9.925
+    },
+    "everyday-0254": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 10.225,
+      "end": 12.9
+    },
+    "everyday-0255": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 13.2,
+      "end": 15.925
+    },
+    "everyday-0256": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 16.225,
+      "end": 19.375
+    },
+    "everyday-0257": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 19.675,
+      "end": 22.4
+    },
+    "everyday-0258": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 22.7,
+      "end": 25.575
+    },
+    "everyday-0259": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 25.875,
+      "end": 28.7
+    },
+    "everyday-0260": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 29.0,
+      "end": 31.65
+    },
+    "everyday-0261": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 31.95,
+      "end": 34.625
+    },
+    "everyday-0262": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 34.925,
+      "end": 38.0
+    },
+    "everyday-0263": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 38.3,
+      "end": 41.45
+    },
+    "everyday-0264": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 41.75,
+      "end": 45.225
+    },
+    "everyday-0265": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 45.525,
+      "end": 48.25
+    },
+    "everyday-0266": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 48.55,
+      "end": 51.675
+    },
+    "everyday-0267": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 51.975,
+      "end": 55.2
+    },
+    "everyday-0268": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 55.5,
+      "end": 58.825
+    },
+    "everyday-0269": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 59.125,
+      "end": 61.9
+    },
+    "everyday-0270": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 62.2,
+      "end": 65.65
+    },
+    "everyday-0271": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 65.95,
+      "end": 69.0
+    },
+    "everyday-0272": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 69.3,
+      "end": 72.225
+    },
+    "everyday-0273": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 72.525,
+      "end": 75.35
+    },
+    "everyday-0274": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 75.65,
+      "end": 78.425
+    },
+    "everyday-0275": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 78.725,
+      "end": 81.325
+    },
+    "everyday-0276": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 81.625,
+      "end": 84.375
+    },
+    "everyday-0277": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 84.675,
+      "end": 88.4
+    },
+    "everyday-0278": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 88.7,
+      "end": 91.5
+    },
+    "everyday-0279": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 91.8,
+      "end": 94.775
+    },
+    "everyday-0280": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 95.075,
+      "end": 97.7
+    },
+    "everyday-0281": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 98.0,
+      "end": 101.25
+    },
+    "everyday-0282": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 101.55,
+      "end": 104.725
+    },
+    "everyday-0283": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 105.025,
+      "end": 107.895
+    },
+    "everyday-0284": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 108.195,
+      "end": 111.345
+    },
+    "everyday-0285": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 111.645,
+      "end": 114.02
+    },
+    "everyday-0286": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 114.32,
+      "end": 117.32
+    },
+    "everyday-0287": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 117.62,
+      "end": 120.945
+    },
+    "everyday-0288": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 121.245,
+      "end": 124.345
+    },
+    "everyday-0289": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 124.645,
+      "end": 128.47
+    },
+    "everyday-0290": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 128.77,
+      "end": 131.67
+    },
+    "everyday-0291": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 131.97,
+      "end": 135.445
+    },
+    "everyday-0292": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 135.745,
+      "end": 139.67
+    },
+    "everyday-0293": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 139.97,
+      "end": 143.015
+    },
+    "everyday-0294": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 143.315,
+      "end": 146.915
+    },
+    "everyday-0295": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 147.215,
+      "end": 150.19
+    },
+    "everyday-0296": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 150.49,
+      "end": 153.315
+    },
+    "everyday-0297": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 153.615,
+      "end": 156.465
+    },
+    "everyday-0298": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 156.765,
+      "end": 160.115
+    },
+    "everyday-0299": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 160.415,
+      "end": 163.29
+    },
+    "everyday-0300": {
+      "src": "audio/everyday-v1-06.m4a",
+      "start": 163.59,
+      "end": 167.165
+    },
+    "everyday-0301": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 0.3,
+      "end": 4.1
+    },
+    "everyday-0302": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 4.4,
+      "end": 7.1
+    },
+    "everyday-0303": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 7.4,
+      "end": 10.2
+    },
+    "everyday-0304": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 10.5,
+      "end": 13.275
+    },
+    "everyday-0305": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 13.575,
+      "end": 16.775
+    },
+    "everyday-0306": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 17.075,
+      "end": 20.225
+    },
+    "everyday-0307": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 20.525,
+      "end": 23.275
+    },
+    "everyday-0308": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 23.575,
+      "end": 26.3
+    },
+    "everyday-0309": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 26.6,
+      "end": 29.8
+    },
+    "everyday-0310": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 30.1,
+      "end": 33.425
+    },
+    "everyday-0311": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 33.725,
+      "end": 36.6
+    },
+    "everyday-0312": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 36.9,
+      "end": 40.15
+    },
+    "everyday-0313": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 40.45,
+      "end": 43.75
+    },
+    "everyday-0314": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 44.05,
+      "end": 46.825
+    },
+    "everyday-0315": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 47.125,
+      "end": 50.45
+    },
+    "everyday-0316": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 50.75,
+      "end": 53.425
+    },
+    "everyday-0317": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 53.725,
+      "end": 56.6
+    },
+    "everyday-0318": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 56.9,
+      "end": 59.8
+    },
+    "everyday-0319": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 60.1,
+      "end": 63.05
+    },
+    "everyday-0320": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 63.35,
+      "end": 66.3
+    },
+    "everyday-0321": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 66.6,
+      "end": 69.4
+    },
+    "everyday-0322": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 69.7,
+      "end": 72.55
+    },
+    "everyday-0323": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 72.85,
+      "end": 75.675
+    },
+    "everyday-0324": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 75.975,
+      "end": 79.075
+    },
+    "everyday-0325": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 79.375,
+      "end": 82.425
+    },
+    "everyday-0326": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 82.725,
+      "end": 85.175
+    },
+    "everyday-0327": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 85.475,
+      "end": 88.5
+    },
+    "everyday-0328": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 88.8,
+      "end": 92.125
+    },
+    "everyday-0329": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 92.425,
+      "end": 96.15
+    },
+    "everyday-0330": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 96.45,
+      "end": 99.725
+    },
+    "everyday-0331": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 100.025,
+      "end": 103.4
+    },
+    "everyday-0332": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 103.7,
+      "end": 106.7
+    },
+    "everyday-0333": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 107.0,
+      "end": 109.9
+    },
+    "everyday-0334": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 110.2,
+      "end": 113.525
+    },
+    "everyday-0335": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 113.825,
+      "end": 116.925
+    },
+    "everyday-0336": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 117.225,
+      "end": 120.35
+    },
+    "everyday-0337": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 120.65,
+      "end": 124.375
+    },
+    "everyday-0338": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 124.675,
+      "end": 127.75
+    },
+    "everyday-0339": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 128.05,
+      "end": 131.05
+    },
+    "everyday-0340": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 131.35,
+      "end": 134.525
+    },
+    "everyday-0341": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 134.825,
+      "end": 137.725
+    },
+    "everyday-0342": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 138.025,
+      "end": 140.9
+    },
+    "everyday-0343": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 141.2,
+      "end": 144.075
+    },
+    "everyday-0344": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 144.375,
+      "end": 147.025
+    },
+    "everyday-0345": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 147.325,
+      "end": 149.8
+    },
+    "everyday-0346": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 150.1,
+      "end": 153.575
+    },
+    "everyday-0347": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 153.875,
+      "end": 156.85
+    },
+    "everyday-0348": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 157.15,
+      "end": 159.85
+    },
+    "everyday-0349": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 160.15,
+      "end": 162.95
+    },
+    "everyday-0350": {
+      "src": "audio/everyday-v1-07.m4a",
+      "start": 163.25,
+      "end": 166.525
+    },
+    "everyday-0351": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 0.3,
+      "end": 3.375
+    },
+    "everyday-0352": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 3.675,
+      "end": 6.6
+    },
+    "everyday-0353": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 6.9,
+      "end": 10.4
+    },
+    "everyday-0354": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 10.7,
+      "end": 13.55
+    },
+    "everyday-0355": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 13.85,
+      "end": 17.725
+    },
+    "everyday-0356": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 18.025,
+      "end": 20.775
+    },
+    "everyday-0357": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 21.075,
+      "end": 23.975
+    },
+    "everyday-0358": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 24.275,
+      "end": 27.775
+    },
+    "everyday-0359": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 28.075,
+      "end": 31.15
+    },
+    "everyday-0360": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 31.45,
+      "end": 34.4
+    },
+    "everyday-0361": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 34.7,
+      "end": 38.225
+    },
+    "everyday-0362": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 38.525,
+      "end": 41.075
+    },
+    "everyday-0363": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 41.375,
+      "end": 44.3
+    },
+    "everyday-0364": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 44.6,
+      "end": 47.425
+    },
+    "everyday-0365": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 47.725,
+      "end": 50.4
+    },
+    "everyday-0366": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 50.7,
+      "end": 53.725
+    },
+    "everyday-0367": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 54.025,
+      "end": 57.275
+    },
+    "everyday-0368": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 57.575,
+      "end": 61.0
+    },
+    "everyday-0369": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 61.3,
+      "end": 64.45
+    },
+    "everyday-0370": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 64.75,
+      "end": 67.85
+    },
+    "everyday-0371": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 68.15,
+      "end": 71.075
+    },
+    "everyday-0372": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 71.375,
+      "end": 74.375
+    },
+    "everyday-0373": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 74.675,
+      "end": 77.675
+    },
+    "everyday-0374": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 77.975,
+      "end": 80.925
+    },
+    "everyday-0375": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 81.225,
+      "end": 84.165
+    },
+    "everyday-0376": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 84.465,
+      "end": 87.615
+    },
+    "everyday-0377": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 87.915,
+      "end": 90.865
+    },
+    "everyday-0378": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 91.165,
+      "end": 94.44
+    },
+    "everyday-0379": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 94.74,
+      "end": 97.615
+    },
+    "everyday-0380": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 97.915,
+      "end": 100.84
+    },
+    "everyday-0381": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 101.14,
+      "end": 104.065
+    },
+    "everyday-0382": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 104.365,
+      "end": 107.49
+    },
+    "everyday-0383": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 107.79,
+      "end": 110.565
+    },
+    "everyday-0384": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 110.865,
+      "end": 114.165
+    },
+    "everyday-0385": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 114.465,
+      "end": 117.615
+    },
+    "everyday-0386": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 117.915,
+      "end": 120.94
+    },
+    "everyday-0387": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 121.24,
+      "end": 125.04
+    },
+    "everyday-0388": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 125.34,
+      "end": 128.34
+    },
+    "everyday-0389": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 128.64,
+      "end": 132.04
+    },
+    "everyday-0390": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 132.34,
+      "end": 135.765
+    },
+    "everyday-0391": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 136.065,
+      "end": 138.99
+    },
+    "everyday-0392": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 139.29,
+      "end": 143.015
+    },
+    "everyday-0393": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 143.315,
+      "end": 146.615
+    },
+    "everyday-0394": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 146.915,
+      "end": 150.115
+    },
+    "everyday-0395": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 150.415,
+      "end": 153.015
+    },
+    "everyday-0396": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 153.315,
+      "end": 157.065
+    },
+    "everyday-0397": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 157.365,
+      "end": 160.39
+    },
+    "everyday-0398": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 160.69,
+      "end": 164.565
+    },
+    "everyday-0399": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 164.865,
+      "end": 168.265
+    },
+    "everyday-0400": {
+      "src": "audio/everyday-v1-08.m4a",
+      "start": 168.565,
+      "end": 172.14
+    },
+    "everyday-0401": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 0.3,
+      "end": 3.15
+    },
+    "everyday-0402": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 3.45,
+      "end": 6.9
+    },
+    "everyday-0403": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 7.2,
+      "end": 10.5
+    },
+    "everyday-0404": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 10.8,
+      "end": 13.8
+    },
+    "everyday-0405": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 14.1,
+      "end": 16.775
+    },
+    "everyday-0406": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 17.075,
+      "end": 20.95
+    },
+    "everyday-0407": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 21.25,
+      "end": 24.35
+    },
+    "everyday-0408": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 24.65,
+      "end": 27.85
+    },
+    "everyday-0409": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 28.15,
+      "end": 31.925
+    },
+    "everyday-0410": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 32.225,
+      "end": 35.525
+    },
+    "everyday-0411": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 35.825,
+      "end": 39.275
+    },
+    "everyday-0412": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 39.575,
+      "end": 42.55
+    },
+    "everyday-0413": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 42.85,
+      "end": 46.45
+    },
+    "everyday-0414": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 46.75,
+      "end": 49.625
+    },
+    "everyday-0415": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 49.925,
+      "end": 53.1
+    },
+    "everyday-0416": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 53.4,
+      "end": 56.675
+    },
+    "everyday-0417": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 56.975,
+      "end": 60.675
+    },
+    "everyday-0418": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 60.975,
+      "end": 63.575
+    },
+    "everyday-0419": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 63.875,
+      "end": 66.875
+    },
+    "everyday-0420": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 67.175,
+      "end": 70.125
+    },
+    "everyday-0421": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 70.425,
+      "end": 73.325
+    },
+    "everyday-0422": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 73.625,
+      "end": 76.625
+    },
+    "everyday-0423": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 76.925,
+      "end": 80.4
+    },
+    "everyday-0424": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 80.7,
+      "end": 83.7
+    },
+    "everyday-0425": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 84.0,
+      "end": 87.25
+    },
+    "everyday-0426": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 87.55,
+      "end": 90.175
+    },
+    "everyday-0427": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 90.475,
+      "end": 93.775
+    },
+    "everyday-0428": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 94.075,
+      "end": 97.325
+    },
+    "everyday-0429": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 97.625,
+      "end": 100.575
+    },
+    "everyday-0430": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 100.875,
+      "end": 104.0
+    },
+    "everyday-0431": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 104.3,
+      "end": 108.275
+    },
+    "everyday-0432": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 108.575,
+      "end": 111.75
+    },
+    "everyday-0433": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 112.05,
+      "end": 115.275
+    },
+    "everyday-0434": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 115.575,
+      "end": 118.45
+    },
+    "everyday-0435": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 118.75,
+      "end": 121.55
+    },
+    "everyday-0436": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 121.85,
+      "end": 124.7
+    },
+    "everyday-0437": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 125.0,
+      "end": 129.25
+    },
+    "everyday-0438": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 129.55,
+      "end": 132.4
+    },
+    "everyday-0439": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 132.7,
+      "end": 136.425
+    },
+    "everyday-0440": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 136.725,
+      "end": 139.775
+    },
+    "everyday-0441": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 140.075,
+      "end": 143.25
+    },
+    "everyday-0442": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 143.55,
+      "end": 146.825
+    },
+    "everyday-0443": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 147.125,
+      "end": 150.3
+    },
+    "everyday-0444": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 150.6,
+      "end": 154.4
+    },
+    "everyday-0445": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 154.7,
+      "end": 157.6
+    },
+    "everyday-0446": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 157.9,
+      "end": 161.0
+    },
+    "everyday-0447": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 161.3,
+      "end": 164.45
+    },
+    "everyday-0448": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 164.75,
+      "end": 167.85
+    },
+    "everyday-0449": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 168.15,
+      "end": 171.5
+    },
+    "everyday-0450": {
+      "src": "audio/everyday-v1-09.m4a",
+      "start": 171.8,
+      "end": 175.075
+    },
+    "everyday-0451": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 0.3,
+      "end": 3.575
+    },
+    "everyday-0452": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 3.875,
+      "end": 7.2
+    },
+    "everyday-0453": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 7.5,
+      "end": 10.35
+    },
+    "everyday-0454": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 10.65,
+      "end": 14.425
+    },
+    "everyday-0455": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 14.725,
+      "end": 17.75
+    },
+    "everyday-0456": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 18.05,
+      "end": 21.1
+    },
+    "everyday-0457": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 21.4,
+      "end": 24.8
+    },
+    "everyday-0458": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 25.1,
+      "end": 27.925
+    },
+    "everyday-0459": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 28.225,
+      "end": 31.5
+    },
+    "everyday-0460": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 31.8,
+      "end": 35.9
+    },
+    "everyday-0461": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 36.2,
+      "end": 39.15
+    },
+    "everyday-0462": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 39.45,
+      "end": 43.2
+    },
+    "everyday-0463": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 43.5,
+      "end": 47.0
+    },
+    "everyday-0464": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 47.3,
+      "end": 50.275
+    },
+    "everyday-0465": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 50.575,
+      "end": 53.925
+    },
+    "everyday-0466": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 54.225,
+      "end": 57.475
+    },
+    "everyday-0467": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 57.775,
+      "end": 60.75
+    },
+    "everyday-0468": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 61.05,
+      "end": 64.55
+    },
+    "everyday-0469": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 64.85,
+      "end": 68.1
+    },
+    "everyday-0470": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 68.4,
+      "end": 71.575
+    },
+    "everyday-0471": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 71.875,
+      "end": 75.2
+    },
+    "everyday-0472": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 75.5,
+      "end": 78.55
+    },
+    "everyday-0473": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 78.85,
+      "end": 81.85
+    },
+    "everyday-0474": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 82.15,
+      "end": 85.4
+    },
+    "everyday-0475": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 85.7,
+      "end": 89.025
+    },
+    "everyday-0476": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 89.325,
+      "end": 92.25
+    },
+    "everyday-0477": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 92.55,
+      "end": 96.025
+    },
+    "everyday-0478": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 96.325,
+      "end": 100.2
+    },
+    "everyday-0479": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 100.5,
+      "end": 103.6
+    },
+    "everyday-0480": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 103.9,
+      "end": 106.975
+    },
+    "everyday-0481": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 107.275,
+      "end": 110.15
+    },
+    "everyday-0482": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 110.45,
+      "end": 113.675
+    },
+    "everyday-0483": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 113.975,
+      "end": 117.275
+    },
+    "everyday-0484": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 117.575,
+      "end": 120.515
+    },
+    "everyday-0485": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 120.815,
+      "end": 124.19
+    },
+    "everyday-0486": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 124.49,
+      "end": 127.715
+    },
+    "everyday-0487": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 128.015,
+      "end": 131.19
+    },
+    "everyday-0488": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 131.49,
+      "end": 135.09
+    },
+    "everyday-0489": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 135.39,
+      "end": 138.315
+    },
+    "everyday-0490": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 138.615,
+      "end": 141.49
+    },
+    "everyday-0491": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 141.79,
+      "end": 144.715
+    },
+    "everyday-0492": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 145.015,
+      "end": 147.84
+    },
+    "everyday-0493": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 148.14,
+      "end": 151.19
+    },
+    "everyday-0494": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 151.49,
+      "end": 154.965
+    },
+    "everyday-0495": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 155.265,
+      "end": 158.54
+    },
+    "everyday-0496": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 158.84,
+      "end": 161.665
+    },
+    "everyday-0497": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 161.965,
+      "end": 165.14
+    },
+    "everyday-0498": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 165.44,
+      "end": 169.315
+    },
+    "everyday-0499": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 169.615,
+      "end": 173.44
+    },
+    "everyday-0500": {
+      "src": "audio/everyday-v1-10.m4a",
+      "start": 173.74,
+      "end": 176.915
+    },
+    "everyday-0501": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 0.3,
+      "end": 3.075
+    },
+    "everyday-0502": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 3.375,
+      "end": 6.275
+    },
+    "everyday-0503": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 6.575,
+      "end": 9.075
+    },
+    "everyday-0504": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 9.375,
+      "end": 12.45
+    },
+    "everyday-0505": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 12.75,
+      "end": 16.45
+    },
+    "everyday-0506": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 16.75,
+      "end": 19.6
+    },
+    "everyday-0507": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 19.9,
+      "end": 22.725
+    },
+    "everyday-0508": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 23.025,
+      "end": 25.9
+    },
+    "everyday-0509": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 26.2,
+      "end": 28.725
+    },
+    "everyday-0510": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 29.025,
+      "end": 31.575
+    },
+    "everyday-0511": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 31.875,
+      "end": 35.125
+    },
+    "everyday-0512": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 35.425,
+      "end": 38.075
+    },
+    "everyday-0513": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 38.375,
+      "end": 42.075
+    },
+    "everyday-0514": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 42.375,
+      "end": 45.2
+    },
+    "everyday-0515": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 45.5,
+      "end": 48.475
+    },
+    "everyday-0516": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 48.775,
+      "end": 52.0
+    },
+    "everyday-0517": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 52.3,
+      "end": 55.075
+    },
+    "everyday-0518": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 55.375,
+      "end": 58.025
+    },
+    "everyday-0519": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 58.325,
+      "end": 61.075
+    },
+    "everyday-0520": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 61.375,
+      "end": 64.2
+    },
+    "everyday-0521": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 64.5,
+      "end": 67.975
+    },
+    "everyday-0522": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 68.275,
+      "end": 71.6
+    },
+    "everyday-0523": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 71.9,
+      "end": 74.725
+    },
+    "everyday-0524": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 75.025,
+      "end": 77.675
+    },
+    "everyday-0525": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 77.975,
+      "end": 80.875
+    },
+    "everyday-0526": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 81.175,
+      "end": 84.325
+    },
+    "everyday-0527": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 84.625,
+      "end": 87.825
+    },
+    "everyday-0528": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 88.125,
+      "end": 91.175
+    },
+    "everyday-0529": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 91.475,
+      "end": 94.35
+    },
+    "everyday-0530": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 94.65,
+      "end": 97.175
+    },
+    "everyday-0531": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 97.475,
+      "end": 100.075
+    },
+    "everyday-0532": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 100.375,
+      "end": 103.425
+    },
+    "everyday-0533": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 103.725,
+      "end": 107.19
+    },
+    "everyday-0534": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 107.49,
+      "end": 110.64
+    },
+    "everyday-0535": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 110.94,
+      "end": 113.715
+    },
+    "everyday-0536": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 114.015,
+      "end": 117.74
+    },
+    "everyday-0537": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 118.04,
+      "end": 120.715
+    },
+    "everyday-0538": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 121.015,
+      "end": 124.14
+    },
+    "everyday-0539": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 124.44,
+      "end": 127.515
+    },
+    "everyday-0540": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 127.815,
+      "end": 130.79
+    },
+    "everyday-0541": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 131.09,
+      "end": 134.215
+    },
+    "everyday-0542": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 134.515,
+      "end": 137.69
+    },
+    "everyday-0543": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 137.99,
+      "end": 140.84
+    },
+    "everyday-0544": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 141.14,
+      "end": 144.715
+    },
+    "everyday-0545": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 145.015,
+      "end": 147.965
+    },
+    "everyday-0546": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 148.265,
+      "end": 151.79
+    },
+    "everyday-0547": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 152.09,
+      "end": 154.69
+    },
+    "everyday-0548": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 154.99,
+      "end": 157.665
+    },
+    "everyday-0549": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 157.965,
+      "end": 160.89
+    },
+    "everyday-0550": {
+      "src": "audio/everyday-v1-11.m4a",
+      "start": 161.19,
+      "end": 164.365
+    },
+    "everyday-0551": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 0.3,
+      "end": 2.875
+    },
+    "everyday-0552": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 3.175,
+      "end": 6.375
+    },
+    "everyday-0553": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 6.675,
+      "end": 9.275
+    },
+    "everyday-0554": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 9.575,
+      "end": 12.5
+    },
+    "everyday-0555": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 12.8,
+      "end": 16.025
+    },
+    "everyday-0556": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 16.325,
+      "end": 19.35
+    },
+    "everyday-0557": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 19.65,
+      "end": 22.325
+    },
+    "everyday-0558": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 22.625,
+      "end": 25.075
+    },
+    "everyday-0559": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 25.375,
+      "end": 28.3
+    },
+    "everyday-0560": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 28.6,
+      "end": 31.325
+    },
+    "everyday-0561": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 31.625,
+      "end": 34.275
+    },
+    "everyday-0562": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 34.575,
+      "end": 37.05
+    },
+    "everyday-0563": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 37.35,
+      "end": 40.275
+    },
+    "everyday-0564": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 40.575,
+      "end": 43.225
+    },
+    "everyday-0565": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 43.525,
+      "end": 46.05
+    },
+    "everyday-0566": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 46.35,
+      "end": 49.525
+    },
+    "everyday-0567": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 49.825,
+      "end": 52.4
+    },
+    "everyday-0568": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 52.7,
+      "end": 56.075
+    },
+    "everyday-0569": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 56.375,
+      "end": 59.075
+    },
+    "everyday-0570": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 59.375,
+      "end": 61.8
+    },
+    "everyday-0571": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 62.1,
+      "end": 65.075
+    },
+    "everyday-0572": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 65.375,
+      "end": 68.125
+    },
+    "everyday-0573": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 68.425,
+      "end": 71.825
+    },
+    "everyday-0574": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 72.125,
+      "end": 74.925
+    },
+    "everyday-0575": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 75.225,
+      "end": 78.875
+    },
+    "everyday-0576": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 79.175,
+      "end": 81.975
+    },
+    "everyday-0577": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 82.275,
+      "end": 85.925
+    },
+    "everyday-0578": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 86.225,
+      "end": 89.2
+    },
+    "everyday-0579": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 89.5,
+      "end": 92.425
+    },
+    "everyday-0580": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 92.725,
+      "end": 96.05
+    },
+    "everyday-0581": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 96.35,
+      "end": 99.65
+    },
+    "everyday-0582": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 99.95,
+      "end": 102.35
+    },
+    "everyday-0583": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 102.65,
+      "end": 105.4
+    },
+    "everyday-0584": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 105.7,
+      "end": 108.875
+    },
+    "everyday-0585": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 109.175,
+      "end": 112.55
+    },
+    "everyday-0586": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 112.85,
+      "end": 116.05
+    },
+    "everyday-0587": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 116.35,
+      "end": 119.55
+    },
+    "everyday-0588": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 119.85,
+      "end": 122.725
+    },
+    "everyday-0589": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 123.025,
+      "end": 125.875
+    },
+    "everyday-0590": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 126.175,
+      "end": 128.9
+    },
+    "everyday-0591": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 129.2,
+      "end": 132.1
+    },
+    "everyday-0592": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 132.4,
+      "end": 135.175
+    },
+    "everyday-0593": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 135.475,
+      "end": 138.875
+    },
+    "everyday-0594": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 139.175,
+      "end": 141.875
+    },
+    "everyday-0595": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 142.175,
+      "end": 144.625
+    },
+    "everyday-0596": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 144.925,
+      "end": 147.625
+    },
+    "everyday-0597": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 147.925,
+      "end": 150.5
+    },
+    "everyday-0598": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 150.8,
+      "end": 153.45
+    },
+    "everyday-0599": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 153.75,
+      "end": 156.75
+    },
+    "everyday-0600": {
+      "src": "audio/everyday-v1-12.m4a",
+      "start": 157.05,
+      "end": 159.8
+    },
+    "everyday-0601": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 0.3,
+      "end": 3.225
+    },
+    "everyday-0602": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 3.525,
+      "end": 6.6
+    },
+    "everyday-0603": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 6.9,
+      "end": 9.75
+    },
+    "everyday-0604": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 10.05,
+      "end": 12.525
+    },
+    "everyday-0605": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 12.825,
+      "end": 15.3
+    },
+    "everyday-0606": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 15.6,
+      "end": 18.25
+    },
+    "everyday-0607": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 18.55,
+      "end": 21.1
+    },
+    "everyday-0608": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 21.4,
+      "end": 24.65
+    },
+    "everyday-0609": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 24.95,
+      "end": 27.65
+    },
+    "everyday-0610": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 27.95,
+      "end": 30.6
+    },
+    "everyday-0611": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 30.9,
+      "end": 34.125
+    },
+    "everyday-0612": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 34.425,
+      "end": 37.05
+    },
+    "everyday-0613": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 37.35,
+      "end": 39.85
+    },
+    "everyday-0614": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 40.15,
+      "end": 43.25
+    },
+    "everyday-0615": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 43.55,
+      "end": 46.6
+    },
+    "everyday-0616": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 46.9,
+      "end": 49.6
+    },
+    "everyday-0617": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 49.9,
+      "end": 52.325
+    },
+    "everyday-0618": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 52.625,
+      "end": 55.725
+    },
+    "everyday-0619": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 56.025,
+      "end": 59.3
+    },
+    "everyday-0620": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 59.6,
+      "end": 62.575
+    },
+    "everyday-0621": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 62.875,
+      "end": 66.05
+    },
+    "everyday-0622": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 66.35,
+      "end": 69.875
+    },
+    "everyday-0623": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 70.175,
+      "end": 73.125
+    },
+    "everyday-0624": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 73.425,
+      "end": 75.925
+    },
+    "everyday-0625": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 76.225,
+      "end": 79.275
+    },
+    "everyday-0626": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 79.575,
+      "end": 82.25
+    },
+    "everyday-0627": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 82.55,
+      "end": 85.025
+    },
+    "everyday-0628": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 85.325,
+      "end": 88.3
+    },
+    "everyday-0629": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 88.6,
+      "end": 91.675
+    },
+    "everyday-0630": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 91.975,
+      "end": 95.1
+    },
+    "everyday-0631": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 95.4,
+      "end": 99.125
+    },
+    "everyday-0632": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 99.425,
+      "end": 102.65
+    },
+    "everyday-0633": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 102.95,
+      "end": 105.6
+    },
+    "everyday-0634": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 105.9,
+      "end": 109.25
+    },
+    "everyday-0635": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 109.55,
+      "end": 112.95
+    },
+    "everyday-0636": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 113.25,
+      "end": 115.6
+    },
+    "everyday-0637": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 115.9,
+      "end": 119.75
+    },
+    "everyday-0638": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 120.05,
+      "end": 123.675
+    },
+    "everyday-0639": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 123.975,
+      "end": 126.85
+    },
+    "everyday-0640": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 127.15,
+      "end": 129.9
+    },
+    "everyday-0641": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 130.2,
+      "end": 133.475
+    },
+    "everyday-0642": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 133.775,
+      "end": 136.675
+    },
+    "everyday-0643": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 136.975,
+      "end": 140.125
+    },
+    "everyday-0644": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 140.425,
+      "end": 143.175
+    },
+    "everyday-0645": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 143.475,
+      "end": 147.225
+    },
+    "everyday-0646": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 147.525,
+      "end": 150.575
+    },
+    "everyday-0647": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 150.875,
+      "end": 153.825
+    },
+    "everyday-0648": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 154.125,
+      "end": 157.375
+    },
+    "everyday-0649": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 157.675,
+      "end": 161.1
+    },
+    "everyday-0650": {
+      "src": "audio/everyday-v1-13.m4a",
+      "start": 161.4,
+      "end": 164.35
+    },
+    "everyday-0651": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 0.3,
+      "end": 3.375
+    },
+    "everyday-0652": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 3.675,
+      "end": 6.725
+    },
+    "everyday-0653": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 7.025,
+      "end": 10.975
+    },
+    "everyday-0654": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 11.275,
+      "end": 14.65
+    },
+    "everyday-0655": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 14.95,
+      "end": 18.05
+    },
+    "everyday-0656": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 18.35,
+      "end": 21.575
+    },
+    "everyday-0657": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 21.875,
+      "end": 24.875
+    },
+    "everyday-0658": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 25.175,
+      "end": 28.025
+    },
+    "everyday-0659": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 28.325,
+      "end": 31.05
+    },
+    "everyday-0660": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 31.35,
+      "end": 34.575
+    },
+    "everyday-0661": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 34.875,
+      "end": 38.075
+    },
+    "everyday-0662": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 38.375,
+      "end": 41.575
+    },
+    "everyday-0663": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 41.875,
+      "end": 44.975
+    },
+    "everyday-0664": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 45.275,
+      "end": 47.975
+    },
+    "everyday-0665": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 48.275,
+      "end": 51.385
+    },
+    "everyday-0666": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 51.685,
+      "end": 54.66
+    },
+    "everyday-0667": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 54.96,
+      "end": 57.485
+    },
+    "everyday-0668": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 57.785,
+      "end": 60.66
+    },
+    "everyday-0669": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 60.96,
+      "end": 63.61
+    },
+    "everyday-0670": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 63.91,
+      "end": 67.06
+    },
+    "everyday-0671": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 67.36,
+      "end": 70.26
+    },
+    "everyday-0672": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 70.56,
+      "end": 73.56
+    },
+    "everyday-0673": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 73.86,
+      "end": 76.56
+    },
+    "everyday-0674": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 76.86,
+      "end": 79.835
+    },
+    "everyday-0675": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 80.135,
+      "end": 83.66
+    },
+    "everyday-0676": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 83.96,
+      "end": 87.435
+    },
+    "everyday-0677": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 87.735,
+      "end": 90.51
+    },
+    "everyday-0678": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 90.81,
+      "end": 93.21
+    },
+    "everyday-0679": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 93.51,
+      "end": 97.01
+    },
+    "everyday-0680": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 97.31,
+      "end": 100.735
+    },
+    "everyday-0681": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 101.035,
+      "end": 103.435
+    },
+    "everyday-0682": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 103.735,
+      "end": 106.835
+    },
+    "everyday-0683": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 107.135,
+      "end": 110.035
+    },
+    "everyday-0684": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 110.335,
+      "end": 113.91
+    },
+    "everyday-0685": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 114.21,
+      "end": 117.66
+    },
+    "everyday-0686": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 117.96,
+      "end": 120.71
+    },
+    "everyday-0687": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 121.01,
+      "end": 124.035
+    },
+    "everyday-0688": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 124.335,
+      "end": 127.81
+    },
+    "everyday-0689": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 128.11,
+      "end": 131.06
+    },
+    "everyday-0690": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 131.36,
+      "end": 134.81
+    },
+    "everyday-0691": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 135.11,
+      "end": 139.21
+    },
+    "everyday-0692": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 139.51,
+      "end": 142.66
+    },
+    "everyday-0693": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 142.96,
+      "end": 146.01
+    },
+    "everyday-0694": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 146.31,
+      "end": 149.56
+    },
+    "everyday-0695": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 149.86,
+      "end": 153.01
+    },
+    "everyday-0696": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 153.31,
+      "end": 156.86
+    },
+    "everyday-0697": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 157.16,
+      "end": 160.41
+    },
+    "everyday-0698": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 160.71,
+      "end": 163.935
+    },
+    "everyday-0699": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 164.235,
+      "end": 167.435
+    },
+    "everyday-0700": {
+      "src": "audio/everyday-v1-14.m4a",
+      "start": 167.735,
+      "end": 171.585
+    },
+    "everyday-0701": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 0.3,
+      "end": 3.35
+    },
+    "everyday-0702": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 3.65,
+      "end": 6.375
+    },
+    "everyday-0703": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 6.675,
+      "end": 9.65
+    },
+    "everyday-0704": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 9.95,
+      "end": 12.9
+    },
+    "everyday-0705": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 13.2,
+      "end": 16.35
+    },
+    "everyday-0706": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 16.65,
+      "end": 19.475
+    },
+    "everyday-0707": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 19.775,
+      "end": 22.725
+    },
+    "everyday-0708": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 23.025,
+      "end": 26.175
+    },
+    "everyday-0709": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 26.475,
+      "end": 29.325
+    },
+    "everyday-0710": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 29.625,
+      "end": 32.525
+    },
+    "everyday-0711": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 32.825,
+      "end": 35.95
+    },
+    "everyday-0712": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 36.25,
+      "end": 39.75
+    },
+    "everyday-0713": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 40.05,
+      "end": 43.2
+    },
+    "everyday-0714": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 43.5,
+      "end": 46.625
+    },
+    "everyday-0715": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 46.925,
+      "end": 49.675
+    },
+    "everyday-0716": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 49.975,
+      "end": 52.825
+    },
+    "everyday-0717": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 53.125,
+      "end": 56.075
+    },
+    "everyday-0718": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 56.375,
+      "end": 59.075
+    },
+    "everyday-0719": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 59.375,
+      "end": 62.75
+    },
+    "everyday-0720": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 63.05,
+      "end": 65.7
+    },
+    "everyday-0721": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 66.0,
+      "end": 69.25
+    },
+    "everyday-0722": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 69.55,
+      "end": 72.875
+    },
+    "everyday-0723": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 73.175,
+      "end": 76.3
+    },
+    "everyday-0724": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 76.6,
+      "end": 79.45
+    },
+    "everyday-0725": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 79.75,
+      "end": 82.9
+    },
+    "everyday-0726": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 83.2,
+      "end": 86.0
+    },
+    "everyday-0727": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 86.3,
+      "end": 89.8
+    },
+    "everyday-0728": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 90.1,
+      "end": 93.55
+    },
+    "everyday-0729": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 93.85,
+      "end": 96.825
+    },
+    "everyday-0730": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 97.125,
+      "end": 100.25
+    },
+    "everyday-0731": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 100.55,
+      "end": 103.55
+    },
+    "everyday-0732": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 103.85,
+      "end": 106.475
+    },
+    "everyday-0733": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 106.775,
+      "end": 109.8
+    },
+    "everyday-0734": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 110.1,
+      "end": 113.125
+    },
+    "everyday-0735": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 113.425,
+      "end": 116.3
+    },
+    "everyday-0736": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 116.6,
+      "end": 120.175
+    },
+    "everyday-0737": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 120.475,
+      "end": 123.35
+    },
+    "everyday-0738": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 123.65,
+      "end": 126.725
+    },
+    "everyday-0739": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 127.025,
+      "end": 130.35
+    },
+    "everyday-0740": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 130.65,
+      "end": 133.65
+    },
+    "everyday-0741": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 133.95,
+      "end": 137.15
+    },
+    "everyday-0742": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 137.45,
+      "end": 140.65
+    },
+    "everyday-0743": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 140.95,
+      "end": 143.825
+    },
+    "everyday-0744": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 144.125,
+      "end": 147.1
+    },
+    "everyday-0745": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 147.4,
+      "end": 150.55
+    },
+    "everyday-0746": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 150.85,
+      "end": 154.35
+    },
+    "everyday-0747": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 154.65,
+      "end": 157.25
+    },
+    "everyday-0748": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 157.55,
+      "end": 160.675
+    },
+    "everyday-0749": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 160.975,
+      "end": 164.075
+    },
+    "everyday-0750": {
+      "src": "audio/everyday-v1-15.m4a",
+      "start": 164.375,
+      "end": 167.45
+    },
+    "everyday-0751": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 0.3,
+      "end": 3.675
+    },
+    "everyday-0752": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 3.975,
+      "end": 7.1
+    },
+    "everyday-0753": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 7.4,
+      "end": 10.575
+    },
+    "everyday-0754": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 10.875,
+      "end": 14.665
+    },
+    "everyday-0755": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 14.965,
+      "end": 18.54
+    },
+    "everyday-0756": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 18.84,
+      "end": 22.24
+    },
+    "everyday-0757": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 22.54,
+      "end": 25.24
+    },
+    "everyday-0758": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 25.54,
+      "end": 29.015
+    },
+    "everyday-0759": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 29.315,
+      "end": 32.165
+    },
+    "everyday-0760": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 32.465,
+      "end": 36.215
+    },
+    "everyday-0761": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 36.515,
+      "end": 39.84
+    },
+    "everyday-0762": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 40.14,
+      "end": 42.965
+    },
+    "everyday-0763": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 43.265,
+      "end": 46.44
+    },
+    "everyday-0764": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 46.74,
+      "end": 49.815
+    },
+    "everyday-0765": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 50.115,
+      "end": 52.915
+    },
+    "everyday-0766": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 53.215,
+      "end": 56.39
+    },
+    "everyday-0767": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 56.69,
+      "end": 59.365
+    },
+    "everyday-0768": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 59.665,
+      "end": 63.115
+    },
+    "everyday-0769": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 63.415,
+      "end": 66.24
+    },
+    "everyday-0770": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 66.54,
+      "end": 69.19
+    },
+    "everyday-0771": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 69.49,
+      "end": 71.965
+    },
+    "everyday-0772": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 72.265,
+      "end": 76.115
+    },
+    "everyday-0773": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 76.415,
+      "end": 80.14
+    },
+    "everyday-0774": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 80.44,
+      "end": 83.09
+    },
+    "everyday-0775": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 83.39,
+      "end": 86.19
+    },
+    "everyday-0776": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 86.49,
+      "end": 89.24
+    },
+    "everyday-0777": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 89.54,
+      "end": 93.065
+    },
+    "everyday-0778": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 93.365,
+      "end": 95.965
+    },
+    "everyday-0779": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 96.265,
+      "end": 98.815
+    },
+    "everyday-0780": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 99.115,
+      "end": 102.165
+    },
+    "everyday-0781": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 102.465,
+      "end": 105.79
+    },
+    "everyday-0782": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 106.09,
+      "end": 109.265
+    },
+    "everyday-0783": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 109.565,
+      "end": 112.99
+    },
+    "everyday-0784": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 113.29,
+      "end": 116.34
+    },
+    "everyday-0785": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 116.64,
+      "end": 119.465
+    },
+    "everyday-0786": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 119.765,
+      "end": 123.04
+    },
+    "everyday-0787": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 123.34,
+      "end": 126.64
+    },
+    "everyday-0788": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 126.94,
+      "end": 129.99
+    },
+    "everyday-0789": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 130.29,
+      "end": 133.54
+    },
+    "everyday-0790": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 133.84,
+      "end": 137.74
+    },
+    "everyday-0791": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 138.04,
+      "end": 141.19
+    },
+    "everyday-0792": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 141.49,
+      "end": 144.815
+    },
+    "everyday-0793": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 145.115,
+      "end": 147.915
+    },
+    "everyday-0794": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 148.215,
+      "end": 152.415
+    },
+    "everyday-0795": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 152.715,
+      "end": 155.69
+    },
+    "everyday-0796": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 155.99,
+      "end": 158.865
+    },
+    "everyday-0797": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 159.165,
+      "end": 162.39
+    },
+    "everyday-0798": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 162.69,
+      "end": 166.315
+    },
+    "everyday-0799": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 166.615,
+      "end": 170.455
+    },
+    "everyday-0800": {
+      "src": "audio/everyday-v1-16.m4a",
+      "start": 170.755,
+      "end": 173.805
+    },
+    "everyday-0801": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 0.3,
+      "end": 3.525
+    },
+    "everyday-0802": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 3.825,
+      "end": 6.875
+    },
+    "everyday-0803": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 7.175,
+      "end": 10.125
+    },
+    "everyday-0804": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 10.425,
+      "end": 13.375
+    },
+    "everyday-0805": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 13.675,
+      "end": 16.775
+    },
+    "everyday-0806": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 17.075,
+      "end": 19.75
+    },
+    "everyday-0807": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 20.05,
+      "end": 22.975
+    },
+    "everyday-0808": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 23.275,
+      "end": 26.325
+    },
+    "everyday-0809": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 26.625,
+      "end": 29.4
+    },
+    "everyday-0810": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 29.7,
+      "end": 32.35
+    },
+    "everyday-0811": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 32.65,
+      "end": 35.525
+    },
+    "everyday-0812": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 35.825,
+      "end": 39.575
+    },
+    "everyday-0813": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 39.875,
+      "end": 43.25
+    },
+    "everyday-0814": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 43.55,
+      "end": 46.3
+    },
+    "everyday-0815": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 46.6,
+      "end": 49.575
+    },
+    "everyday-0816": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 49.875,
+      "end": 52.92
+    },
+    "everyday-0817": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 53.22,
+      "end": 55.645
+    },
+    "everyday-0818": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 55.945,
+      "end": 59.17
+    },
+    "everyday-0819": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 59.47,
+      "end": 62.72
+    },
+    "everyday-0820": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 63.02,
+      "end": 66.295
+    },
+    "everyday-0821": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 66.595,
+      "end": 69.72
+    },
+    "everyday-0822": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 70.02,
+      "end": 73.27
+    },
+    "everyday-0823": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 73.57,
+      "end": 76.595
+    },
+    "everyday-0824": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 76.895,
+      "end": 80.32
+    },
+    "everyday-0825": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 80.62,
+      "end": 83.42
+    },
+    "everyday-0826": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 83.72,
+      "end": 86.945
+    },
+    "everyday-0827": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 87.245,
+      "end": 90.245
+    },
+    "everyday-0828": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 90.545,
+      "end": 93.195
+    },
+    "everyday-0829": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 93.495,
+      "end": 96.22
+    },
+    "everyday-0830": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 96.52,
+      "end": 100.295
+    },
+    "everyday-0831": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 100.595,
+      "end": 103.545
+    },
+    "everyday-0832": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 103.845,
+      "end": 106.595
+    },
+    "everyday-0833": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 106.895,
+      "end": 109.695
+    },
+    "everyday-0834": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 109.995,
+      "end": 112.62
+    },
+    "everyday-0835": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 112.92,
+      "end": 116.47
+    },
+    "everyday-0836": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 116.77,
+      "end": 119.42
+    },
+    "everyday-0837": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 119.72,
+      "end": 122.99
+    },
+    "everyday-0838": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 123.29,
+      "end": 126.46
+    },
+    "everyday-0839": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 126.76,
+      "end": 129.725
+    },
+    "everyday-0840": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 130.025,
+      "end": 132.65
+    },
+    "everyday-0841": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 132.95,
+      "end": 135.65
+    },
+    "everyday-0842": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 135.95,
+      "end": 139.105
+    },
+    "everyday-0843": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 139.405,
+      "end": 142.58
+    },
+    "everyday-0844": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 142.88,
+      "end": 146.43
+    },
+    "everyday-0845": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 146.73,
+      "end": 149.93
+    },
+    "everyday-0846": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 150.23,
+      "end": 152.93
+    },
+    "everyday-0847": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 153.23,
+      "end": 156.28
+    },
+    "everyday-0848": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 156.58,
+      "end": 159.405
+    },
+    "everyday-0849": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 159.705,
+      "end": 162.505
+    },
+    "everyday-0850": {
+      "src": "audio/everyday-v1-17.m4a",
+      "start": 162.805,
+      "end": 165.88
+    },
+    "everyday-0851": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 0.3,
+      "end": 3.25
+    },
+    "everyday-0852": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 3.55,
+      "end": 6.6
+    },
+    "everyday-0853": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 6.9,
+      "end": 9.85
+    },
+    "everyday-0854": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 10.15,
+      "end": 13.025
+    },
+    "everyday-0855": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 13.325,
+      "end": 16.1
+    },
+    "everyday-0856": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 16.4,
+      "end": 20.325
+    },
+    "everyday-0857": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 20.625,
+      "end": 24.0
+    },
+    "everyday-0858": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 24.3,
+      "end": 27.85
+    },
+    "everyday-0859": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 28.15,
+      "end": 31.125
+    },
+    "everyday-0860": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 31.425,
+      "end": 34.8
+    },
+    "everyday-0861": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 35.1,
+      "end": 37.975
+    },
+    "everyday-0862": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 38.275,
+      "end": 42.225
+    },
+    "everyday-0863": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 42.525,
+      "end": 45.725
+    },
+    "everyday-0864": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 46.025,
+      "end": 49.025
+    },
+    "everyday-0865": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 49.325,
+      "end": 52.2
+    },
+    "everyday-0866": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 52.5,
+      "end": 55.475
+    },
+    "everyday-0867": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 55.775,
+      "end": 58.55
+    },
+    "everyday-0868": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 58.85,
+      "end": 61.65
+    },
+    "everyday-0869": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 61.95,
+      "end": 65.3
+    },
+    "everyday-0870": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 65.6,
+      "end": 68.6
+    },
+    "everyday-0871": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 68.9,
+      "end": 72.225
+    },
+    "everyday-0872": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 72.525,
+      "end": 75.625
+    },
+    "everyday-0873": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 75.925,
+      "end": 78.675
+    },
+    "everyday-0874": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 78.975,
+      "end": 82.15
+    },
+    "everyday-0875": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 82.45,
+      "end": 85.525
+    },
+    "everyday-0876": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 85.825,
+      "end": 88.625
+    },
+    "everyday-0877": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 88.925,
+      "end": 91.7
+    },
+    "everyday-0878": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 92.0,
+      "end": 95.725
+    },
+    "everyday-0879": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 96.025,
+      "end": 99.825
+    },
+    "everyday-0880": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 100.125,
+      "end": 103.76
+    },
+    "everyday-0881": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 104.06,
+      "end": 107.225
+    },
+    "everyday-0882": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 107.525,
+      "end": 110.6
+    },
+    "everyday-0883": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 110.9,
+      "end": 113.975
+    },
+    "everyday-0884": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 114.275,
+      "end": 118.225
+    },
+    "everyday-0885": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 118.525,
+      "end": 121.525
+    },
+    "everyday-0886": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 121.825,
+      "end": 124.825
+    },
+    "everyday-0887": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 125.125,
+      "end": 128.15
+    },
+    "everyday-0888": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 128.45,
+      "end": 131.85
+    },
+    "everyday-0889": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 132.15,
+      "end": 136.05
+    },
+    "everyday-0890": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 136.35,
+      "end": 140.2
+    },
+    "everyday-0891": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 140.5,
+      "end": 143.675
+    },
+    "everyday-0892": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 143.975,
+      "end": 146.85
+    },
+    "everyday-0893": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 147.15,
+      "end": 150.25
+    },
+    "everyday-0894": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 150.55,
+      "end": 154.075
+    },
+    "everyday-0895": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 154.375,
+      "end": 157.375
+    },
+    "everyday-0896": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 157.675,
+      "end": 160.45
+    },
+    "everyday-0897": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 160.75,
+      "end": 164.25
+    },
+    "everyday-0898": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 164.55,
+      "end": 167.825
+    },
+    "everyday-0899": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 168.125,
+      "end": 171.8
+    },
+    "everyday-0900": {
+      "src": "audio/everyday-v1-18.m4a",
+      "start": 172.1,
+      "end": 175.725
+    },
+    "everyday-0901": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 0.3,
+      "end": 3.6
+    },
+    "everyday-0902": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 3.9,
+      "end": 7.325
+    },
+    "everyday-0903": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 7.625,
+      "end": 9.775
+    },
+    "everyday-0904": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 10.075,
+      "end": 12.8
+    },
+    "everyday-0905": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 13.1,
+      "end": 16.075
+    },
+    "everyday-0906": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 16.375,
+      "end": 19.725
+    },
+    "everyday-0907": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 20.025,
+      "end": 23.675
+    },
+    "everyday-0908": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 23.975,
+      "end": 26.75
+    },
+    "everyday-0909": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 27.05,
+      "end": 29.45
+    },
+    "everyday-0910": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 29.75,
+      "end": 32.925
+    },
+    "everyday-0911": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 33.225,
+      "end": 36.375
+    },
+    "everyday-0912": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 36.675,
+      "end": 40.05
+    },
+    "everyday-0913": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 40.35,
+      "end": 43.8
+    },
+    "everyday-0914": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 44.1,
+      "end": 47.075
+    },
+    "everyday-0915": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 47.375,
+      "end": 50.7
+    },
+    "everyday-0916": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 51.0,
+      "end": 53.725
+    },
+    "everyday-0917": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 54.025,
+      "end": 57.375
+    },
+    "everyday-0918": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 57.675,
+      "end": 61.1
+    },
+    "everyday-0919": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 61.4,
+      "end": 65.625
+    },
+    "everyday-0920": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 65.925,
+      "end": 68.66
+    },
+    "everyday-0921": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 68.96,
+      "end": 73.135
+    },
+    "everyday-0922": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 73.435,
+      "end": 76.51
+    },
+    "everyday-0923": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 76.81,
+      "end": 79.81
+    },
+    "everyday-0924": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 80.11,
+      "end": 83.735
+    },
+    "everyday-0925": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 84.035,
+      "end": 86.96
+    },
+    "everyday-0926": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 87.26,
+      "end": 90.31
+    },
+    "everyday-0927": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 90.61,
+      "end": 93.485
+    },
+    "everyday-0928": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 93.785,
+      "end": 96.035
+    },
+    "everyday-0929": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 96.335,
+      "end": 99.86
+    },
+    "everyday-0930": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 100.16,
+      "end": 103.235
+    },
+    "everyday-0931": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 103.535,
+      "end": 106.06
+    },
+    "everyday-0932": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 106.36,
+      "end": 109.16
+    },
+    "everyday-0933": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 109.46,
+      "end": 112.485
+    },
+    "everyday-0934": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 112.785,
+      "end": 115.86
+    },
+    "everyday-0935": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 116.16,
+      "end": 119.56
+    },
+    "everyday-0936": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 119.86,
+      "end": 123.06
+    },
+    "everyday-0937": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 123.36,
+      "end": 126.71
+    },
+    "everyday-0938": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 127.01,
+      "end": 129.835
+    },
+    "everyday-0939": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 130.135,
+      "end": 133.01
+    },
+    "everyday-0940": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 133.31,
+      "end": 136.185
+    },
+    "everyday-0941": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 136.485,
+      "end": 139.235
+    },
+    "everyday-0942": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 139.535,
+      "end": 142.51
+    },
+    "everyday-0943": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 142.81,
+      "end": 145.185
+    },
+    "everyday-0944": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 145.485,
+      "end": 148.71
+    },
+    "everyday-0945": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 149.01,
+      "end": 152.31
+    },
+    "everyday-0946": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 152.61,
+      "end": 156.135
+    },
+    "everyday-0947": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 156.435,
+      "end": 158.985
+    },
+    "everyday-0948": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 159.285,
+      "end": 162.11
+    },
+    "everyday-0949": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 162.41,
+      "end": 165.185
+    },
+    "everyday-0950": {
+      "src": "audio/everyday-v1-19.m4a",
+      "start": 165.485,
+      "end": 169.01
+    },
+    "everyday-0951": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 0.3,
+      "end": 3.05
+    },
+    "everyday-0952": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 3.35,
+      "end": 6.475
+    },
+    "everyday-0953": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 6.775,
+      "end": 9.675
+    },
+    "everyday-0954": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 9.975,
+      "end": 13.15
+    },
+    "everyday-0955": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 13.45,
+      "end": 16.525
+    },
+    "everyday-0956": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 16.825,
+      "end": 19.525
+    },
+    "everyday-0957": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 19.825,
+      "end": 23.35
+    },
+    "everyday-0958": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 23.65,
+      "end": 26.95
+    },
+    "everyday-0959": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 27.25,
+      "end": 29.875
+    },
+    "everyday-0960": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 30.175,
+      "end": 33.175
+    },
+    "everyday-0961": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 33.475,
+      "end": 36.625
+    },
+    "everyday-0962": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 36.925,
+      "end": 39.975
+    },
+    "everyday-0963": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 40.275,
+      "end": 43.85
+    },
+    "everyday-0964": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 44.15,
+      "end": 47.85
+    },
+    "everyday-0965": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 48.15,
+      "end": 52.025
+    },
+    "everyday-0966": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 52.325,
+      "end": 55.575
+    },
+    "everyday-0967": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 55.875,
+      "end": 58.875
+    },
+    "everyday-0968": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 59.175,
+      "end": 62.5
+    },
+    "everyday-0969": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 62.8,
+      "end": 65.825
+    },
+    "everyday-0970": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 66.125,
+      "end": 68.825
+    },
+    "everyday-0971": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 69.125,
+      "end": 72.15
+    },
+    "everyday-0972": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 72.45,
+      "end": 75.2
+    },
+    "everyday-0973": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 75.5,
+      "end": 78.375
+    },
+    "everyday-0974": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 78.675,
+      "end": 82.075
+    },
+    "everyday-0975": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 82.375,
+      "end": 85.625
+    },
+    "everyday-0976": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 85.925,
+      "end": 88.65
+    },
+    "everyday-0977": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 88.95,
+      "end": 92.0
+    },
+    "everyday-0978": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 92.3,
+      "end": 95.4
+    },
+    "everyday-0979": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 95.7,
+      "end": 98.7
+    },
+    "everyday-0980": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 99.0,
+      "end": 101.975
+    },
+    "everyday-0981": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 102.275,
+      "end": 105.1
+    },
+    "everyday-0982": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 105.4,
+      "end": 108.2
+    },
+    "everyday-0983": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 108.5,
+      "end": 111.075
+    },
+    "everyday-0984": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 111.375,
+      "end": 115.025
+    },
+    "everyday-0985": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 115.325,
+      "end": 118.65
+    },
+    "everyday-0986": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 118.95,
+      "end": 121.875
+    },
+    "everyday-0987": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 122.175,
+      "end": 125.575
+    },
+    "everyday-0988": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 125.875,
+      "end": 129.05
+    },
+    "everyday-0989": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 129.35,
+      "end": 132.275
+    },
+    "everyday-0990": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 132.575,
+      "end": 136.175
+    },
+    "everyday-0991": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 136.475,
+      "end": 140.2
+    },
+    "everyday-0992": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 140.5,
+      "end": 143.4
+    },
+    "everyday-0993": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 143.7,
+      "end": 146.425
+    },
+    "everyday-0994": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 146.725,
+      "end": 149.3
+    },
+    "everyday-0995": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 149.6,
+      "end": 153.075
+    },
+    "everyday-0996": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 153.375,
+      "end": 156.6
+    },
+    "everyday-0997": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 156.9,
+      "end": 159.875
+    },
+    "everyday-0998": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 160.175,
+      "end": 163.85
+    },
+    "everyday-0999": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 164.15,
+      "end": 167.05
+    },
+    "everyday-1000": {
+      "src": "audio/everyday-v1-20.m4a",
+      "start": 167.35,
+      "end": 170.45
+    }
+  },
+  "files": [
+    {
+      "src": "audio/everyday-v1-01.m4a",
+      "bytes": 1264256,
+      "duration": 155.37,
+      "sha256": "6cbd62e3c95ea3787a4c80ebaa25546b4fb9ee132a0b2f3544bf44c88eb28c5a"
+    },
+    {
+      "src": "audio/everyday-v1-02.m4a",
+      "bytes": 1378602,
+      "duration": 169.665,
+      "sha256": "064e8245a1806d3f01b9c7b9156f4e037c820336f9c039b2de91ac0b71a9f38b"
+    },
+    {
+      "src": "audio/everyday-v1-03.m4a",
+      "bytes": 1398058,
+      "duration": 172.09,
+      "sha256": "198a6141194113186f2c15234f2c2ba77f3a461405d6d49e44635a414d1be9ad"
+    },
+    {
+      "src": "audio/everyday-v1-04.m4a",
+      "bytes": 1371776,
+      "duration": 168.815,
+      "sha256": "5e3deb4ac9d71a2f5183fc1e7e261d00e258c480fdba4454cd75b67460d05cd5"
+    },
+    {
+      "src": "audio/everyday-v1-05.m4a",
+      "bytes": 1340714,
+      "duration": 164.92,
+      "sha256": "bd731c0a952f193fbb7e1275e2b7d2e8f514f3c367367e34689ff126bbcf255d"
+    },
+    {
+      "src": "audio/everyday-v1-06.m4a",
+      "bytes": 1361194,
+      "duration": 167.465,
+      "sha256": "4aea7e71843294f0b2b5b06879dc59855e657f250ba1bce8fb426f7b975ce0e8"
+    },
+    {
+      "src": "audio/everyday-v1-07.m4a",
+      "bytes": 1356074,
+      "duration": 166.825,
+      "sha256": "9f720698baefd388625ca2621d56fb4aa23ebb83768b98f4854547db03dc935e"
+    },
+    {
+      "src": "audio/everyday-v1-08.m4a",
+      "bytes": 1400789,
+      "duration": 172.44,
+      "sha256": "6a4667007f0afb2038e49968fa693fee074fca79b37c696a144c21ccd29ad3a0"
+    },
+    {
+      "src": "audio/everyday-v1-09.m4a",
+      "bytes": 1424341,
+      "duration": 175.375,
+      "sha256": "99209aa4381600a5d72899d7c77e155bc77296d2b9daf9bfb3f9ce6a9196106e"
+    },
+    {
+      "src": "audio/everyday-v1-10.m4a",
+      "bytes": 1439018,
+      "duration": 177.215,
+      "sha256": "a88e51c24935956ee4b91bf0b6c5c75c7b36d9c6ceaf03feb806c1d50cf013cd"
+    },
+    {
+      "src": "audio/everyday-v1-11.m4a",
+      "bytes": 1338666,
+      "duration": 164.665,
+      "sha256": "8fed9c6e4ea0411f42b74177973331a02a29883798d6a0466a30de4c9fd33cca"
+    },
+    {
+      "src": "audio/everyday-v1-12.m4a",
+      "bytes": 1302144,
+      "duration": 160.1,
+      "sha256": "97b57d7396aad60dee0fae0f2e837693283c3971de7a53d33013f6d246e9a680"
+    },
+    {
+      "src": "audio/everyday-v1-13.m4a",
+      "bytes": 1338666,
+      "duration": 164.65,
+      "sha256": "1a5c5a7a15af441b0a3f1b586484831f7850073493daaad95b0ddd645d8ca345"
+    },
+    {
+      "src": "audio/everyday-v1-14.m4a",
+      "bytes": 1396352,
+      "duration": 171.885,
+      "sha256": "cfd58b67eda5052630fd9927cc9d62608c7c16aa48fa1d6f95a46b221a783b92"
+    },
+    {
+      "src": "audio/everyday-v1-15.m4a",
+      "bytes": 1363242,
+      "duration": 167.75,
+      "sha256": "7f306a5f18939d2ce07cf87293ce18ca6016e2d5de68b031263d2126b8862af6"
+    },
+    {
+      "src": "audio/everyday-v1-16.m4a",
+      "bytes": 1414101,
+      "duration": 174.105,
+      "sha256": "2a3576f6a2b33711c5fcff7ce5f18b29e0caa87abdf51cbd9276e840e212ed95"
+    },
+    {
+      "src": "audio/everyday-v1-17.m4a",
+      "bytes": 1350613,
+      "duration": 166.18,
+      "sha256": "e160ec3081aef97826f1ecf614996c36d8e50f1788c853575fb181fba08a9062"
+    },
+    {
+      "src": "audio/everyday-v1-18.m4a",
+      "bytes": 1429461,
+      "duration": 176.025,
+      "sha256": "52270076748e6cb0d4476a06df287e9a3935e50ebd250a690ae3728682933618"
+    },
+    {
+      "src": "audio/everyday-v1-19.m4a",
+      "bytes": 1375872,
+      "duration": 169.31,
+      "sha256": "9b5f9b8d4cef26279e04bf4a5dce0961a6b4ba5b416bf66d1314d5d91afadf38"
+    },
+    {
+      "src": "audio/everyday-v1-20.m4a",
+      "bytes": 1387477,
+      "duration": 170.75,
+      "sha256": "ec44229d7354762077e9622e3097900e9536a1926c2b43698dd62a14926430c5"
+    }
+  ]
+}

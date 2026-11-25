@@ -3,6 +3,7 @@ import { buildFeedback } from './pronunciation-feedback.js';
 export const MAX_SECONDS = 20;
 let enginePromise;
 let referencePromise;
+let everydayReferencePromise;
 const targets = new Map();
 function fail(code,message,quality) { const e=new Error(message);e.code=code;if(quality)e.quality=quality;throw e; }
 export async function loadEngine() {
@@ -12,6 +13,10 @@ export async function loadEngine() {
 async function loadReferences(){
   if(!referencePromise)referencePromise=fetch(new URL('./pronunciation-targets.json',import.meta.url)).then(async response=>{if(!response.ok)throw Error('Reference unavailable');const data=await response.json();if(!data||typeof data.sentences!=='object'||typeof data.words!=='object')throw Error('Invalid reference');return data;}).catch(()=>{referencePromise=undefined;fail('load_failed','기준 발음 파일을 불러오지 못했어요. 다시 시도해 주세요.');});
   return referencePromise;
+}
+async function loadEverydayReferences(){
+  if(!everydayReferencePromise)everydayReferencePromise=fetch(new URL('./everyday-pronunciation-targets.json',import.meta.url)).then(async response=>{if(!response.ok)throw Error('Everyday reference unavailable');const data=await response.json();if(!data||!data.sentences||typeof data.sentences!=='object'||Array.isArray(data.sentences))throw Error('Invalid everyday reference');return data;}).catch(()=>{everydayReferencePromise=undefined;fail('load_failed','생활영어 기준 발음 파일을 불러오지 못했어요. 다시 시도해 주세요.');});
+  return everydayReferencePromise;
 }
 const canonical=s=>String(s).normalize('NFD').replace(/[ˈˌ]/gu,'').replace(/r/gu,'ɹ').replace(/g/gu,'ɡ');
 const equivalent=(a,b)=>a===b||(a==='ᵻ'&&(b==='ɪ'||b==='ə'));
@@ -53,7 +58,8 @@ export function inspectAudio(samples,sampleRate) {
 async function expectedTarget(text) {
   if(typeof text!=='string'||!text.trim()||text.length>400)fail('unsupported_text','분석할 영어 문장이나 단어를 확인해 주세요.');if(targets.has(text))return targets.get(text);
   const source=await loadReferences(),clean=text.trim(),own=(map,key)=>Object.prototype.hasOwnProperty.call(map,key)?map[key]:undefined;
-  const entry=own(source.sentences,text)||own(source.sentences,clean)||own(source.words,clean.toLowerCase());
+  let entry=own(source.sentences,text)||own(source.sentences,clean)||own(source.words,clean.toLowerCase());
+  if(!entry){const everyday=await loadEverydayReferences();entry=own(everyday.sentences,text)||own(everyday.sentences,clean);}
   if(!entry||typeof entry.ipa!=='string'||!entry.ipa.trim())fail('unsupported_text','이 항목의 기준 발음이 아직 준비되지 않았어요. 앱의 기본 문장이나 단어로 연습해 주세요.');
   const expectedWords=Array.isArray(entry.words)?entry.words:[],tokens=[],owners=[];
   if(expectedWords.length)for(let wordIndex=0;wordIndex<expectedWords.length;wordIndex++){const phones=tokenizeIpa(expectedWords[wordIndex].ipa);tokens.push(...phones);owners.push(...phones.map(()=>wordIndex));}

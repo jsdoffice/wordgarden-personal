@@ -5,8 +5,25 @@ let activeRecording = null;
 let recordingURL = null;
 let practiceTopic = '카페에서 주문하기';
 let practiceLevel = '중급 B1–B2';
+let practiceSource = 'words';
+let speakingCategory = '';
+function speakingExamples() {
+  if (practiceSource === 'everyday') return (window.EVERYDAY_BANK || []).filter(item => !speakingCategory || item.topic === speakingCategory).map(item => ({...item, sourceId:item.id, word:'생활영어',meaning:item.topic,sentence:item.english,translation:item.korean}));
+  if (practiceSource === 'voa') return translationItems().filter(item => !speakingCategory || item.topic === speakingCategory).map(item => ({...item, sourceId:item.id,word:'VOA 원문',meaning:item.topic,sentence:item.english,translation:item.korean}));
+  return words().filter(item => item.sentence && item.sentence !== item.word);
+}
+window.openSpeakingPractice = function (source = 'words', itemId) {
+  practiceSource = ['words','voa','everyday'].includes(source) ? source : 'words';
+  speakingCategory = ''; practiceIndex = 0;
+  const rows = speakingExamples();
+  practiceIndex = Math.max(0,rows.findIndex(item => item.id === itemId));
+  practiceTarget = rows[practiceIndex] || null;
+  if (practiceSource === 'everyday') { practiceTopic = '일상 대화'; practiceLevel = '초중급 A2–B1'; }
+  show('practice');
+};
 
 function stopPractice() {
+  TranslationAudio?.stop();
   const rec = activeRecording;
   activeRecording = null;
   if (rec) {
@@ -24,13 +41,15 @@ function stopPractice() {
 
 function practicePage() {
   stopPractice();
-  const examples = words().filter(w => w.sentence && w.sentence !== w.word);
-  if (!practiceTarget) practiceTarget = examples[practiceIndex % examples.length];
+  const examples = speakingExamples();
+  if (!practiceTarget || !examples.some(item => item.id === practiceTarget.id)) practiceTarget = examples[practiceIndex % examples.length];
   const w = practiceTarget;
+  const scoringWord = practiceSource === 'words' ? vocabulary().find(item => item.word.toLowerCase() === w.word.toLowerCase() && DICTIONARY.some(entry => entry.word.toLowerCase() === item.word.toLowerCase())) : null;
   main.innerHTML = title('SPEAK A LITTLE EVERY DAY', '소리 내어, 내 영어로.', '듣고 따라 말한 뒤, 같은 문장을 다시 들어 보세요.') + `
     <div class="practice-layout">
       <section class="card speaking-card">
-        <div class="section-head"><h2>따라 말하기</h2><span class="pill">기기에서 녹음</span></div>
+        <div class="section-head"><h2>${practiceSource === 'everyday' ? '생활영어 따라 말하기' : practiceSource === 'voa' ? 'VOA 문장 따라 말하기' : '따라 말하기'}</h2><span class="pill">기기에서 녹음</span></div>
+        <div class="speaking-source"><label>연습 자료<select id="speakingSource"><option value="words" ${practiceSource === 'words' ? 'selected' : ''}>단어장 예문</option><option value="voa" ${practiceSource === 'voa' ? 'selected' : ''}>VOA 원문 3,000문장</option><option value="everyday" ${practiceSource === 'everyday' ? 'selected' : ''}>생활영어 1,000문장</option></select></label>${practiceSource !== 'words' ? `<label>상황·주제<select id="speakingCategory"><option value="">모든 상황·주제</option>${[...new Set((practiceSource === 'everyday' ? EVERYDAY_BANK : translationItems()).map(item => item.topic))].map(topic => `<option value="${esc(topic)}" ${speakingCategory === topic ? 'selected' : ''}>${esc(topic)}</option>`).join('')}</select></label>` : ''}<label class="speaking-choice">문장 선택 (${examples.length.toLocaleString('ko-KR')}개)<select id="speakingChoice">${examples.map(item => `<option value="${esc(item.id)}" ${w.id === item.id ? 'selected' : ''}>${esc(item.sentence)}</option>`).join('')}</select></label></div>
         <span class="practice-word">${esc(w.word)} <small>· ${esc(w.meaning)}</small></span>
         <p class="practice-sentence" lang="en">${esc(w.sentence)}</p>
         <p class="translation">${esc(w.translation)}</p>
@@ -43,19 +62,24 @@ function practicePage() {
           <p class="muted">최대 30초. 녹음은 이 화면에서만 사용하며 서버로 전송하지 않아요. 다른 화면으로 이동하면 삭제됩니다.</p>
         </div>
         <details class="practice-checklist"><summary>내 발음 스스로 확인하기</summary><label><input type="checkbox"> 빠뜨린 단어 없이 끝까지 말했나요?</label><label><input type="checkbox"> 강하게 들리는 음절을 따라 말했나요?</label><label><input type="checkbox"> 단어 사이를 자연스럽게 이어 말했나요?</label></details>
-        <p class="muted">이곳에서는 녹음과 듣기를 연습해요. 100점 만점과 음절별 등급은 발음 평가에서 확인할 수 있어요.</p><button class="secondary" data-page="pronunciation">점수 · 음절별 등급으로 연습하기 ↗</button><p class="muted">발음 평가의 기본 문장 3,000개 또는 단어를 선택해 새로 녹음하세요.</p>
+        <p class="muted">이곳에서는 녹음과 듣기를 연습해요. 100점 만점과 음절별 등급은 발음 평가에서 확인할 수 있어요.</p><button class="secondary" id="practiceScore" ${practiceSource === 'words' && !scoringWord ? 'disabled' : ''}>${practiceSource === 'words' ? '이 단어 발음 평가' : '이 문장 발음 평가'}</button><p class="muted">생활영어·VOA 문장과 단어를 구분해서 연습할 수 있어요. 발음 평가에서는 새로 녹음합니다.</p>
       </section>
       <section class="card chat-practice">
         <div class="eyebrow">CONTINUE IN CHATGPT</div><h2>ChatGPT와 영어로 대화하기</h2>
         <p class="muted">연습 내용을 복사한 뒤, ChatGPT를 따로 열어 원하는 계정으로 로그인하고 붙여 넣으세요. 지금 사용하는 계정과 다른 새 계정도 사용할 수 있습니다.</p>
-        <div class="practice-options"><label for="practiceTopic">연습 상황</label><select id="practiceTopic">${['카페에서 주문하기','여행 중 길 묻기','호텔 체크인','일상 대화','업무 대화','이 문장과 단어 복습','음성으로 따라 말하기'].map(t=>`<option ${t===practiceTopic?'selected':''}>${t}</option>`).join('')}</select><label for="practiceLevel">영어 수준</label><select id="practiceLevel">${['초급 A1–A2','중급 B1–B2','중상급 B2–C1','고급 C1'].map(t=>`<option ${t===practiceLevel?'selected':''}>${t}</option>`).join('')}</select></div>
+        <div class="practice-options"><label for="practiceTopic">연습 상황</label><select id="practiceTopic">${['카페에서 주문하기','여행 중 길 묻기','호텔 체크인','일상 대화','업무 대화','이 문장과 단어 복습','음성으로 따라 말하기'].map(t=>`<option ${t===practiceTopic?'selected':''}>${t}</option>`).join('')}</select><label for="practiceLevel">영어 수준</label><select id="practiceLevel">${['초급 A1–A2','초중급 A2–B1','중급 B1–B2','중상급 B2–C1','고급 C1'].map(t=>`<option ${t===practiceLevel?'selected':''}>${t}</option>`).join('')}</select></div>
         <label class="prompt-label" for="chatPrompt">ChatGPT에 보낼 연습 내용</label><textarea id="chatPrompt" rows="8" readonly></textarea>
         <div class="actions"><button class="primary" id="copyPractice">① 연습 내용 복사</button><a class="secondary" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" id="openChatGPT">② ChatGPT 열기 ↗</a></div>
         <p id="copyStatus" role="status" class="muted">ChatGPT에서 사용할 계정을 확인한 뒤 내용을 붙여 넣고 보내세요.</p>
         <div class="practice-note"><strong>선택한 ChatGPT 계정의 사용 한도 안에서</strong><p>ChatGPT의 사용 한도가 적용됩니다. 한도에 도달하면 연습을 멈추고 초기화를 기다리세요. 추가 크레딧이나 유료 서비스는 이 웹앱에서 구매하지 않습니다.</p><p>음성 연습은 ChatGPT에서 제공되는 음성 버튼으로 시작하세요. 이 웹앱에는 ChatGPT 계정 연결이나 앱 내부 AI 대화 기능이 없으며, 대화 내용과 사용량을 이 웹앱이 읽거나 제어하지 않습니다.</p></div>
       </section>
     </div>`;
-  document.querySelector('#practiceListen').onclick = () => speak(w.sentence);
+  document.querySelector('#practiceListen').onclick = () => { document.querySelector('#myRecording')?.pause(); TranslationAudio.stop(); if (practiceSource === 'words') speak(w.sentence); else TranslationAudio.start([w],0,true); };
+  document.querySelector('#myRecording').onplay = () => { TranslationAudio.stop(); if ('speechSynthesis' in window) speechSynthesis.cancel(); };
+  document.querySelector('#speakingSource').onchange = event => openSpeakingPractice(event.target.value);
+  document.querySelector('#speakingCategory')?.addEventListener('change', event => { speakingCategory = event.target.value; practiceTarget = null; practiceIndex = 0; practicePage(); });
+  document.querySelector('#speakingChoice').onchange = event => { practiceTarget = examples.find(item => item.id === event.target.value); practiceIndex = Math.max(0,examples.findIndex(item => item.id === event.target.value)); TranslationAudio.stop(); practicePage(); };
+  document.querySelector('#practiceScore').onclick = () => { if (practiceSource === 'everyday') Pronunciation.open('everyday',w.sourceId); else if (practiceSource === 'voa') Pronunciation.open('sentence',w.sourceId); else if (scoringWord) Pronunciation.open('word',scoringWord.id); };
   document.querySelector('#nextPractice').onclick = () => { practiceIndex = (practiceIndex + 1) % examples.length; practiceTarget = examples[practiceIndex]; practicePage(); };
   document.querySelector('#recordStart').onclick = startPracticeRecording;
   document.querySelector('#recordStop').onclick = finishPracticeRecording;
@@ -149,7 +173,7 @@ async function startPracticeRecording() {
       const audio = document.querySelector('#myRecording');
       audio.src = recordingURL; audio.hidden = false;
       document.querySelector('#discardRecording').hidden = false;
-      status.textContent = '녹음했어요. 문장 소리와 내 목소리를 번갈아 들어 보세요.';
+      status.textContent = `${practiceSource === 'everyday' ? '생활영어 말하기 결과 · ' : practiceSource === 'voa' ? 'VOA 말하기 결과 · ' : ''}녹음을 완료했어요. 문장 소리와 내 목소리를 번갈아 들어 보세요.`;
     };
     recorder.start();
     const began = Date.now();
@@ -182,10 +206,10 @@ async function showOfflineStatus() {
   const el = document.querySelector('#offlineStatus');
   if (!el) return;
   try {
-    const cache = await caches.open('wordgarden-v23-grammar-patterns-20261124-release');
-    const urls = ['./index.html','./dictionary.js','./questions.js','./app.js','./practice.js','./style.css','./lab-data.js','./lab.js','./lab.css','./lab-attribution.txt','./translation-data.js','./translation.js','./translation.css','./focus-theme.css','./translation-audio-v5.json'];
+    const cache = await caches.open('wordgarden-v24-everyday-20261125-release');
+    const urls = ['./index.html','./dictionary.js','./questions.js','./app.js','./practice.js','./style.css','./lab-data.js','./lab.js','./lab.css','./lab-attribution.txt','./translation-data.js','./translation.js','./translation.css','./focus-theme.css','./translation-audio-v5.json','./everyday-data.js','./everyday.js','./everyday.css','./everyday-audio.json','./everyday-pronunciation-targets.json'];
     const cached = await Promise.all(urls.map(url => cache.match(url)));
-    el.textContent = cached.every(Boolean) ? '학습 자료가 이 기기에 저장되어 있어요. 인터넷 없이 단어·예문 학습, 영어 연구실 전체 자료, 번역 카드·직접 입력과 녹음을 사용할 수 있습니다. 미국 남성 음성 연속 듣기는 인터넷이 필요하며, 한국어 읽기와 기존 발음은 기기에 설치된 음성에 따라 달라요.' : '오프라인 자료를 준비 중이에요. 인터넷에 연결한 상태로 잠시 뒤 다시 확인해 주세요.';
+    el.textContent = cached.every(Boolean) ? '학습 자료가 이 기기에 저장되어 있어요. 인터넷 없이 단어·예문 학습, 영어 연구실 전체 자료, 생활영어 1,000문장, 번역 카드·직접 입력과 녹음을 사용할 수 있습니다. 미국 남성 음성 연속 듣기는 인터넷이 필요하며, 한국어 읽기와 기존 발음은 기기에 설치된 음성에 따라 달라요.' : '오프라인 자료를 준비 중이에요. 인터넷에 연결한 상태로 잠시 뒤 다시 확인해 주세요.';
   } catch { el.textContent = '오프라인 저장 상태를 확인할 수 없어요. Safari에서 다시 열어 주세요.'; }
 }
 

@@ -146,7 +146,8 @@
     if (innerWidth > 760) document.querySelector('#tr-typed-answer').focus();
   };
 
-  let manifestPromise, manifest, audio, interval, ticket = 0, transitioning = false;
+  const manifests = new Map(), manifestPromises = new Map();
+  let audio, interval, ticket = 0, transitioning = false;
   function getAudio() {
     if (!audio) {
       audio = document.createElement('audio'); audio.preload = 'auto'; audio.setAttribute('playsinline', '');
@@ -157,17 +158,22 @@
     }
     return audio;
   }
-  function loadManifest() {
-    if (!manifestPromise) manifestPromise = fetch('translation-audio-v5.json').then(r => { if (!r.ok) throw Error('manifest'); return r.json(); }).then(data => manifest = data).catch(e => { manifestPromise = null; throw e; });
-    return manifestPromise;
+  function collectionFor(item) { return (item?.sourceId || item?.id || '').startsWith('everyday-') ? 'everyday' : 'translation'; }
+  function loadManifest(collection = 'translation') {
+    if (!manifestPromises.has(collection)) {
+      const path = collection === 'everyday' ? 'everyday-audio.json' : 'translation-audio-v5.json';
+      manifestPromises.set(collection, fetch(path).then(response => { if (!response.ok) throw Error('manifest'); return response.json(); }).then(data => { manifests.set(collection,data); return data; }).catch(error => { manifestPromises.delete(collection); throw error; }));
+    }
+    return manifestPromises.get(collection);
   }
   function current() { return TranslationAudio.queue[TranslationAudio.index]; }
-  function clipFor() { return manifest?.clips[current()?.sourceId || current()?.id]; }
+  function clipFor() { return manifests.get(collectionFor(current()))?.clips[current()?.sourceId || current()?.id]; }
   async function playCurrent(reset = true) {
     const run = ++ticket, a = getAudio();
     transitioning = true; TranslationAudio.message = '음성을 준비하고 있어요…'; updatePlayer();
     try {
-      if (!manifest) await loadManifest(); if (run !== ticket) return;
+      const collection = collectionFor(current());
+      if (!manifests.has(collection)) await loadManifest(collection); if (run !== ticket) return;
       const clip = clipFor(); if (!clip) throw Error('missing clip');
       const url = new URL(clip.src, document.baseURI).href;
       let started;
@@ -191,7 +197,7 @@
       clearInterval(interval); interval = setInterval(tick, 70);
       updatePlayer();
       if ('mediaSession' in navigator) {
-        if (typeof MediaMetadata === 'function') navigator.mediaSession.metadata = new MediaMetadata({title:current().english,artist:'단어정원 · Michael · 미국 영어',album:'VOA 원문 번역 3,000문장'});
+        if (typeof MediaMetadata === 'function') navigator.mediaSession.metadata = new MediaMetadata({title:current().english,artist:'단어정원 · Michael · 미국 영어',album:collectionFor(current()) === 'everyday' ? '생활영어 1,000문장' : 'VOA 원문 번역 3,000문장'});
         for (const [name, action] of [['play', () => TranslationAudio.resume()], ['pause', () => TranslationAudio.pause()], ['nexttrack', () => TranslationAudio.step(1)], ['previoustrack', () => TranslationAudio.step(-1)]]) { try { navigator.mediaSession.setActionHandler(name, action); } catch {} }
       }
     } catch (error) {
@@ -225,6 +231,7 @@
     const ko = document.querySelector('#tr-now-ko'); if (ko) ko.textContent = w?.korean || '';
     const source = document.querySelector('#tr-now-source'); if (source) source.innerHTML = sourceHTML(w);
     for (const id of ['tr-audio-status','tr-quiz-audio-status']) { const el = document.getElementById(id); if (el) el.textContent = status; }
+    window.Everyday?.audioUpdated(w,status);
     const play = document.querySelector('#tr-play'); if (play) play.textContent = TranslationAudio.playing ? 'Ⅱ 일시 정지' : w ? '▶ 이어 듣기' : '▶ 연속 듣기';
     const repeat = document.querySelector('#tr-repeat'); if (repeat) repeat.checked = TranslationAudio.repeat;
   }
@@ -246,4 +253,5 @@
   window.addEventListener('pagehide', () => TranslationAudio.stop());
   // Load only the small cue index, never the 3,000-sentence audio collection.
   loadManifest().catch(() => {});
+  loadManifest('everyday').catch(() => {});
 })();
