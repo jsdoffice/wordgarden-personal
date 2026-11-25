@@ -133,3 +133,7 @@ body.keyboard-open.lesson-mode .translation{font-size:13px;line-height:1.35}
 body.lesson-mode .word-gap-quiz .word-mode-buttons>button{min-height:44px}
 body.keyboard-open.lesson-mode .word-gap-quiz.is-sentence .word-prompt .translation{display:none}
 body.keyboard-open.lesson-mode .word-gap-quiz.is-vocabulary .word-prompt .question{display:none}
+/* Small explanations for controls that need context. */
+.today-progress-label{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#e4efff;font-size:13px;line-height:1.5;margin:10px 0 8px}.today-progress-label strong{color:#fff;font-weight:700}.today-progress-label b{font-size:14px;color:#fff;font-variant-numeric:tabular-nums}.today-progress-help{font-size:12px;line-height:1.5;color:#e4efff;margin:8px 0 0}.swipe-surface{-webkit-user-select:none;user-select:none}.swipe-surface input,.swipe-surface textarea{-webkit-user-select:text;user-select:text}
+@media(max-width:760px){body.home-mode .today-progress-label{font-size:12px;margin:6px 0}.today-progress-label b{font-size:13px}body.home-mode .today-progress-help{font-size:12px;line-height:1.4;margin:7px 0 0}body.home-mode .today-card .primary{margin-top:12px}}
+@media(max-width:760px) and (max-height:700px){body.home-mode .today-progress-label{margin:0 0 5px;font-size:12px}body.home-mode .today-progress-help{margin-top:5px}body.home-mode .today-card .primary{margin-top:8px}body.home-mode .home-short-goal{display:none}}
