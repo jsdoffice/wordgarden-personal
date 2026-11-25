@@ -16,10 +16,22 @@
   function references(item){return(item.sourceIds||[]).map(id=>sources().find(source=>source.id===id)).filter(Boolean).flatMap(source=>{try{const url=new URL(source.url);if(url.protocol!=='https:'||!['learnenglish.britishcouncil.org','learnenglishteens.britishcouncil.org','dictionary.cambridge.org','americanenglish.state.gov','www.americanenglish.org','americanenglish.org'].includes(url.hostname))return[];return[`<a href="${esc(url.href)}" target="_blank" rel="noopener noreferrer">${esc(source.title)} ↗</a>`];}catch{return[];}}).join('');}
   function card(item){const showEnglish=E.view==='list'||E.reveal;return`<article class="card everyday-card sentence-card" data-everyday-id="${esc(item.id)}"><div class="sentence-card-meta"><span class="pill">${esc(item.topic)}</span><details class="everyday-reference sentence-details" data-everyday-details="${esc(item.id)}"><summary>해설·출처</summary><div class="sentence-detail-panel"><button class="text-btn sentence-panel-close" data-everyday-close-detail="${esc(item.id)}">닫기 ×</button><h3>표현과 용법</h3><p class="everyday-note" ${!showEnglish?'hidden':''}>${esc(item.note)}</p><p>자체 작성 예문·번역입니다. 공식 자료는 용법 참고용이에요.</p>${references(item)}</div></details></div><div class="sentence-copy" data-language="${showEnglish?'english':'korean'}"><p class="everyday-english sentence-english" lang="en" ${!showEnglish?'hidden':''}>${esc(item.english)}</p><p class="everyday-korean sentence-korean">${esc(item.korean)}</p></div><div class="sentence-card-actions"><button class="listen" data-everyday-listen="${esc(item.id)}">듣기</button><button class="primary" data-everyday-practice="${esc(item.id)}" aria-label="이 문장 연습">연습하기</button><button class="secondary" data-everyday-speak="${esc(item.id)}">말하기</button><button class="secondary" data-everyday-score="${esc(item.id)}">발음 평가</button></div></article>`;}
   function queueMatches(items){const ids=new Set(TranslationAudio.queue.map(item=>item.sourceId||item.id));return items.length===TranslationAudio.queue.length&&items.every(item=>ids.has(item.id));}
-  function turn(delta){
-    if(E.filters||E.audioOptions||document.querySelector('[data-everyday-details][open]'))return;
-    const size=filtered().length,next=Math.max(0,Math.min(size-1,E.index+delta));
-    if(!size||next===E.index)return;E.index=next;renderResults();
+  function cardMotion(stage){
+    const target=()=>stage?.querySelectorAll('.sentence-card')[0]||null;
+    const key=()=>target()?.dataset.everydayId||null;
+    const isActive=()=>Boolean(stage&&stage.isConnected!==false&&document.querySelector('#everydayResults')===stage&&E.view==='card'&&!E.filters&&!E.audioOptions&&!Array.from(stage.querySelectorAll('[data-everyday-details]')).some(detail=>detail.open)&&key()&&key()===filtered()[E.index]?.id);
+    const canMove=direction=>isActive()&&(direction===-1||direction===1)&&E.index+direction>=0&&E.index+direction<filtered().length;
+    return{target,key,isActive,canMove};
+  }
+  function turn(delta,motion=cardMotion(document.querySelector('#everydayResults'))){
+    if(!motion.canMove(delta))return false;
+    E.index+=delta;renderResults();return true;
+  }
+  function animateTurn(delta,stage){
+    const motion=cardMotion(stage),key=motion.key(),target=motion.target();
+    if(!motion.canMove(delta))return;
+    const navigate=()=>{if(motion.isActive()&&motion.key()===key&&motion.target()===target)return turn(delta,motion);return false;};
+    if(window.MobileUI?.transitionCard)window.MobileUI.transitionCard({direction:delta,...motion,navigate});else navigate();
   }
   function setPanel(kind,open){const filter=kind==='filters';if(open){E.filters=false;E.audioOptions=false;document.querySelector('#everydayFilters').hidden=true;document.querySelector('#everydayAudioOptionsPanel').hidden=true;document.querySelector('#everydayFilterToggle').setAttribute('aria-expanded','false');document.querySelector('#everydayAudioOptions').setAttribute('aria-expanded','false');}E[filter?'filters':'audioOptions']=open;document.querySelector(filter?'#everydayFilters':'#everydayAudioOptionsPanel').hidden=!open;document.querySelector(filter?'#everydayFilterToggle':'#everydayAudioOptions').setAttribute('aria-expanded',String(open));}
   function renderResults(){
@@ -30,7 +42,8 @@
     const selected=E.view==='card'?items.slice(E.index,E.index+1):items.slice(0,E.visible);
     document.querySelector('#everydayResults').innerHTML=selected.length?selected.map(card).join(''):'<section class="card sentence-empty"><h2>문장이 없어요</h2><button class="secondary" id="everydayResetFilters">필터 초기화</button></section>';
     document.querySelector('#everydayPagination').innerHTML=E.view==='card'?`<button class="secondary" id="everydayPrevious" ${!items.length||E.index===0?'disabled':''}>← 이전</button><span>${items.length?E.index+1:0} / ${items.length.toLocaleString('ko-KR')}<small class="sentence-swipe-hint">좌우로 밀기</small></span><button class="secondary" id="everydayNext" ${!items.length||E.index>=items.length-1?'disabled':''}>다음 →</button>`:(E.visible<items.length?`<button class="secondary" id="everydayMore">더 보기 (${Math.min(E.visible,items.length)} / ${items.length})</button>`:'');
-    document.querySelector('#everydayPrevious')?.addEventListener('click',()=>turn(-1));document.querySelector('#everydayNext')?.addEventListener('click',()=>turn(1));
+    const stage=document.querySelector('#everydayResults');
+    document.querySelector('#everydayPrevious')?.addEventListener('click',()=>animateTurn(-1,stage));document.querySelector('#everydayNext')?.addEventListener('click',()=>animateTurn(1,stage));
     document.querySelector('#everydayMore')?.addEventListener('click',()=>{E.visible+=20;renderResults();});
     document.querySelector('#everydayResetFilters')?.addEventListener('click',()=>{E.topic='';E.query='';E.index=0;everydayPage();});
     for(const b of document.querySelectorAll('[data-everyday-listen]'))b.onclick=()=>{const item=bank().find(row=>row.id===b.dataset.everydayListen);if(item)TranslationAudio.start([item],0,true);};
@@ -61,7 +74,7 @@
     document.querySelector('#everydayPause').onclick=()=>TranslationAudio.pause();
     document.querySelector('#everydayAudioPrevious').onclick=()=>{if((TranslationAudio.queue[0]?.sourceId||TranslationAudio.queue[0]?.id||'').startsWith('everyday-'))TranslationAudio.step(-1);};document.querySelector('#everydayAudioNext').onclick=()=>{if((TranslationAudio.queue[0]?.sourceId||TranslationAudio.queue[0]?.id||'').startsWith('everyday-'))TranslationAudio.step(1);};
     document.querySelector('#everydayOpenSpeaking').onclick=()=>window.openSpeakingPractice('everyday',filtered()[E.index]?.id);document.querySelector('#everydayOpenPronunciation').onclick=()=>window.Pronunciation.open('everyday',filtered()[E.index]?.id);
-    renderResults();if(E.view==='card')window.MobileUI?.bindSwipe(document.querySelector('#everydayResults'),{prev:()=>turn(-1),next:()=>turn(1)});
+    renderResults();if(E.view==='card'){const stage=document.querySelector('#everydayResults'),motion=cardMotion(stage);window.MobileUI?.bindSwipe(stage,{prev:()=>turn(-1,motion),next:()=>turn(1,motion),motion});}
   };
   window.Everyday={items:bank,topicOptions,audioUpdated(item,status){if(!document.querySelector('#everydayNow')||!(item?.sourceId||item?.id||'').startsWith('everyday-'))return;document.querySelector('#everydayNow').textContent=item.english;document.querySelector('#everydayNowKo').textContent=item.korean;document.querySelector('#everydayAudioStatus').textContent=status;document.querySelector('#everydayPlay').textContent=queueMatches(filtered())?(TranslationAudio.playing?'일시 정지':'이어 듣기'):'연속 듣기';}};
 })();

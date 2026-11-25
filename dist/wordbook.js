@@ -72,7 +72,7 @@ window.Wordbook = (() => {
   }
   function wordMarkup(word,cardMode,grouped) {
     const data=metadata(word),peers=grouped.get(keyOf(word.word))||[word],star=peers.some(w=>state.progress[w.id]?.star);
-    return `<article class="wb-item ${cardMode?'wb-flashcard':''} ${word.word.length>24?'wb-long-headword':''}" aria-label="${esc(word.word)} 단어 카드">
+    return `<article class="wb-item ${cardMode?'wb-flashcard':''} ${word.word.length>24?'wb-long-headword':''}" data-wordbook-id="${esc(word.id)}" aria-label="${esc(word.word)} 단어 카드">
       <div class="wb-card-top"><span class="wb-category">${esc(word.category)}</span><div class="wb-tools"><button class="wb-icon ${star?'is-saved':''}" data-wb-star="${esc(word.id)}" aria-label="${esc(word.word)} ${star?'저장 해제':'저장'}" aria-pressed="${star}">${star?'★':'☆'}</button>${word.id.startsWith('c')?`<button class="wb-icon" data-wb-delete="${esc(word.id)}" aria-label="${esc(word.word)} 직접 추가한 단어 삭제">×</button>`:''}</div></div>
       <div class="wb-heading"><h2 ${cardMode?'tabindex="-1" id="wordbookCurrent"':''} lang="en">${esc(word.word)}</h2><button class="wb-icon wb-word-audio" data-wb-listen="${esc(word.id)}" aria-label="${esc(word.word)} 발음 듣기">${icon('audio')}</button></div>
       <p class="wb-ipa" aria-label="미국식 발음기호">${data.ipa?`<span lang="en">/${esc(data.ipa)}/</span>`:'발음기호 미등록'}<span class="wb-ipa-label">미국식</span></p>
@@ -93,11 +93,16 @@ window.Wordbook = (() => {
     document.querySelector('#wbFiltersToggle').classList.toggle('has-filter',Boolean(ui.query.trim()||wordFilter!=='all'));
     if(!items.length){container.innerHTML='<section class="card empty wb-empty"><h2>표시할 단어가 없어요</h2><p class="muted">검색·필터를 열어 다른 조건으로 찾아보세요.</p></section>';return;}
     if(ui.mode==='card') {
-      container.innerHTML=`<div class="wb-card-view">${wordMarkup(items[index],true,grouped)}<div class="wb-navigation" role="group" aria-label="단어 카드 이동"><button class="secondary" id="wordbookPrev" ${index===0?'disabled':''}>${icon('previous')}<span>이전</span></button><span role="status" aria-live="polite"><strong>${fmt(index+1)}</strong><span> / ${fmt(items.length)}</span><small class="wb-swipe-hint" aria-hidden="true">좌우로 넘기기</small></span><button class="primary" id="wordbookNext" ${index===items.length-1?'disabled':''}><span>다음</span>${icon('next')}</button></div></div>`;
-      const move=step=>{if(index+step<0||index+step>=items.length)return;ui.selected=selectionKey(items[index+step]);ui.exampleIndex=0;if('speechSynthesis'in window)speechSynthesis.cancel();render(true);};
+      container.innerHTML=`<div class="wb-card-view"><div class="wb-card-stage">${wordMarkup(items[index],true,grouped)}</div><div class="wb-navigation" role="group" aria-label="단어 카드 이동"><button class="secondary" id="wordbookPrev" ${index===0?'disabled':''}>${icon('previous')}<span>이전</span></button><span role="status" aria-live="polite"><strong>${fmt(index+1)}</strong><span> / ${fmt(items.length)}</span><small class="wb-swipe-hint" aria-hidden="true">좌우로 넘기기</small></span><button class="primary" id="wordbookNext" ${index===items.length-1?'disabled':''}><span>다음</span>${icon('next')}</button></div></div>`;
+      const target=()=>container.querySelector('.wb-flashcard');
+      const key=()=>target()?.dataset.wordbookId||'';
+      const isActive=()=>ui.mode==='card'&&container.isConnected&&document.querySelector('#wordList')===container;
+      const canMove=step=>isActive()&&!ui.filtersOpen&&key()===items[index].id&&[-1,1].includes(step)&&index+step>=0&&index+step<items.length;
+      const moveCore=step=>{if(!canMove(step))return;ui.selected=selectionKey(items[index+step]);ui.exampleIndex=0;if('speechSynthesis'in window)speechSynthesis.cancel();render(true);};
+      const move=step=>{if(!canMove(step))return;if(window.MobileUI?.transitionCard)return window.MobileUI.transitionCard({direction:step,target,key,canMove,isActive:()=>isActive()&&!ui.filtersOpen,navigate:()=>moveCore(step)});moveCore(step);};
       for(const [id,step]of [['wordbookPrev',-1],['wordbookNext',1]])document.querySelector('#'+id).onclick=()=>move(step);
       const card=container.querySelector('.wb-flashcard');
-      swipeCleanup=window.MobileUI?.bindSwipe(container.querySelector('.wb-card-view'),{prev:()=>move(-1),next:()=>move(1)});
+      swipeCleanup=window.MobileUI?.bindSwipe(container.querySelector('.wb-card-view'),{prev:()=>moveCore(-1),next:()=>moveCore(1),motion:{target,key,canMove,isActive:()=>isActive()&&!ui.filtersOpen}});
       container.querySelectorAll('[data-wb-example-tab]').forEach(button=>button.onclick=()=>{ui.exampleIndex=Number(button.dataset.wbExampleTab);selectExample(card,true);scheduleFit();});
     } else {
       container.innerHTML=`<div class="wb-list-view">${items.slice(0,wordLimit).map(word=>wordMarkup(word,false,grouped)).join('')}</div>${items.length>wordLimit?`<button class="secondary wb-more" id="wordbookMore">더 보기 (${fmt(Math.min(wordLimit,items.length))} / ${fmt(items.length)})</button>`:''}`;

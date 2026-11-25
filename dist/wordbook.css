@@ -55,6 +55,7 @@
 .wb-empty-examples{font-size:12px;color:var(--muted,#7c889a);line-height:1.6;margin:12px 0 0}
 .wb-more{display:block;margin:22px auto 0}
 .wb-card-view{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:14px;min-height:0}
+.wb-card-stage{display:flex;flex-direction:column;position:relative;min-height:0;overflow:hidden;border-radius:24px;touch-action:pan-y pinch-zoom}
 .wb-flashcard{padding:22px 26px;border-radius:24px;box-shadow:0 4px 22px #17243a04;display:flex;flex-direction:column;min-height:0}
 .wb-flashcard .wb-heading{margin-top:4px}
 .wb-flashcard .wb-heading h2{font-size:34px;line-height:1.15;letter-spacing:-1px}
@@ -109,6 +110,7 @@
  .wb-workspace.is-card-mode .wb-page-hint{display:none}
  .wb-workspace.is-card-mode .wb-results{display:flex;flex:1;min-height:0;min-width:0}
  .wb-workspace.is-card-mode .wb-card-view{width:100%;height:100%;flex:1;gap:10px}
+ .wb-workspace.is-card-mode .wb-card-stage{flex:1;border-radius:22px}
  .wb-workspace.is-card-mode .wb-flashcard{flex:1;min-height:0;padding:16px 18px;border-radius:22px}
  .wb-flashcard .wb-heading h2{font-size:32px}
  .wb-flashcard.wb-long-headword .wb-heading h2{font-size:23px}

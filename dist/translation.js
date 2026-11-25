@@ -38,9 +38,22 @@
   const progressCount=()=>bank().filter(w=>state.progress[w.id]?.attempts>0||state.progress[w.id.replace(/^tr/,'tt')]?.attempts>0).length;
   const badgeText=()=>`${progressCount().toLocaleString()} / ${bank().length.toLocaleString()} 학습`;
   function practiceRows(rows){if(!rows.length){toast('학습할 문장이 없어요.');return;}window.MobileUI?.cardMode(false);startTranslation(rows,mode);}
-  function turnCard(delta){
-    if(filtersOpen||audioOptionsOpen||document.querySelector('[data-tr-details][open]'))return;
-    const size=filtered().length,next=Math.max(0,Math.min(size-1,cardIndex+delta));if(!size||next===cardIndex)return;cardIndex=next;renderLibrary();
+  function cardMotion(stage){
+    const target=()=>stage?.querySelectorAll('.sentence-card')[0]||null;
+    const key=()=>target()?.dataset.trCard||null;
+    const isActive=()=>Boolean(stage&&stage.isConnected!==false&&document.querySelector('#translationList')===stage&&view==='card'&&!filtersOpen&&!audioOptionsOpen&&!Array.from(stage.querySelectorAll('[data-tr-details]')).some(detail=>detail.open)&&key()&&key()===filtered()[cardIndex]?.id);
+    const canMove=direction=>isActive()&&(direction===-1||direction===1)&&cardIndex+direction>=0&&cardIndex+direction<filtered().length;
+    return{target,key,isActive,canMove};
+  }
+  function turnCard(delta,motion=cardMotion(document.querySelector('#translationList'))){
+    if(!motion.canMove(delta))return false;
+    cardIndex+=delta;renderLibrary();return true;
+  }
+  function animateTurnCard(delta,stage){
+    const motion=cardMotion(stage),key=motion.key(),target=motion.target();
+    if(!motion.canMove(delta))return;
+    const navigate=()=>{if(motion.isActive()&&motion.key()===key&&motion.target()===target)return turnCard(delta,motion);return false;};
+    if(window.MobileUI?.transitionCard)window.MobileUI.transitionCard({direction:delta,...motion,navigate});else navigate();
   }
   function panel(kind,open){
     const filter=kind==='filters';
@@ -69,14 +82,15 @@
     document.querySelector('#tr-play').onclick=()=>{const rows=filtered(),ids=new Set(rows.map(w=>w.id)),same=rows.length===TranslationAudio.queue.length&&TranslationAudio.queue.every(w=>ids.has(w.sourceId||w.id));if(same&&TranslationAudio.playing)TranslationAudio.pause();else if(same&&rows.length)TranslationAudio.resume();else TranslationAudio.start(rows);};
     document.querySelector('#tr-prev').onclick=()=>TranslationAudio.step(-1);document.querySelector('#tr-next').onclick=()=>TranslationAudio.step(1);
     document.querySelector('#tr-speed').onchange=e=>TranslationAudio.setRate(Number(e.target.value));document.querySelector('#tr-repeat').onchange=e=>{TranslationAudio.repeat=e.target.checked;};document.querySelector('#tr-shuffle').onchange=e=>{TranslationAudio.random=e.target.checked;if(TranslationAudio.queue.length)TranslationAudio.start(filtered());};
-    renderLibrary();if(view==='card')window.MobileUI?.bindSwipe(document.querySelector('#translationList'),{prev:()=>turnCard(-1),next:()=>turnCard(1)});
+    renderLibrary();if(view==='card'){const stage=document.querySelector('#translationList'),motion=cardMotion(stage);window.MobileUI?.bindSwipe(stage,{prev:()=>turnCard(-1,motion),next:()=>turnCard(1,motion),motion});}
   };
   function renderLibrary(){
     const rows=filtered();cardIndex=Math.max(0,Math.min(cardIndex,rows.length-1));document.querySelector('#translationCount').textContent=`${rows.length.toLocaleString()}문장`;document.querySelector('#translationStart').disabled=!rows.length;document.querySelector('#tr-play').disabled=!rows.length;
     const selected=view==='card'?rows.slice(cardIndex,cardIndex+1):rows.slice(0,visible);
     document.querySelector('#translationList').innerHTML=selected.length?selected.map(readingCard).join(''):'<section class="card sentence-empty"><h2>문장이 없어요</h2><button class="secondary" id="translationResetFilters">필터 초기화</button></section>';
     document.querySelector('#translationPagination').innerHTML=view==='card'?`<button class="secondary" id="translationPrevious" ${!rows.length||cardIndex===0?'disabled':''}>← 이전</button><span>${rows.length?cardIndex+1:0} / ${rows.length.toLocaleString()}<small class="sentence-swipe-hint">좌우로 밀기</small></span><button class="secondary" id="translationNext" ${!rows.length||cardIndex>=rows.length-1?'disabled':''}>다음 →</button>`:(visible<rows.length?`<button class="secondary tr-more" id="translationMore">더 보기 (${Math.min(visible,rows.length)} / ${rows.length})</button>`:'');
-    document.querySelector('#translationPrevious')?.addEventListener('click',()=>turnCard(-1));document.querySelector('#translationNext')?.addEventListener('click',()=>turnCard(1));document.querySelector('#translationMore')?.addEventListener('click',()=>{visible+=12;renderLibrary();});
+    const stage=document.querySelector('#translationList');
+    document.querySelector('#translationPrevious')?.addEventListener('click',()=>animateTurnCard(-1,stage));document.querySelector('#translationNext')?.addEventListener('click',()=>animateTurnCard(1,stage));document.querySelector('#translationMore')?.addEventListener('click',()=>{visible+=12;renderLibrary();});
     document.querySelector('#translationResetFilters')?.addEventListener('click',()=>{topic='all';search='';cardIndex=0;translationPage();});
     document.querySelectorAll('[data-tr-listen]').forEach(b=>b.onclick=()=>TranslationAudio.start([bank().find(w=>w.id===b.dataset.trListen)],0,true));document.querySelectorAll('[data-tr-practice]').forEach(b=>b.onclick=()=>practiceRows([bank().find(w=>w.id===b.dataset.trPractice)]));
     document.querySelectorAll('[data-tr-close-detail]').forEach(b=>b.onclick=()=>{document.querySelector(`[data-tr-details="${b.dataset.trCloseDetail}"]`).open=false;});
