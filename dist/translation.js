@@ -51,7 +51,7 @@
   }
   function readingCard(w){return`<article class="card tr-library-card sentence-card" data-tr-card="${esc(w.id)}"><div class="sentence-card-meta"><span class="pill">${esc(w.topic)}</span><details class="sentence-details" data-tr-details="${esc(w.id)}"><summary>해설·출처</summary><div class="sentence-detail-panel"><button class="text-btn sentence-panel-close" data-tr-close-detail="${esc(w.id)}">닫기 ×</button><h3>표현과 원문</h3><p>${esc(w.note)}</p>${sourceHTML(w)}</div></details></div><div class="sentence-copy" data-language="${reveal?'english':'korean'}"><p class="sentence-english" lang="en" ${!reveal?'hidden':''}>${esc(w.english)}</p><p class="sentence-korean">${esc(w.korean)}</p></div><div class="sentence-card-actions tr-reading-actions"><button class="listen" data-tr-listen="${esc(w.id)}">문장 듣기</button><button class="primary" data-tr-practice="${esc(w.id)}">이 문장 연습</button></div></article>`;}
   window.translationPage=function(){
-    const topics=[...new Set(bank().map(w=>w.topic))];filtersOpen=false;audioOptionsOpen=false;window.MobileUI?.cardMode(view==='card');
+    const topics=[...new Set(bank().map(w=>w.topic))];filtersOpen=false;audioOptionsOpen=false;window.MobileUI?.lessonMode?.(false);window.MobileUI?.cardMode(view==='card');
     main.innerHTML=`<section class="sentence-browser translation-browser ${view==='card'?'is-card':'is-list'}" aria-label="VOA 번역 연습 3,000문장">
       <header class="sentence-browser-header"><div><h1>번역 연습</h1><p class="sentence-learning-count tr-completed">${badgeText()}</p></div><button class="secondary sentence-filter-toggle" id="translationFilterToggle" aria-expanded="false" aria-controls="translationFilters">필터</button></header>
       <div id="translationFilters" class="browser-popover" hidden><div class="sentence-panel-heading"><h2>문장 찾기</h2><button class="text-btn" id="translationFilterClose">닫기 ×</button></div><div class="tr-filters"><label>주제<select id="translationTopic"><option value="all">모든 주제</option>${topics.map(t=>`<option value="${esc(t)}" ${topic===t?'selected':''}>${esc(t)}</option>`).join('')}</select></label><label>검색<input id="translationSearch" type="search" value="${esc(search)}" placeholder="한국어·영어·문법"></label></div><button class="primary" id="translationFilterDone">적용</button></div>
@@ -83,15 +83,32 @@
     updatePlayer();
   }
 
+  const fitLesson = () => window.MobileUI?.fitLesson?.();
+  function bindLessonPanels(isCurrent) {
+    for (const button of document.querySelectorAll('[data-tr-close-panel]')) button.onclick = () => {
+      if (!isCurrent()) return;
+      const panel = document.getElementById(button.dataset.trClosePanel);
+      if (panel) panel.open = false;
+    };
+  }
+  function lessonFeedback(w,{ok,text='',typed=false,skipped=false,hinted=false}) {
+    const heading=ok?'✓ 정답이에요':skipped?'예시 문장을 살펴보세요':'예시 답안과 달라요';
+    return `<div class="feedback tr-lesson-result ${ok?'':'wrong'}"><div class="tr-result-heading">${heading}</div><p lang="en" class="tr-correct">${esc(w.english)}</p><p class="tr-feedback-korean">${esc(w.korean)}</p></div>${typed&&!ok&&!skipped?'<button class="secondary tr-self-correct" id="tr-self-correct">내 답도 정답으로 기록</button>':''}<div class="tr-feedback-actions"><button class="listen" id="tr-listen-answer">영어 듣기</button><details class="tr-lesson-details" id="tr-feedback-more"><summary class="secondary">해설·출처</summary><section class="tr-lesson-panel"><button class="text-btn" data-tr-close-panel="tr-feedback-more">닫기 ×</button><h2>문장 해설</h2><p lang="en" class="tr-detail-english">${esc(w.english)}</p><p>${esc(w.korean)}</p>${text?`<p class="tr-your-answer">${typed?'내 번역':'내 문장'}: ${esc(text)}</p>`:''}<p class="tr-explanation"><strong>${esc(w.grammar)}</strong><br>${esc(w.note)}</p>${hinted?'<p>힌트를 사용했어요.</p>':''}${typed?'<p>예시 답안과 비교하는 채점이에요. 뜻이 같은 다른 번역도 가능해요. 모든 자연스러운 번역을 판단하는 AI 채점은 아닙니다.</p>':''}${sourceHTML(w)}</section></details></div><p id="tr-quiz-audio-status" role="status" class="muted"></p><button class="primary tr-check" id="tr-next-question">다음 문장 →</button>`;
+  }
+
   window.renderTranslationQuiz = function (w, s) {
-    window.MobileUI?.cardMode(false);
+    window.MobileUI?.cardMode(false);window.MobileUI?.lessonMode?.(true);
     TranslationAudio.stop();
     const questionIndex = s.index, isCurrent = () => currentQuestion(w,s,questionIndex);
     const source = tokenise(w.english).map((word, id) => ({id, word: word === 'I' ? word : word.toLowerCase()}));
     let cards = shuffle(source), selected = [], hinted = false, submitted = false, advanced = false;
     const canEdit = () => isCurrent() && !s.answered && !submitted;
     if (cards.every((card, i) => card.id === i)) cards = [...cards.slice(1), cards[0]];
-    main.innerHTML = `<div class="quiz tr-quiz"><div class="quiz-top"><button class="text-btn" id="exitQuiz">✕ 학습 끝내기</button><div class="progress"><div style="width:${s.index / s.items.length * 100}%"></div></div><span class="muted">${s.index + 1} / ${s.items.length}</span></div><div class="eyebrow">${isEveryday(w) ? 'EVERYDAY ENGLISH · WORD CARDS' : 'TRANSLATE WITH WORD CARDS'}</div><h1>이 문장을 영어로 만들어 보세요.</h1><p class="muted">카드를 눌러 순서대로 놓으세요. 선택한 카드를 다시 누르면 돌아갑니다.</p><section class="card tr-question"><div class="section-head"><span class="pill">${esc(quizLevel(w))} · ${esc(w.topic)}</span><span class="tr-small">${esc(w.grammar)}</span></div><p class="tr-korean">${esc(w.korean)}</p><p class="tr-small" id="tr-answer-label">나의 영어 문장 · 모든 카드를 사용하세요</p><div class="tr-answer" id="tr-answer" role="group" aria-labelledby="tr-answer-label"></div><div class="tr-bank" id="tr-bank" role="group" aria-label="무작위 영어 단어 카드"></div><div class="tr-tools"><button class="text-btn" id="tr-undo">↶ 한 장 되돌리기</button><button class="text-btn" id="tr-clear">처음부터</button><button class="text-btn" id="tr-hint">다음 카드 힌트</button><button class="text-btn" id="tr-skip">잘 모르겠어요</button></div><p id="tr-card-status" class="muted" role="status"></p><button class="primary tr-check" id="tr-check">정답 확인하기</button><div id="tr-feedback" aria-live="polite"></div></section></div>`;
+    main.innerHTML = `<div class="quiz tr-quiz tr-cards-lesson"><div class="quiz-top"><button class="text-btn" id="exitQuiz" aria-label="학습 끝내기">✕</button><div class="progress"><div style="width:${s.index/s.items.length*100}%"></div></div><span class="muted">${s.index+1} / ${s.items.length}</span><button class="text-btn" id="tr-korean-listen" aria-label="한국어 문장 듣기">듣기</button><button class="text-btn" id="tr-help-toggle" aria-expanded="false" aria-controls="tr-help-panel">도움</button></div><section class="tr-help-panel" id="tr-help-panel" hidden role="dialog" aria-label="카드 배열 도움"><div class="tr-help-heading"><strong>카드 배열 도움</strong><button class="text-btn" id="tr-help-close">닫기 ×</button></div><div class="tr-tools"><button class="text-btn" id="tr-undo">되돌리기</button><button class="text-btn" id="tr-clear">비우기</button><button class="text-btn" id="tr-hint">힌트</button><button class="text-btn" id="tr-skip">모르겠어요</button></div></section><h1 class="tr-lesson-heading">영어로 만들어 보세요</h1><section class="card tr-question"><div class="section-head"><span class="pill">${esc(quizLevel(w))} · 카드 배열</span><span id="tr-card-status" role="status" class="muted"></span></div><p class="tr-korean">${esc(w.korean)}</p><div class="tr-workspace" id="tr-workspace"><span class="sentence-sr-only" id="tr-answer-label">나의 영어 문장</span><div class="tr-answer" id="tr-answer" role="group" aria-labelledby="tr-answer-label"></div><div class="tr-bank" id="tr-bank" role="group" aria-label="영어 단어 카드"></div></div><div class="tr-question-controls" id="tr-question-controls"><button class="primary tr-check" id="tr-check">정답 확인</button></div><div id="tr-feedback" aria-live="polite"></div></section></div>`;
+    function closeCardHelp(){document.querySelector('#tr-help-panel').hidden=true;document.querySelector('#tr-help-toggle').setAttribute('aria-expanded','false');}
+    document.querySelector('#tr-help-toggle').onclick=()=>{if(!canEdit())return;const panel=document.querySelector('#tr-help-panel');panel.hidden=!panel.hidden;document.querySelector('#tr-help-toggle').setAttribute('aria-expanded',String(!panel.hidden));};
+    document.querySelector('#tr-help-close').onclick=()=>{if(isCurrent())closeCardHelp();};
+    document.querySelector('#tr-help-panel').onkeydown=event=>{if(event.key==='Escape')closeCardHelp();};
     const draw = focusId => {
       document.querySelector('#tr-answer').innerHTML = selected.length ? selected.map(id => `<button class="tr-token selected" data-tr-remove="${id}" lang="en" aria-label="${esc(source[id].word)} 빼기">${esc(source[id].word)}</button>`).join('') : '<span class="tr-placeholder">이곳에 영어 문장이 완성돼요.</span>';
       document.querySelector('#tr-bank').innerHTML = cards.map(card => `<button class="tr-token ${selected.includes(card.id) ? 'used' : ''}" data-tr-add="${card.id}" lang="en" ${selected.includes(card.id) ? 'disabled' : ''} aria-label="${esc(card.word)} 추가">${esc(card.word)}</button>`).join('');
@@ -102,6 +119,7 @@
       document.querySelectorAll('[data-tr-add]').forEach(b => b.onclick = () => { const id = Number(b.dataset.trAdd); if (!canEdit() || selected.includes(id) || !source[id]) return; selected.push(id); draw(); });
       document.querySelectorAll('[data-tr-remove]').forEach(b => b.onclick = () => { if (!canEdit()) return; const id = Number(b.dataset.trRemove); selected = selected.filter(n => n !== id); draw(id); });
       if (focusId !== undefined) document.querySelector(`[data-tr-add="${focusId}"]`)?.focus({preventScroll:true});
+      fitLesson();
     };
     const submit = skipped => {
       if (submitted || s.answered || !isCurrent()) return;
@@ -110,20 +128,23 @@
       const ok = !skipped && accepts(w, text);
       submitted = true;
       if (!recordLearning(w, ok)) { submitted = false; return; }
-      s.answered = true;
+      s.answered = true;closeCardHelp();document.querySelector('#tr-help-toggle').disabled=true;
       document.querySelectorAll('.tr-question button').forEach(b => b.disabled = true);
-      document.querySelector('#tr-feedback').innerHTML = `<div class="feedback ${ok ? '' : 'wrong'}"><div>${ok ? '✓ 문장을 완성했어요!' : '이 문장 구조를 다시 익혀 보세요.'}</div>${!ok && text ? `<p class="tr-your-answer">내 문장: ${esc(text)}</p>` : ''}<p lang="en" class="tr-correct">${esc(w.english)}</p><p>${esc(w.korean)}</p><p class="tr-explanation"><strong>${esc(w.grammar)}</strong><br>${esc(w.note)}</p>${sourceHTML(w)}${hinted ? '<p class="tr-small">힌트를 사용했어요. 다음에는 혼자 도전해 보세요.</p>' : ''}</div><div class="actions"><button class="listen" id="tr-listen-answer">◖ 미국 남성 음성 듣기</button></div><p id="tr-quiz-audio-status" role="status" class="muted"></p><button class="primary tr-check" id="tr-next-question">${s.index + 1 === s.items.length ? '학습 결과 보기' : '다음 문장 →'}</button>`;
-      document.querySelector('#tr-listen-answer').onclick = () => TranslationAudio.start([w], 0, true);
+      document.querySelector('.tr-quiz').classList.add('is-answered');document.querySelector('#tr-workspace').hidden=true;document.querySelector('#tr-question-controls').hidden=true;
+      document.querySelector('#tr-feedback').innerHTML=lessonFeedback(w,{ok,text,hinted,skipped});
+      document.querySelector('#tr-next-question').textContent=s.index+1===s.items.length?'학습 결과 보기':'다음 문장 →';
+      bindLessonPanels(isCurrent);fitLesson();
+      document.querySelector('#tr-listen-answer').onclick = () => {if(isCurrent())TranslationAudio.start([w],0,true);};
       document.querySelector('#tr-next-question').onclick = () => { if (advanced || !isCurrent() || !s.answered) return; advanced = true; TranslationAudio.stop(); s.index++; quiz(); };
       if (state.sound) TranslationAudio.start([w], 0, true);
     };
-    document.querySelector('.tr-korean').insertAdjacentHTML('afterend', '<button class="text-btn" id="tr-korean-listen">◖ 한국어 문장 듣기</button>');
-    document.querySelector('#tr-korean-listen').onclick = () => speakKorean(w.korean);
+
+    document.querySelector('#tr-korean-listen').onclick = () => {if(isCurrent())speakKorean(w.korean);};
     document.querySelector('#exitQuiz').onclick = () => { if (isCurrent()) show(s.returnPage || 'home'); };
-    document.querySelector('#tr-undo').onclick = () => { if (!canEdit()) return; const id = selected.pop(); draw(id); };
-    document.querySelector('#tr-clear').onclick = () => { if (!canEdit()) return; selected = []; draw(); };
+    document.querySelector('#tr-undo').onclick = () => { if (!canEdit()) return; closeCardHelp();const id = selected.pop(); draw(id); };
+    document.querySelector('#tr-clear').onclick = () => { if (!canEdit()) return; closeCardHelp();selected = []; draw(); };
     document.querySelector('#tr-hint').onclick = () => {
-      if (!canEdit()) return;
+      if (!canEdit()) return;closeCardHelp();
       const prefix = selected.every((id, i) => source[id].word === source[i].word);
       if (!prefix) { toast('놓은 카드의 순서를 먼저 살펴보세요. 첫 카드: ' + source[0].word); return; }
       const next = source[selected.length];
@@ -146,14 +167,14 @@
     speechSynthesis.speak(utterance);
   }
   window.renderTypingQuiz = function (w, s) {
-    window.MobileUI?.cardMode(false);
+    window.MobileUI?.cardMode(false);window.MobileUI?.lessonMode?.(true);
     TranslationAudio.stop();
     const questionIndex = s.index, isCurrent = () => currentQuestion(w,s,questionIndex);
     let submitted = false, advanced = false, selfCorrected = false;
-    main.innerHTML = `<div class="quiz tr-quiz"><div class="quiz-top"><button class="text-btn" id="exitQuiz">✕ 학습 끝내기</button><div class="progress"><div style="width:${s.index / s.items.length * 100}%"></div></div><span class="muted">${s.index + 1} / ${s.items.length}</span></div><div class="eyebrow">${isEveryday(w) ? 'EVERYDAY ENGLISH · TYPE IT' : 'TRANSLATE IN YOUR OWN WORDS'}</div><h1>이번에는 처음부터 써 보세요.</h1><p class="muted">${isEveryday(w) ? '한국어를 읽거나 듣고 같은 뜻의 자연스러운 생활영어 문장을 입력하세요.' : '한국어를 읽거나 듣고 VOA 원문에 해당하는 영어 문장을 입력하세요.'}</p><section class="card tr-question"><div class="section-head"><span class="pill">${esc(quizLevel(w))} · 직접 입력</span><span class="tr-small">${esc(w.grammar)}</span></div><p class="tr-korean">${esc(w.korean)}</p><button class="text-btn" id="tr-korean-listen">◖ 한국어 문장 듣기</button><form id="tr-typing-form"><label for="tr-typed-answer">나의 영어 번역</label><textarea id="tr-typed-answer" rows="4" maxlength="600" autocomplete="off" autocapitalize="sentences" spellcheck="false" lang="en" placeholder="Write the complete sentence in English."></textarea><div class="tr-tools"><button type="button" class="text-btn" id="tr-type-hint">첫 구절 힌트</button><button type="button" class="text-btn" id="tr-type-skip">잘 모르겠어요</button></div><p id="tr-type-hint-text" role="status" class="muted"></p><button class="primary tr-check">번역 확인하기</button><p class="tr-small">대소문자·문장부호·일부 축약형은 허용해요. ${isEveryday(w) ? '자체 작성한 생활영어 예시 답안과 비교해요.' : 'VOA 원문과 비교하는 채점입니다.'} 뜻이 같은 다른 번역도 가능하며, 모든 자연스러운 번역을 판단하는 AI 채점은 아닙니다.</p></form><div id="tr-feedback" aria-live="polite"></div></section></div>`;
+    main.innerHTML = `<div class="quiz tr-quiz tr-typing-lesson"><div class="quiz-top"><button class="text-btn" id="exitQuiz" aria-label="학습 끝내기">✕</button><div class="progress"><div style="width:${s.index/s.items.length*100}%"></div></div><span class="muted">${s.index+1} / ${s.items.length}</span><button class="text-btn" id="tr-korean-listen" aria-label="한국어 문장 듣기">듣기</button></div><h1 class="tr-lesson-heading">영어 문장을 써 보세요</h1><section class="card tr-question"><div class="section-head"><span class="pill">${esc(quizLevel(w))} · 직접 입력</span><details class="tr-lesson-details tr-prehelp" id="tr-typing-help"><summary class="text-btn">채점 안내</summary><section class="tr-lesson-panel"><button class="text-btn" data-tr-close-panel="tr-typing-help">닫기 ×</button><h2>채점 안내</h2><p>대소문자·문장부호·일부 축약형은 허용해요.</p><p>${isEveryday(w)?'자체 작성한 생활영어 예시 답안':'VOA 원문'}과 비교해요. 뜻이 같은 다른 번역도 가능하며, 모든 자연스러운 번역을 판단하는 AI 채점은 아닙니다.</p></section></details></div><p class="tr-korean">${esc(w.korean)}</p><form id="tr-typing-form"><label class="sentence-sr-only" for="tr-typed-answer">나의 영어 번역</label><textarea id="tr-typed-answer" rows="3" maxlength="600" autocomplete="off" autocapitalize="sentences" spellcheck="false" lang="en" placeholder="Write in English."></textarea><div class="tr-tools"><button type="button" class="text-btn" id="tr-type-hint">첫 구절 힌트</button><button type="button" class="text-btn" id="tr-type-skip">모르겠어요</button></div><p id="tr-type-hint-text" role="status" class="muted"></p><button class="primary tr-check" id="tr-type-check">정답 확인</button></form><div id="tr-feedback" aria-live="polite"></div></section></div>`;
     document.querySelector('#exitQuiz').onclick = () => { if (isCurrent()) show(s.returnPage || 'home'); };
-    document.querySelector('#tr-korean-listen').onclick = () => speakKorean(w.korean);
-    document.querySelector('#tr-type-hint').onclick = () => { document.querySelector('#tr-type-hint-text').textContent = `시작 힌트: ${tokenise(w.english).slice(0, 3).join(' ')}…`; };
+    document.querySelector('#tr-korean-listen').onclick = () => {if(isCurrent())speakKorean(w.korean);};
+    document.querySelector('#tr-type-hint').onclick = () => {if(submitted||s.answered||!isCurrent())return;document.querySelector('#tr-type-hint-text').textContent=`시작: ${tokenise(w.english).slice(0,3).join(' ')}…`;fitLesson();};
     const submit = skipped => {
       if (submitted || s.answered || !isCurrent()) return;
       const value = document.querySelector('#tr-typed-answer').value.trim();
@@ -167,7 +188,10 @@
       s.answered = true;
       const recordedProgress = state.progress[w.id], recordedHistory = state.history[recordedDay];
       document.querySelector('#tr-typing-form').hidden = true;
-      document.querySelector('#tr-feedback').innerHTML = `<div class="feedback ${ok ? '' : 'wrong'}"><div>${ok ? '✓ 자연스럽게 완성했어요!' : skipped ? '예시 문장을 살펴보세요.' : '예시 답안과 다른 부분이 있어요.'}</div>${value ? `<p class="tr-your-answer">내 번역: ${esc(value)}</p>` : ''}<p lang="en" class="tr-correct">${esc(w.english)}</p><p>${esc(w.korean)}</p><p class="tr-explanation"><strong>${esc(w.grammar)}</strong><br>${esc(w.note)}</p>${sourceHTML(w)}</div>${!ok && !skipped ? '<p class="tr-small">의미가 같은 다른 번역일 수도 있어요. 예시와 비교한 뒤 직접 정답으로 기록할 수 있습니다.</p><button class="secondary" id="tr-self-correct">내 번역도 같은 뜻이에요 · 정답으로 기록</button>' : ''}<div class="actions"><button class="listen" id="tr-listen-answer">◖ 미국 남성 음성 듣기</button></div><p id="tr-quiz-audio-status" role="status" class="muted"></p><button class="primary tr-check" id="tr-next-question">${s.index + 1 === s.items.length ? '학습 결과 보기' : '다음 문장 →'}</button>`;
+      document.querySelector('#tr-typed-answer')?.blur?.();document.querySelector('.tr-quiz').classList.add('is-answered');
+      document.querySelector('#tr-feedback').innerHTML=lessonFeedback(w,{ok,text:value,typed:true,skipped});
+      document.querySelector('#tr-next-question').textContent=s.index+1===s.items.length?'학습 결과 보기':'다음 문장 →';
+      bindLessonPanels(isCurrent);fitLesson();
       document.querySelector('#tr-self-correct')?.addEventListener('click', e => {
         const button = e.currentTarget || e.target;
         if (selfCorrected || button.disabled || !isCurrent() || !s.answered) return;
@@ -185,12 +209,13 @@
         s.correct++; save();
         button.textContent = '✓ 직접 확인한 정답으로 기록했어요';
       });
-      document.querySelector('#tr-listen-answer').onclick = () => TranslationAudio.start([w], 0, true);
+      document.querySelector('#tr-listen-answer').onclick = () => {if(isCurrent())TranslationAudio.start([w],0,true);};
       document.querySelector('#tr-next-question').onclick = () => { if (advanced || !isCurrent() || !s.answered) return; advanced = true; TranslationAudio.stop(); s.index++; quiz(); };
       if (state.sound) TranslationAudio.start([w], 0, true);
     };
     document.querySelector('#tr-typing-form').onsubmit = e => { e.preventDefault(); submit(false); };
     document.querySelector('#tr-type-skip').onclick = () => submit(true);
+    bindLessonPanels(isCurrent);fitLesson();
     if (innerWidth > 760) document.querySelector('#tr-typed-answer').focus();
   };
 

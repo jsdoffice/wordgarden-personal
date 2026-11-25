@@ -41,7 +41,7 @@
     for(const id of ['everydayStart','everydayPlay','everydayRandom','everydayOpenSpeaking','everydayOpenPronunciation'])document.querySelector('#'+id).disabled=!items.length;
   }
   window.everydayPage=function(){
-    E.filters=false;E.audioOptions=false;window.MobileUI?.cardMode(E.view==='card');
+    E.filters=false;E.audioOptions=false;window.MobileUI?.lessonMode?.(false);window.MobileUI?.cardMode(E.view==='card');
     main.innerHTML=`<section class="sentence-browser everyday-browser ${E.view==='card'?'is-card':'is-list'}" aria-label="생활영어 1,000문장">
       <header class="sentence-browser-header"><div><h1>생활영어</h1><p id="everydayLearnedCount" class="sentence-learning-count" role="status"></p></div><button class="secondary sentence-filter-toggle" id="everydayFilterToggle" aria-expanded="false" aria-controls="everydayFilters">필터</button></header>
       <div class="browser-popover" id="everydayFilters" hidden><div class="sentence-panel-heading"><h2>문장 찾기</h2><button class="text-btn" id="everydayFilterClose">닫기 ×</button></div><div class="everyday-filters"><label>상황<select id="everydayTopic">${topicOptions(E.topic)}</select></label><label>검색<input id="everydaySearch" type="search" value="${esc(E.query)}" placeholder="영어·한국어" autocomplete="off"></label></div><div class="actions"><button class="secondary" id="everydayRandom">무작위 카드</button><button class="primary" id="everydayFilterDone">적용</button></div></div>

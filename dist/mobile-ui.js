@@ -1,12 +1,31 @@
 /* Shared mobile navigation and card gestures. Learning storage keeps its original identity. */
 (() => {
   'use strict';
+  let editingHeight = 0;
+  const editable = () => document.activeElement?.matches?.('input:not([type="checkbox"]):not([type="radio"]),textarea,[contenteditable="true"]');
   function viewport() {
     const height = window.visualViewport?.height || window.innerHeight;
     document.documentElement.style.setProperty('--app-height', `${Math.round(height)}px`);
+    const editing = editable();
+    if (!editing) editingHeight = 0;
+    const keyboard = Boolean(editing && editingHeight && height < editingHeight - 120);
+    document.body.classList.toggle('keyboard-open', keyboard);
+    document.documentElement.style.setProperty('--viewport-top', `${Math.round(window.visualViewport?.offsetTop || 0)}px`);
   }
+  function homeMode(enabled) {
+    document.body.classList.toggle('home-mode',Boolean(enabled));
+    if(enabled){document.body.classList.remove('card-mode','lesson-mode');}
+    viewport();
+  }
+  function lessonMode(enabled) {
+    document.body.classList.toggle('lesson-mode',Boolean(enabled));
+    if(enabled){document.body.classList.remove('card-mode','home-mode');window.scrollTo(0,0);}
+    viewport();
+  }
+  function fitLesson(){viewport();}
   function cardMode(enabled) {
     document.body.classList.toggle('card-mode', Boolean(enabled));
+    if(enabled)document.body.classList.remove('home-mode','lesson-mode');
     viewport();
     if (enabled) window.scrollTo(0, 0);
   }
@@ -54,8 +73,14 @@
       if(active){button.setAttribute('aria-current','page');button.scrollIntoView?.({block:'nearest',inline:'nearest',behavior:'auto'});}else button.removeAttribute('aria-current');
     });
   }
-  window.MobileUI = {cardMode,bindSwipe,updateNav};
+  window.MobileUI = {cardMode,homeMode,lessonMode,fitLesson,bindSwipe,updateNav};
   window.addEventListener('resize',viewport);
   window.visualViewport?.addEventListener('resize',viewport);
+  window.visualViewport?.addEventListener('scroll',viewport);
+  document.addEventListener('focusin',()=>{
+    if(editable()&&!editingHeight)editingHeight=Math.max(window.innerHeight,window.visualViewport?.height||0);
+    viewport();
+  });
+  document.addEventListener('focusout',()=>{setTimeout(viewport,0);});
   viewport();
 })();

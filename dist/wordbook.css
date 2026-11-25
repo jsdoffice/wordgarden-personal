@@ -4,8 +4,8 @@
 .wb-topbar,.wb-top-actions,.wb-modes{display:flex;align-items:center}
 .wb-topbar{justify-content:space-between;gap:10px;margin-bottom:16px;flex:none;min-height:44px}
 .wb-top-actions{gap:7px}
-.wb-modes{gap:3px;border-radius:13px;padding:4px;background:#e9edf4}
-.wb-modes button{display:flex;align-items:center;justify-content:center;gap:6px;min-height:36px;padding:7px 12px;border:0;border-radius:10px;background:transparent;color:var(--muted,#7c889a);font-size:13px;font-weight:650}
+.wb-modes{gap:6px;border-radius:13px;padding:4px;background:#e9edf4}
+.wb-modes button{display:flex;align-items:center;justify-content:center;gap:6px;min-height:44px;min-width:72px;flex-shrink:0;padding:9px 12px;border:0;border-radius:10px;background:transparent;color:var(--muted,#7c889a);font-size:13px;font-weight:650;touch-action:manipulation}
 .wb-modes button[aria-pressed=true]{background:var(--surface,#fff);color:var(--ink,#17243a);box-shadow:0 2px 6px #17243a08}
 .wb-filter-toggle,.wb-add-button{display:flex;align-items:center;justify-content:center;gap:6px;min-height:44px;border-radius:12px;background:var(--surface,#fff);color:var(--ink,#17243a);border:1px solid #e5eaf1;padding:9px 12px;font-size:12px;font-weight:600;white-space:nowrap}
 .wb-filter-toggle.has-filter{color:var(--wb-blue);border-color:#a8c9ff;background:#f4f8ff}
@@ -91,7 +91,7 @@
 @media(max-width:760px){
  .wb-topbar{gap:7px;margin-bottom:12px}
  .wb-modes{padding:3px;border-radius:12px}
- .wb-modes button{gap:4px;font-size:12px;padding:7px 9px;min-height:36px}
+ .wb-modes button{gap:4px;font-size:12px;padding:9px;min-height:44px;min-width:64px}
  .wb-modes svg{width:16px;height:16px}
  .wb-top-actions{gap:6px}
  .wb-filter-toggle,.wb-add-button{padding:9px 10px;font-size:12px;gap:5px}
@@ -143,4 +143,4 @@
  .wb-workspace[data-example-layout=tabs] .wb-examples p[lang=ko]{font-size:12px;line-height:1.5;margin-top:6px}
  #addDialog .wb-add-fields{grid-template-columns:1fr}
 }
-@media(max-width:350px){.wb-topbar{gap:5px}.wb-modes button{padding:7px 8px}.wb-modes svg{display:none}.wb-filter-toggle{padding:9px}.wb-add-button{padding:9px 8px}.wb-top-actions{gap:5px}.wb-navigation{gap:10px}.wb-navigation button{padding:10px 9px}}
+@media(max-width:350px){.wb-topbar{gap:5px}.wb-modes button{padding:9px 8px;min-width:56px}.wb-modes svg{display:none}.wb-filter-toggle{padding:9px}.wb-add-button{padding:9px 8px}.wb-top-actions{gap:5px}.wb-navigation{gap:10px}.wb-navigation button{padding:10px 9px}}
