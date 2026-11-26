@@ -25,6 +25,7 @@
     const found=candidates(),index=found.findIndex(item=>item.id===P.item?.id);
     if($('pronPrevious'))$('pronPrevious').disabled=busy||index<=0;
     if($('pronNext'))$('pronNext').disabled=busy||index<0||index>=found.length-1;
+    window.MenuAudio?.refresh?.();
   }
   function releaseCapture(){
     const c=P.capture;P.capture=null;if(!c)return;clearInterval(c.timer);
@@ -154,6 +155,6 @@
     $('pronRetry').disabled=$('pronRecord').disabled&&P.phase==='idle';
     $('pronRetry').onclick=()=>{if($('pronRecord')&&!$('pronRecord').disabled)$('pronRecord').click();};
   }
-  window.pronunciationPage=pageView;window.Pronunciation={stop,open(mode='sentence',itemId){if(isHere()&&P.phase!=='idle')return;P.mode=['sentence','everyday','word'].includes(mode)?mode:'sentence';P.query='';P.category='';P.item=pool().find(item=>item.id===itemId)||null;show('pronunciation');}};window.addEventListener('pagehide',stop);
+  window.pronunciationPage=pageView;window.Pronunciation={stop,audioItems:()=>P.phase==='idle'?candidates():[],open(mode='sentence',itemId){if(isHere()&&P.phase!=='idle')return;P.mode=['sentence','everyday','word'].includes(mode)?mode:'sentence';P.query='';P.category='';P.item=pool().find(item=>item.id===itemId)||null;show('pronunciation');}};window.addEventListener('pagehide',stop);
   document.addEventListener('visibilitychange',()=>{if(document.hidden&&isHere()){stop();status('화면이 숨겨져 녹음과 분석을 중단했어요. 다시 시작해 주세요.');}});
 })();

@@ -91,7 +91,7 @@ window.Wordbook = (() => {
     document.querySelectorAll('[data-wordbook-mode]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.wordbookMode===ui.mode)));
     document.querySelector('#wordbookCount').textContent=`${labels.find(([key])=>key===wordFilter)?.[1]||'전체'} · ${fmt(items.length)}개${ui.query.trim()?` · “${ui.query.trim()}” 검색 결과`:''}`;
     document.querySelector('#wbFiltersToggle').classList.toggle('has-filter',Boolean(ui.query.trim()||wordFilter!=='all'));
-    if(!items.length){container.innerHTML='<section class="card empty wb-empty"><h2>표시할 단어가 없어요</h2><p class="muted">검색·필터를 열어 다른 조건으로 찾아보세요.</p></section>';return;}
+    if(!items.length){container.innerHTML='<section class="card empty wb-empty"><h2>표시할 단어가 없어요</h2><p class="muted">검색·필터를 열어 다른 조건으로 찾아보세요.</p></section>';window.MenuAudio?.refresh();return;}
     if(ui.mode==='card') {
       container.innerHTML=`<div class="wb-card-view"><div class="wb-card-stage">${wordMarkup(items[index],true,grouped)}</div><div class="wb-navigation" role="group" aria-label="단어 카드 이동"><button class="secondary" id="wordbookPrev" ${index===0?'disabled':''}>${icon('previous')}<span>이전</span></button><span role="status" aria-live="polite"><strong>${fmt(index+1)}</strong><span> / ${fmt(items.length)}</span><small class="wb-swipe-hint" aria-hidden="true">좌우로 넘기기</small></span><button class="primary" id="wordbookNext" ${index===items.length-1?'disabled':''}><span>다음</span>${icon('next')}</button></div></div>`;
       const target=()=>container.querySelector('.wb-flashcard');
@@ -121,6 +121,7 @@ window.Wordbook = (() => {
     container.querySelectorAll('[data-wb-delete]').forEach(button=>button.onclick=()=>{if(confirm('직접 추가한 이 단어를 삭제할까요?')){state.custom=state.custom.filter(w=>w.id!==button.dataset.wbDelete);delete state.progress[button.dataset.wbDelete];save();render();}});
     if(focus)document.querySelector('#wordbookCurrent')?.focus({preventScroll:true});
     scheduleFit();
+    window.MenuAudio?.refresh();
   }
   function selectExample(card,tabs) {
     const pairs=[...card.querySelectorAll('.wb-examples li')];
@@ -140,5 +141,5 @@ window.Wordbook = (() => {
   function scheduleFit(){if(fitFrame!==null&&window.cancelAnimationFrame)cancelAnimationFrame(fitFrame);if(window.requestAnimationFrame)fitFrame=requestAnimationFrame(()=>{fitFrame=null;fitCard();});else fitCard();}
   window.addEventListener('resize',scheduleFit);window.visualViewport?.addEventListener('resize',scheduleFit);
   document.fonts?.ready.then(scheduleFit);document.fonts?.addEventListener('loadingdone',scheduleFit);
-  return {page:pageView,render,examples,metadata,rows};
+  return {page:pageView,render,examples,metadata,rows,audioItems:()=>rows().flatMap(word=>[{id:word.id+':word',english:word.word,tts:true},...examples(word).map(([english],index)=>({id:word.id+':example:'+index,english,tts:true}))])};
 })();

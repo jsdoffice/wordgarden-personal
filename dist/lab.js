@@ -183,6 +183,7 @@
     const nav=root.querySelector('#lab-card-nav');nav.hidden=view.mode!=='card'||!results.length;
     root.querySelector('#lab-previous').disabled=view.position===0||view.tools||Boolean(view.overlay);
     root.querySelector('#lab-next').disabled=view.position>=results.length-1||view.tools||Boolean(view.overlay);
+    window.MenuAudio?.refresh();
   }
 
   function changeQuery(root,query,focus){view.query=String(query).trim();view.topic='';view.visible=40;resetCard();const input=root.querySelector('#lab-search');input.value=query;render(root);if(focus)input.focus();}
@@ -218,6 +219,7 @@
     swipeCleanup=window.MobileUI?.bindSwipe(root.querySelector('#lab-results'),{prev:()=>moveCore(root,-1),next:()=>moveCore(root,1),motion});
   };
   window.openPatternLibrary=function(){view.section='patterns';view.query='';view.topic='';view.visible=40;resetCard();show('lab');};
+  window.LabAudio={items:()=>{if(!loadLibrary())return[];return matching().flatMap(entry=>examplesFor(entry).filter(example=>!example.wrong&&example.en).map((example,index)=>({id:entryKey(entry)+':example:'+index,english:example.en,tts:true})));}};
   window.openGrammarLibrary=function(){view.section='rules';view.query='';view.topic='';view.visible=40;resetCard();show('lab');};
   document.addEventListener('keydown',event=>{
     const root=document.querySelector('#main .wg-lab');if(!root)return;
